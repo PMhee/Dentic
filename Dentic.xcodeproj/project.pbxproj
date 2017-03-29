@@ -1,0 +1,2117 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15E9FDCE65ABC73AB902B713 /* Pods_DenticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4857896F26B2134F03097110 /* Pods_DenticTests.framework */; };
+		41DF708E8A0C6D14350AA580 /* Pods_MEDDICUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5969A1918AAD94ED169C26 /* Pods_MEDDICUITests.framework */; };
+		48149B1A09B8948776C91619 /* Pods_Dentic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62F69347CBDDF3D17A6BF81 /* Pods_Dentic.framework */; };
+		B70048DE1E309F1800A7B485 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70048DD1E309F1800A7B485 /* HistoryViewController.swift */; };
+		B70048E01E30A54800A7B485 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70048DF1E30A54800A7B485 /* HistoryTableViewCell.swift */; };
+		B70120B71E347F4F008CC584 /* Name.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120B61E347F4F008CC584 /* Name.png */; };
+		B70120B91E347FD1008CC584 /* PatientProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70120B81E347FD1008CC584 /* PatientProfileViewController.swift */; };
+		B70120C01E348547008CC584 /* Address.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BA1E348547008CC584 /* Address.png */; };
+		B70120C11E348547008CC584 /* Date of birth.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BB1E348547008CC584 /* Date of birth.png */; };
+		B70120C21E348547008CC584 /* Gender.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BC1E348547008CC584 /* Gender.png */; };
+		B70120C31E348547008CC584 /* HN.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BD1E348547008CC584 /* HN.png */; };
+		B70120C41E348547008CC584 /* passport.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BE1E348547008CC584 /* passport.png */; };
+		B70120C51E348547008CC584 /* Med Payment.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BF1E348547008CC584 /* Med Payment.png */; };
+		B70120C81E34854F008CC584 /* Nationality.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120C61E34854F008CC584 /* Nationality.png */; };
+		B70120C91E34854F008CC584 /* Telephone.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120C71E34854F008CC584 /* Telephone.png */; };
+		B70A0A351E35435900F21C24 /* RealmStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0A341E35435900F21C24 /* RealmStatus.swift */; };
+		B70A0A371E35E51C00F21C24 /* ViewProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0A361E35E51C00F21C24 /* ViewProfilePicViewController.swift */; };
+		B70A0A391E35EC0D00F21C24 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A0A381E35EC0D00F21C24 /* add.png */; };
+		B70A0A3B1E35EE8F00F21C24 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A0A3A1E35EE8F00F21C24 /* download.png */; };
+		B70A0A3D1E35F0F800F21C24 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A0A3C1E35F0F800F21C24 /* icon.png */; };
+		B70A0A3F1E35F1CB00F21C24 /* AddFormTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0A3E1E35F1CB00F21C24 /* AddFormTitleViewController.swift */; };
+		B70CE02F1E8A2358000DB50E /* StoneOralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CE02E1E8A2358000DB50E /* StoneOralTableViewCell.swift */; };
+		B70D03A71E700E00000FF059 /* BackPhysician.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D03A61E700DFF000FF059 /* BackPhysician.swift */; };
+		B714B3FA1E36FDC90042A4CD /* eye-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B714B3F81E36FDC90042A4CD /* eye-dark.png */; };
+		B714B3FB1E36FDC90042A4CD /* eye-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B714B3F91E36FDC90042A4CD /* eye-white.png */; };
+		B714B3FE1E36FE6A0042A4CD /* calculator-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B714B3FC1E36FE6A0042A4CD /* calculator-dark.png */; };
+		B714B3FF1E36FE6A0042A4CD /* calculator-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B714B3FD1E36FE6A0042A4CD /* calculator-white.png */; };
+		B714B4011E37019F0042A4CD /* SectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B714B4001E37019F0042A4CD /* SectionHeaderTableViewCell.swift */; };
+		B716C8E01E5A94E700BE7A71 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716C8DF1E5A94E700BE7A71 /* SignupViewController.swift */; };
+		B71A99931E31BD8D00F64844 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B71A99921E31BD8D00F64844 /* Loading.xib */; };
+		B71A99971E31C24500F64844 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A99961E31C24500F64844 /* Loading.swift */; };
+		B71A99991E31C4A700F64844 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = B71A99981E31C4A700F64844 /* loading.png */; };
+		B71A99A01E320A8B00F64844 /* tabbar-more-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B71A999E1E320A8B00F64844 /* tabbar-more-selected.png */; };
+		B71A99A11E320A8B00F64844 /* tabbar-more-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B71A999F1E320A8B00F64844 /* tabbar-more-unselected.png */; };
+		B71A99A31E320D2000F64844 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A99A21E320D2000F64844 /* LoadingViewController.swift */; };
+		B72AFD2E1E8B7C820062E0D8 /* annotate-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B72AFD2D1E8B7C820062E0D8 /* annotate-white.png */; };
+		B72AFD301E8B7E240062E0D8 /* edit-draw-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = B72AFD2F1E8B7E240062E0D8 /* edit-draw-pencil.png */; };
+		B73642C31E4760670042D39A /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642C21E4760670042D39A /* PasscodeViewController.swift */; };
+		B73642C51E476D580042D39A /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642C41E476D580042D39A /* MoreTableViewCell.swift */; };
+		B73642CB1E4778D80042D39A /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73642CA1E4778D80042D39A /* Group.storyboard */; };
+		B73642CD1E477A4D0042D39A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642CC1E477A4D0042D39A /* GroupViewController.swift */; };
+		B73642CF1E4787870042D39A /* add-group.png in Resources */ = {isa = PBXBuildFile; fileRef = B73642CE1E4787870042D39A /* add-group.png */; };
+		B73642D11E4788080042D39A /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642D01E4788080042D39A /* AddGroupViewController.swift */; };
+		B73802DA1E333A1700D3045E /* Ankle_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C41E333A1700D3045E /* Ankle_Lt.jpg */; };
+		B73802DB1E333A1700D3045E /* Ankle_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C51E333A1700D3045E /* Ankle_Rt.jpg */; };
+		B73802DC1E333A1700D3045E /* Foot_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C61E333A1700D3045E /* Foot_Lt.jpg */; };
+		B73802DD1E333A1700D3045E /* Foot_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C71E333A1700D3045E /* Foot_Rt.jpg */; };
+		B73802DE1E333A1700D3045E /* Hand_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C81E333A1700D3045E /* Hand_Lt.jpg */; };
+		B73802DF1E333A1700D3045E /* Hand_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802C91E333A1700D3045E /* Hand_Rt.jpg */; };
+		B73802E01E333A1700D3045E /* Hip_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CA1E333A1700D3045E /* Hip_Lt.jpg */; };
+		B73802E11E333A1700D3045E /* Hip_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CB1E333A1700D3045E /* Hip_Rt.jpg */; };
+		B73802E21E333A1700D3045E /* Humerus_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CC1E333A1700D3045E /* Humerus_Lt.jpg */; };
+		B73802E31E333A1700D3045E /* Humerus_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CD1E333A1700D3045E /* Humerus_Rt.jpg */; };
+		B73802E41E333A1700D3045E /* Knee_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CE1E333A1700D3045E /* Knee_Lt.jpg */; };
+		B73802E51E333A1700D3045E /* Knee_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802CF1E333A1700D3045E /* Knee_Rt.jpg */; };
+		B73802E61E333A1700D3045E /* Lower_Limb_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D01E333A1700D3045E /* Lower_Limb_Rt.jpg */; };
+		B73802E71E333A1700D3045E /* Lower_Limb_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D11E333A1700D3045E /* Lower_Limb_Lt.jpg */; };
+		B73802E81E333A1700D3045E /* Pelvis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D21E333A1700D3045E /* Pelvis.jpg */; };
+		B73802E91E333A1700D3045E /* Shoulder_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D31E333A1700D3045E /* Shoulder_Lt.jpg */; };
+		B73802EA1E333A1700D3045E /* Shoulder_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D41E333A1700D3045E /* Shoulder_Rt.jpg */; };
+		B73802EB1E333A1700D3045E /* Skull.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D51E333A1700D3045E /* Skull.jpg */; };
+		B73802EC1E333A1700D3045E /* Thoracic spine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D61E333A1700D3045E /* Thoracic spine.jpg */; };
+		B73802ED1E333A1700D3045E /* Upper_Limb_Lt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D71E333A1700D3045E /* Upper_Limb_Lt.jpg */; };
+		B73802EE1E333A1700D3045E /* Upper_Limb_Rt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D81E333A1700D3045E /* Upper_Limb_Rt.jpg */; };
+		B73802EF1E333A1700D3045E /* Vertebral column.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B73802D91E333A1700D3045E /* Vertebral column.jpg */; };
+		B73802F51E33431E00D3045E /* Annotation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73802F41E33431E00D3045E /* Annotation.storyboard */; };
+		B73802F71E33436100D3045E /* DrawPresetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73802F61E33436100D3045E /* DrawPresetViewController.swift */; };
+		B73A00E81E2CDBB400D30531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A00E71E2CDBB400D30531 /* AppDelegate.swift */; };
+		B73A00ED1E2CDBB400D30531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73A00EB1E2CDBB400D30531 /* Main.storyboard */; };
+		B73A00EF1E2CDBB400D30531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73A00EE1E2CDBB400D30531 /* Assets.xcassets */; };
+		B73A00F21E2CDBB400D30531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73A00F01E2CDBB400D30531 /* LaunchScreen.storyboard */; };
+		B73A00FD1E2CDBB400D30531 /* MEDDICTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A00FC1E2CDBB400D30531 /* MEDDICTests.swift */; };
+		B73A01081E2CDBB400D30531 /* MEDDICUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A01071E2CDBB400D30531 /* MEDDICUITests.swift */; };
+		B73A01D11E2CDEAD00D30531 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A01D01E2CDEAD00D30531 /* FirstPageViewController.swift */; };
+		B73A01D31E2CDEF700D30531 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A01D21E2CDEF700D30531 /* LoginViewController.swift */; };
+		B73A01E71E2CE0EE00D30531 /* ThaiSansNeue-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01D51E2CE0EE00D30531 /* ThaiSansNeue-Black.otf */; };
+		B73A01E81E2CE0EE00D30531 /* ThaiSansNeue-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01D61E2CE0EE00D30531 /* ThaiSansNeue-BlackItalic.otf */; };
+		B73A01E91E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01D71E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf */; };
+		B73A01EA1E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01D81E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf */; };
+		B73A01EB1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01D91E2CE0EE00D30531 /* ThaiSansNeue-ExtraBold.otf */; };
+		B73A01EC1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBoldItali.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DA1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBoldItali.otf */; };
+		B73A01ED1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DB1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf */; };
+		B73A01EE1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DC1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf */; };
+		B73A01EF1E2CE0EE00D30531 /* ThaiSansNeue-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DD1E2CE0EE00D30531 /* ThaiSansNeue-Italic.otf */; };
+		B73A01F01E2CE0EE00D30531 /* ThaiSansNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DE1E2CE0EE00D30531 /* ThaiSansNeue-Light.otf */; };
+		B73A01F11E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01DF1E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf */; };
+		B73A01F21E2CE0EE00D30531 /* ThaiSansNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E01E2CE0EE00D30531 /* ThaiSansNeue-Regular.otf */; };
+		B73A01F31E2CE0EE00D30531 /* ThaiSansNeue-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E11E2CE0EE00D30531 /* ThaiSansNeue-SemiBold.otf */; };
+		B73A01F41E2CE0EE00D30531 /* ThaiSansNeue-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E21E2CE0EE00D30531 /* ThaiSansNeue-SemiBoldItalic.otf */; };
+		B73A01F51E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E31E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf */; };
+		B73A01F61E2CE0EE00D30531 /* ThaiSansNeue-UltraBoldItali.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E41E2CE0EE00D30531 /* ThaiSansNeue-UltraBoldItali.otf */; };
+		B73A01F71E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E51E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf */; };
+		B73A01F81E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = B73A01E61E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf */; };
+		B73A021A1E2CEA4000D30531 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02191E2CEA4000D30531 /* APIUser.swift */; };
+		B73A021E1E2CF18600D30531 /* UILoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A021D1E2CF18600D30531 /* UILoading.swift */; };
+		B73A02211E2D133200D30531 /* BackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02201E2D133200D30531 /* BackSystem.swift */; };
+		B73A02251E2D140400D30531 /* RealmPhysician.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02241E2D140400D30531 /* RealmPhysician.swift */; };
+		B73A022B1E2D17AD00D30531 /* ModalErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A022A1E2D17AD00D30531 /* ModalErrorViewController.swift */; };
+		B73A022F1E2D4C2800D30531 /* ModalLoginError.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73A022E1E2D4C2800D30531 /* ModalLoginError.xib */; };
+		B73A02321E2D4EEE00D30531 /* RecentPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02311E2D4EEE00D30531 /* RecentPatientViewController.swift */; };
+		B73A02351E2D53D400D30531 /* RecentPatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02341E2D53D400D30531 /* RecentPatientTableViewCell.swift */; };
+		B73A02381E2D556D00D30531 /* UITable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A02371E2D556D00D30531 /* UITable.swift */; };
+		B73A02501E2D58F800D30531 /* chulalongkorn.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A02491E2D58F800D30531 /* chulalongkorn.png */; };
+		B73A02511E2D58F800D30531 /* modlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024A1E2D58F800D30531 /* modlogo.png */; };
+		B73A02521E2D58F800D30531 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024B1E2D58F800D30531 /* profile.png */; };
+		B73A02531E2D58F800D30531 /* tabbar-patient-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024C1E2D58F800D30531 /* tabbar-patient-selected.png */; };
+		B73A02541E2D58F800D30531 /* tabbar-patient-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024D1E2D58F800D30531 /* tabbar-patient-unselected.png */; };
+		B73A02551E2D58F800D30531 /* tabbar-recent-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024E1E2D58F800D30531 /* tabbar-recent-selected.png */; };
+		B73A02561E2D58F800D30531 /* tabbar-recent-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B73A024F1E2D58F800D30531 /* tabbar-recent-unselected.png */; };
+		B74256581E4A54EF003B3A4E /* ic_upload.png in Resources */ = {isa = PBXBuildFile; fileRef = B74256571E4A54EF003B3A4E /* ic_upload.png */; };
+		B742565A1E4A5546003B3A4E /* ic_sync.png in Resources */ = {isa = PBXBuildFile; fileRef = B74256591E4A5546003B3A4E /* ic_sync.png */; };
+		B742565C1E4A5865003B3A4E /* add-patient.png in Resources */ = {isa = PBXBuildFile; fileRef = B742565B1E4A5865003B3A4E /* add-patient.png */; };
+		B742565E1E4A5C85003B3A4E /* camera-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B742565D1E4A5C85003B3A4E /* camera-white.png */; };
+		B74256601E4A6749003B3A4E /* cloud-computing.png in Resources */ = {isa = PBXBuildFile; fileRef = B742565F1E4A6749003B3A4E /* cloud-computing.png */; };
+		B74B3CEC1E386FB500A508EB /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B74B3CEB1E386FB500A508EB /* star.png */; };
+		B74B3CEE1E38820300A508EB /* CustomFormInitQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3CED1E38820300A508EB /* CustomFormInitQuestionViewController.swift */; };
+		B74B3CF01E38861500A508EB /* CusFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3CEF1E38861500A508EB /* CusFormTableViewCell.swift */; };
+		B74B3CF21E38A31300A508EB /* RowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3CF11E38A31300A508EB /* RowTableViewCell.swift */; };
+		B74B3CF41E38A32600A508EB /* ColumnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3CF31E38A32600A508EB /* ColumnTableViewCell.swift */; };
+		B74B3CF61E38A34000A508EB /* CustomFormMultipleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3CF51E38A34000A508EB /* CustomFormMultipleGridViewController.swift */; };
+		B7528B831E3237A600C440F0 /* Annotate.png in Resources */ = {isa = PBXBuildFile; fileRef = B7528B811E3237A600C440F0 /* Annotate.png */; };
+		B7528B841E3237A600C440F0 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B7528B821E3237A600C440F0 /* Camera.png */; };
+		B7528B871E3237AC00C440F0 /* Gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = B7528B851E3237AC00C440F0 /* Gallery.png */; };
+		B7528B8A1E326EC100C440F0 /* Preset.png in Resources */ = {isa = PBXBuildFile; fileRef = B7528B891E326EC100C440F0 /* Preset.png */; };
+		B7528B8C1E32708800C440F0 /* tools.png in Resources */ = {isa = PBXBuildFile; fileRef = B7528B8B1E32708700C440F0 /* tools.png */; };
+		B758D62C1E45D54200C7D11B /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = B758D62B1E45D54200C7D11B /* tick.png */; };
+		B758D62E1E45D59F00C7D11B /* CheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D62D1E45D59F00C7D11B /* CheckboxTableViewCell.swift */; };
+		B758D6301E45D84600C7D11B /* CheckBoxCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D62F1E45D84600C7D11B /* CheckBoxCheckTableViewCell.swift */; };
+		B758D6321E45E1D800C7D11B /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B758D6311E45E1D800C7D11B /* circle.png */; };
+		B758D6341E45E22E00C7D11B /* MultipleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D6331E45E22E00C7D11B /* MultipleTableViewCell.swift */; };
+		B758D6361E45E23E00C7D11B /* MultipleCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D6351E45E23E00C7D11B /* MultipleCheckTableViewCell.swift */; };
+		B758D6381E463DBE00C7D11B /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D6371E463DBE00C7D11B /* PictureTableViewCell.swift */; };
+		B758D63A1E464BBA00C7D11B /* CustomFormSectionAns.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D6391E464BBA00C7D11B /* CustomFormSectionAns.swift */; };
+		B758D63C1E464BD700C7D11B /* CustomFormAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B758D63B1E464BD700C7D11B /* CustomFormAnswer.swift */; };
+		B76297AE1E334A79000921E9 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297A81E334A79000921E9 /* eraser.png */; };
+		B76297AF1E334A79000921E9 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297A91E334A79000921E9 /* marker.png */; };
+		B76297B01E334A79000921E9 /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297AA1E334A79000921E9 /* pen.png */; };
+		B76297B11E334A79000921E9 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297AB1E334A79000921E9 /* pencil.png */; };
+		B76297B31E334A79000921E9 /* whiteBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297AD1E334A79000921E9 /* whiteBG.png */; };
+		B76297B71E3354F1000921E9 /* upload.png in Resources */ = {isa = PBXBuildFile; fileRef = B76297B61E3354F1000921E9 /* upload.png */; };
+		B76297BC1E3367BA000921E9 /* CustomForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76297BB1E3367BA000921E9 /* CustomForm.storyboard */; };
+		B76297C51E3368C7000921E9 /* CustomForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297BE1E3368C7000921E9 /* CustomForm.swift */; };
+		B76297C61E3368C7000921E9 /* CustomFormForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297BF1E3368C7000921E9 /* CustomFormForm.swift */; };
+		B76297C71E3368C7000921E9 /* CustomFormFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297C01E3368C7000921E9 /* CustomFormFormula.swift */; };
+		B76297C81E3368C7000921E9 /* CustomFormGridOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297C11E3368C7000921E9 /* CustomFormGridOption.swift */; };
+		B76297C91E3368C7000921E9 /* CustomFormOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297C21E3368C7000921E9 /* CustomFormOption.swift */; };
+		B76297CA1E3368C7000921E9 /* CustomFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297C31E3368C7000921E9 /* CustomFormSection.swift */; };
+		B76297CB1E3368C7000921E9 /* CustomFormShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76297C41E3368C7000921E9 /* CustomFormShare.swift */; };
+		B76445301E4DC2750012194F /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764452F1E4DC2750012194F /* TabbarViewController.swift */; };
+		B76516A71E67F4BE0026D0CA /* customform-filled-green.png in Resources */ = {isa = PBXBuildFile; fileRef = B76516A61E67F4BE0026D0CA /* customform-filled-green.png */; };
+		B76516A91E67F4C40026D0CA /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B76516A81E67F4C40026D0CA /* Camera.png */; };
+		B76516AB1E67F5010026D0CA /* camera-filled-red.png in Resources */ = {isa = PBXBuildFile; fileRef = B76516AA1E67F5010026D0CA /* camera-filled-red.png */; };
+		B76516AD1E67F5D10026D0CA /* customform-filled-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B76516AC1E67F5D10026D0CA /* customform-filled-blue.png */; };
+		B76516AF1E67F6180026D0CA /* camera-filled-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B76516AE1E67F6180026D0CA /* camera-filled-blue.png */; };
+		B76516B11E6828BD0026D0CA /* CustomFormListAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76516B01E6828BD0026D0CA /* CustomFormListAnswer.swift */; };
+		B7669C961E641DDE0095819E /* WebviewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669C951E641DDE0095819E /* WebviewVideoViewController.swift */; };
+		B769BD561E6D1B0E00544D89 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B769BD551E6D1B0E00544D89 /* bg.jpg */; };
+		B769BD581E6D206600544D89 /* FollowupHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769BD571E6D206600544D89 /* FollowupHistoryTableViewCell.swift */; };
+		B76F75041E37665900E2184F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FA1E37665900E2184F /* calendar.png */; };
+		B76F75051E37665900E2184F /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FB1E37665900E2184F /* checkbox.png */; };
+		B76F75061E37665900E2184F /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FC1E37665900E2184F /* drop.png */; };
+		B76F75071E37665900E2184F /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FD1E37665900E2184F /* grid.png */; };
+		B76F75081E37665900E2184F /* multiple.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FE1E37665900E2184F /* multiple.png */; };
+		B76F75091E37665900E2184F /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F74FF1E37665900E2184F /* number.png */; };
+		B76F750A1E37665900E2184F /* pictures.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F75001E37665900E2184F /* pictures.png */; };
+		B76F750B1E37665900E2184F /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F75011E37665900E2184F /* slider.png */; };
+		B76F750C1E37665900E2184F /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F75021E37665900E2184F /* text.png */; };
+		B76F750D1E37665900E2184F /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = B76F75031E37665900E2184F /* video.png */; };
+		B76F750F1E37693700E2184F /* CustomFormQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F750E1E37693700E2184F /* CustomFormQuestionViewController.swift */; };
+		B76FFCE51E496FD800E5F748 /* RealmStackFollowup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76FFCE41E496FD800E5F748 /* RealmStackFollowup.swift */; };
+		B76FFCE81E497EC500E5F748 /* BackStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76FFCE71E497EC500E5F748 /* BackStack.swift */; };
+		B77057041E34DF0700B82883 /* PatientProfilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77057031E34DF0700B82883 /* PatientProfilTableViewCell.swift */; };
+		B779CD9C1E44889800987CC1 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779CD9B1E44889800987CC1 /* MoreViewController.swift */; };
+		B779CDA41E448A3100987CC1 /* ic_cusform_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CD9E1E448A3100987CC1 /* ic_cusform_more.png */; };
+		B779CDA51E448A3100987CC1 /* ic_group_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CD9F1E448A3100987CC1 /* ic_group_more.png */; };
+		B779CDA61E448A3100987CC1 /* ic_logout_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CDA01E448A3100987CC1 /* ic_logout_more.png */; };
+		B779CDA71E448A3100987CC1 /* ic_passcode_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CDA11E448A3100987CC1 /* ic_passcode_more.png */; };
+		B779CDA81E448A3100987CC1 /* ic_password_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CDA21E448A3100987CC1 /* ic_password_more.png */; };
+		B779CDA91E448A3100987CC1 /* ic_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CDA31E448A3100987CC1 /* ic_profile.png */; };
+		B779CDAF1E44999C00987CC1 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B779CDAE1E44999C00987CC1 /* search.png */; };
+		B779CDB11E449C1200987CC1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779CDB01E449C1200987CC1 /* SearchViewController.swift */; };
+		B780E9A21E69AC4200240EC9 /* RealmListFollowup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780E9A11E69AC4200240EC9 /* RealmListFollowup.swift */; };
+		B78474C61E49B704005CCA1C /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = B78474C51E49B704005CCA1C /* Group.png */; };
+		B78474CC1E4A00A3005CCA1C /* RealmStackPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78474CB1E4A00A3005CCA1C /* RealmStackPicture.swift */; };
+		B78474CE1E4A0522005CCA1C /* MedicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B78474CD1E4A0522005CCA1C /* MedicLogo.png */; };
+		B78474D01E4A0645005CCA1C /* MedicLogoWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = B78474CF1E4A0645005CCA1C /* MedicLogoWhite.png */; };
+		B78474D21E4A3309005CCA1C /* GridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78474D11E4A3309005CCA1C /* GridTableViewCell.swift */; };
+		B78474D41E4A3868005CCA1C /* HeaderGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78474D31E4A3868005CCA1C /* HeaderGridTableViewCell.swift */; };
+		B78474D61E4A3D12005CCA1C /* PhysicianProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78474D51E4A3D12005CCA1C /* PhysicianProfileViewController.swift */; };
+		B78474D91E4A3EB1005CCA1C /* APIPhysician.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78474D81E4A3EB1005CCA1C /* APIPhysician.swift */; };
+		B785D2C91E47007900BCEDC8 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785D2C81E47007900BCEDC8 /* SliderTableViewCell.swift */; };
+		B785D2CB1E470C1A00BCEDC8 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785D2CA1E470C1A00BCEDC8 /* DateTableViewCell.swift */; };
+		B785D2CD1E47159100BCEDC8 /* DropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785D2CC1E47159100BCEDC8 /* DropTableViewCell.swift */; };
+		B785D2CF1E47200B00BCEDC8 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785D2CE1E47200B00BCEDC8 /* VideoTableViewCell.swift */; };
+		B785D2D11E47228400BCEDC8 /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B785D2D01E47228400BCEDC8 /* play-button.png */; };
+		B790E2911E2F3B9A00B8BB12 /* Clinical.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B790E2901E2F3B9A00B8BB12 /* Clinical.storyboard */; };
+		B790E2941E2F3F3D00B8BB12 /* ClinicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B790E2931E2F3F3D00B8BB12 /* ClinicalViewController.swift */; };
+		B790E29A1E2F502F00B8BB12 /* clinical-recent.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E2991E2F502F00B8BB12 /* clinical-recent.png */; };
+		B790E29C1E2F50A800B8BB12 /* clinical-questionare.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E29B1E2F50A800B8BB12 /* clinical-questionare.png */; };
+		B790E29E1E2F512300B8BB12 /* clinical-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E29D1E2F512300B8BB12 /* clinical-edit.png */; };
+		B790E2A21E2F5FB100B8BB12 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E2A11E2F5FB100B8BB12 /* edit.png */; };
+		B7956F981E39A04C00BDB7F3 /* ShowCustomFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7956F971E39A04C00BDB7F3 /* ShowCustomFormViewController.swift */; };
+		B7A006431E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A006421E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift */; };
+		B7A03D751E8920EC00EBD201 /* InternalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */; };
+		B7A03D771E892DDA00EBD201 /* PAOralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */; };
+		B7A085751E488F4100C3EB14 /* ShowGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A085741E488F4100C3EB14 /* ShowGroupViewController.swift */; };
+		B7A085771E48913000C3EB14 /* ShowGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A085761E48913000C3EB14 /* ShowGroupCollectionViewCell.swift */; };
+		B7AC98C61E38AFDA00CF1B91 /* column.png in Resources */ = {isa = PBXBuildFile; fileRef = B7AC98C51E38AFDA00CF1B91 /* column.png */; };
+		B7AC98C81E38AFF200CF1B91 /* row.png in Resources */ = {isa = PBXBuildFile; fileRef = B7AC98C71E38AFF200CF1B91 /* row.png */; };
+		B7AC98CA1E38B04F00CF1B91 /* CustomFormEquationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC98C91E38B04F00CF1B91 /* CustomFormEquationViewController.swift */; };
+		B7AC98CC1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC98CB1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift */; };
+		B7AFF9D61E450C2F00598A62 /* SectionTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AFF9D51E450C2F00598A62 /* SectionTitleTableViewCell.swift */; };
+		B7AFF9D81E450EE200598A62 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AFF9D71E450EE200598A62 /* TextFieldTableViewCell.swift */; };
+		B7B97B621E890C1800CCC45B /* DentistClinicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B97B611E890C1800CCC45B /* DentistClinicalViewController.swift */; };
+		B7B97B641E890D1700CCC45B /* ExternalOralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B97B631E890D1700CCC45B /* ExternalOralTableViewCell.swift */; };
+		B7BEFBF21E2E156800DD1FDC /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BEFBF11E2E156800DD1FDC /* PatientViewController.swift */; };
+		B7BEFBF41E2E176D00DD1FDC /* NoDataFound.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7BEFBF31E2E176D00DD1FDC /* NoDataFound.xib */; };
+		B7BEFBF61E2E17E900DD1FDC /* searching.png in Resources */ = {isa = PBXBuildFile; fileRef = B7BEFBF51E2E17E900DD1FDC /* searching.png */; };
+		B7BEFBF81E2E1A8B00DD1FDC /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = B7BEFBF71E2E1A8B00DD1FDC /* reload.png */; };
+		B7BEFBFA1E2E1AF600DD1FDC /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BEFBF91E2E1AF600DD1FDC /* NoDataView.swift */; };
+		B7C3D3511E2DC0E8008E7E86 /* APIPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3501E2DC0E8008E7E86 /* APIPatient.swift */; };
+		B7C3D3531E2DC241008E7E86 /* RealmPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3521E2DC241008E7E86 /* RealmPatient.swift */; };
+		B7C3D3551E2DC2A0008E7E86 /* RealmFollowup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3541E2DC2A0008E7E86 /* RealmFollowup.swift */; };
+		B7C3D3571E2DC309008E7E86 /* BackPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3561E2DC309008E7E86 /* BackPatient.swift */; };
+		B7C3D3591E2DCE0A008E7E86 /* RealmJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3581E2DCE0A008E7E86 /* RealmJSON.swift */; };
+		B7C3D35D1E2DD419008E7E86 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D35C1E2DD419008E7E86 /* Helper.swift */; };
+		B7C3D35F1E2DE593008E7E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D35E1E2DE593008E7E86 /* Color.swift */; };
+		B7CD3D941E80E8460015BA60 /* customTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD3D931E80E8460015BA60 /* customTextField.swift */; };
+		B7CF48891E35F546009F597B /* APIAddCustomForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF48881E35F546009F597B /* APIAddCustomForm.swift */; };
+		B7CF48961E35FDD5009F597B /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488B1E35FDD5009F597B /* 0.png */; };
+		B7CF48971E35FDD5009F597B /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488C1E35FDD5009F597B /* 1.png */; };
+		B7CF48981E35FDD5009F597B /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488D1E35FDD5009F597B /* 2.png */; };
+		B7CF48991E35FDD5009F597B /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488E1E35FDD5009F597B /* 3.png */; };
+		B7CF489A1E35FDD5009F597B /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488F1E35FDD5009F597B /* 4.png */; };
+		B7CF489B1E35FDD5009F597B /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48901E35FDD5009F597B /* 5.png */; };
+		B7CF489C1E35FDD5009F597B /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48911E35FDD5009F597B /* 6.png */; };
+		B7CF489D1E35FDD5009F597B /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48921E35FDD5009F597B /* 7.png */; };
+		B7CF489E1E35FDD5009F597B /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48931E35FDD5009F597B /* 8.png */; };
+		B7CF489F1E35FDD5009F597B /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48941E35FDD5009F597B /* 9.png */; };
+		B7CF48A01E35FDD5009F597B /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48951E35FDD5009F597B /* 10.png */; };
+		B7CF48A51E3600C5009F597B /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48A11E3600C5009F597B /* 11.png */; };
+		B7CF48A61E3600C5009F597B /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48A21E3600C5009F597B /* 12.png */; };
+		B7CF48A71E3600C5009F597B /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48A31E3600C5009F597B /* 13.png */; };
+		B7CF48A81E3600C5009F597B /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48A41E3600C5009F597B /* 14.png */; };
+		B7CF48AF1E3607AD009F597B /* Orthopedic.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48AA1E3607AD009F597B /* Orthopedic.png */; };
+		B7CF48B01E3607AD009F597B /* Cardiology.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48AB1E3607AD009F597B /* Cardiology.png */; };
+		B7CF48B11E3607AD009F597B /* Medicine.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48AC1E3607AD009F597B /* Medicine.png */; };
+		B7CF48B21E3607AD009F597B /* Surgery.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48AD1E3607AD009F597B /* Surgery.png */; };
+		B7CF48B31E3607AD009F597B /* Pediatric.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF48AE1E3607AD009F597B /* Pediatric.png */; };
+		B7CF48B61E360DE5009F597B /* CustomFormSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF48B51E360DE5009F597B /* CustomFormSectionViewController.swift */; };
+		B7CF48B81E360E13009F597B /* BackCustomForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF48B71E360E13009F597B /* BackCustomForm.swift */; };
+		B7D732D01E33EEF5002F785C /* pills.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D732CF1E33EEF5002F785C /* pills.png */; };
+		B7D732D41E33F405002F785C /* emp_star.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D732D11E33F405002F785C /* emp_star.png */; };
+		B7D732D51E33F405002F785C /* full_star.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D732D21E33F405002F785C /* full_star.png */; };
+		B7D732D61E33F405002F785C /* half_star.png in Resources */ = {isa = PBXBuildFile; fileRef = B7D732D31E33F405002F785C /* half_star.png */; };
+		B7D732D81E33F536002F785C /* CustomFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D732D71E33F536002F785C /* CustomFormViewController.swift */; };
+		B7D732DC1E33F572002F785C /* CustomFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D732DB1E33F572002F785C /* CustomFormTableViewCell.swift */; };
+		B7D732DF1E33FA71002F785C /* PatientProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D732DE1E33FA71002F785C /* PatientProfile.storyboard */; };
+		B7E0DEB31E792D7100785381 /* ic_data.png in Resources */ = {isa = PBXBuildFile; fileRef = B7E0DEB21E792D7100785381 /* ic_data.png */; };
+		B7E0DEB61E792EF300785381 /* RepresentData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E0DEB51E792EF300785381 /* RepresentData.storyboard */; };
+		B7E0DEB81E79309300785381 /* RepresentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DEB71E79309300785381 /* RepresentTableViewController.swift */; };
+		B7E0DEBA1E79322A00785381 /* HashtagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DEB91E79322A00785381 /* HashtagViewController.swift */; };
+		B7E0DEBC1E7936F400785381 /* BackRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DEBB1E7936F400785381 /* BackRepresent.swift */; };
+		B7E0DEBE1E793C9600785381 /* RealmMeshtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DEBD1E793C9600785381 /* RealmMeshtag.swift */; };
+		B7E0DEC01E793D4600785381 /* BackMeshtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DEBF1E793D4600785381 /* BackMeshtag.swift */; };
+		B7E5DF701E54250600EF407C /* Neuro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7E5DF6F1E54250600EF407C /* Neuro.jpg */; };
+		B7E5DF721E54575200EF407C /* RealmGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5DF711E54575200EF407C /* RealmGroup.swift */; };
+		B7E5DF741E5458C500EF407C /* groups.png in Resources */ = {isa = PBXBuildFile; fileRef = B7E5DF731E5458C500EF407C /* groups.png */; };
+		B7E5DF761E545BA300EF407C /* iconGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = B7E5DF751E545BA300EF407C /* iconGroup.png */; };
+		B7E5DF781E5460E100EF407C /* group-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = B7E5DF771E5460E100EF407C /* group-grey.png */; };
+		B7E8C8281E48187A0052C7CC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C8271E48187A0052C7CC /* ChangePasswordViewController.swift */; };
+		B7E8C82B1E4835740052C7CC /* APIGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C82A1E4835740052C7CC /* APIGroup.swift */; };
+		B7E8C82E1E483FA60052C7CC /* BackGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C82D1E483FA60052C7CC /* BackGroup.swift */; };
+		B7E8C8311E487E460052C7CC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C8301E487E460052C7CC /* Group.swift */; };
+		B7EA5AE11E4AC38100B561AD /* RowGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA5AE01E4AC38100B561AD /* RowGridTableViewCell.swift */; };
+		B7EA5AE31E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA5AE21E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift */; };
+		BBAEF106E026CFCDA1547BDA /* Pods_MEDDICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660F86F48D5241CD73D4FD44 /* Pods_MEDDICTests.framework */; };
+		CF4C0A5CEB531E828D8A1F39 /* Pods_DenticUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DE1BCC0DCAF155F663EE84 /* Pods_DenticUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B73A00F91E2CDBB400D30531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B73A00DC1E2CDBB400D30531 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B73A00E31E2CDBB400D30531;
+			remoteInfo = MEDDIC;
+		};
+		B73A01041E2CDBB400D30531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B73A00DC1E2CDBB400D30531 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B73A00E31E2CDBB400D30531;
+			remoteInfo = MEDDIC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D5969A1918AAD94ED169C26 /* Pods_MEDDICUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEDDICUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		295B012D6D24E70C18CBE5E2 /* Pods-Dentic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dentic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dentic/Pods-Dentic.debug.xcconfig"; sourceTree = "<group>"; };
+		41CFB393E6ADFCF89DA7ED6D /* Pods-Dentic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dentic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dentic/Pods-Dentic.release.xcconfig"; sourceTree = "<group>"; };
+		41DE1BCC0DCAF155F663EE84 /* Pods_DenticUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DenticUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4857896F26B2134F03097110 /* Pods_DenticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DenticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		489BAEDF60D1B09EBAE5BAF2 /* Pods-MEDDIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDIC/Pods-MEDDIC.release.xcconfig"; sourceTree = "<group>"; };
+		56B21E008E6B7BE4616C2AE9 /* Pods_MEDDIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEDDIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660F86F48D5241CD73D4FD44 /* Pods_MEDDICTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEDDICTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5988619858F1A7F49EE428 /* Pods-MEDDICTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDICTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDICTests/Pods-MEDDICTests.debug.xcconfig"; sourceTree = "<group>"; };
+		880B198C571ED5787FBB12C4 /* Pods-MEDDICTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDICTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDICTests/Pods-MEDDICTests.release.xcconfig"; sourceTree = "<group>"; };
+		A06502B107C08F6AF4BE1F37 /* Pods-DenticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DenticTests/Pods-DenticTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B129593550F41BBD31E5E8B2 /* Pods-DenticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DenticTests/Pods-DenticTests.release.xcconfig"; sourceTree = "<group>"; };
+		B70048DD1E309F1800A7B485 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = CLINICAL/HistoryViewController.swift; sourceTree = "<group>"; };
+		B70048DF1E30A54800A7B485 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B70120B61E347F4F008CC584 /* Name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Name.png; sourceTree = "<group>"; };
+		B70120B81E347FD1008CC584 /* PatientProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientProfileViewController.swift; path = PROFILE/PatientProfileViewController.swift; sourceTree = "<group>"; };
+		B70120BA1E348547008CC584 /* Address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Address.png; path = PROFILE/Address.png; sourceTree = "<group>"; };
+		B70120BB1E348547008CC584 /* Date of birth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Date of birth.png"; path = "PROFILE/Date of birth.png"; sourceTree = "<group>"; };
+		B70120BC1E348547008CC584 /* Gender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gender.png; path = PROFILE/Gender.png; sourceTree = "<group>"; };
+		B70120BD1E348547008CC584 /* HN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HN.png; path = PROFILE/HN.png; sourceTree = "<group>"; };
+		B70120BE1E348547008CC584 /* passport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = passport.png; path = PROFILE/passport.png; sourceTree = "<group>"; };
+		B70120BF1E348547008CC584 /* Med Payment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Med Payment.png"; path = "PROFILE/Med Payment.png"; sourceTree = "<group>"; };
+		B70120C61E34854F008CC584 /* Nationality.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nationality.png; path = PROFILE/Nationality.png; sourceTree = "<group>"; };
+		B70120C71E34854F008CC584 /* Telephone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Telephone.png; path = PROFILE/Telephone.png; sourceTree = "<group>"; };
+		B70A0A341E35435900F21C24 /* RealmStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatus.swift; path = BACKEND/REALM/RealmStatus.swift; sourceTree = "<group>"; };
+		B70A0A361E35E51C00F21C24 /* ViewProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProfilePicViewController.swift; path = CLINICAL/ViewProfilePicViewController.swift; sourceTree = "<group>"; };
+		B70A0A381E35EC0D00F21C24 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = CUSTOMFORM/add.png; sourceTree = "<group>"; };
+		B70A0A3A1E35EE8F00F21C24 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		B70A0A3C1E35F0F800F21C24 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = CUSTOMFORM/icon.png; sourceTree = "<group>"; };
+		B70A0A3E1E35F1CB00F21C24 /* AddFormTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFormTitleViewController.swift; path = CUSTOMFORM/AddFormTitleViewController.swift; sourceTree = "<group>"; };
+		B70CE02E1E8A2358000DB50E /* StoneOralTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoneOralTableViewCell.swift; path = CLINICAL/DENTIST/StoneOralTableViewCell.swift; sourceTree = "<group>"; };
+		B70D03A61E700DFF000FF059 /* BackPhysician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackPhysician.swift; path = BACKEND/BackPhysician.swift; sourceTree = "<group>"; };
+		B714B3F81E36FDC90042A4CD /* eye-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eye-dark.png"; path = "CUSTOMFORM/eye-dark.png"; sourceTree = "<group>"; };
+		B714B3F91E36FDC90042A4CD /* eye-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eye-white.png"; path = "CUSTOMFORM/eye-white.png"; sourceTree = "<group>"; };
+		B714B3FC1E36FE6A0042A4CD /* calculator-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calculator-dark.png"; path = "CUSTOMFORM/calculator-dark.png"; sourceTree = "<group>"; };
+		B714B3FD1E36FE6A0042A4CD /* calculator-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calculator-white.png"; path = "CUSTOMFORM/calculator-white.png"; sourceTree = "<group>"; };
+		B714B4001E37019F0042A4CD /* SectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderTableViewCell.swift; path = CUSTOMFORM/SectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B716C8DF1E5A94E700BE7A71 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B71A99921E31BD8D00F64844 /* Loading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
+		B71A99961E31C24500F64844 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		B71A99981E31C4A700F64844 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		B71A999E1E320A8B00F64844 /* tabbar-more-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more-selected.png"; sourceTree = "<group>"; };
+		B71A999F1E320A8B00F64844 /* tabbar-more-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more-unselected.png"; sourceTree = "<group>"; };
+		B71A99A21E320D2000F64844 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B72AFD2D1E8B7C820062E0D8 /* annotate-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "annotate-white.png"; path = "CLINICAL/annotate-white.png"; sourceTree = "<group>"; };
+		B72AFD2F1E8B7E240062E0D8 /* edit-draw-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit-draw-pencil.png"; path = "CLINICAL/edit-draw-pencil.png"; sourceTree = "<group>"; };
+		B73642C21E4760670042D39A /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasscodeViewController.swift; path = MAIN/PasscodeViewController.swift; sourceTree = "<group>"; };
+		B73642C41E476D580042D39A /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = MAIN/MoreTableViewCell.swift; sourceTree = "<group>"; };
+		B73642C61E4771270042D39A /* MEDDIC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MEDDIC.entitlements; sourceTree = "<group>"; };
+		B73642CA1E4778D80042D39A /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Group.storyboard; path = GROUP/Group.storyboard; sourceTree = "<group>"; };
+		B73642CC1E477A4D0042D39A /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupViewController.swift; path = GROUP/GroupViewController.swift; sourceTree = "<group>"; };
+		B73642CE1E4787870042D39A /* add-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-group.png"; path = "PICALL/add-group.png"; sourceTree = "<group>"; };
+		B73642D01E4788080042D39A /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewController.swift; path = GROUP/AddGroupViewController.swift; sourceTree = "<group>"; };
+		B73802C41E333A1700D3045E /* Ankle_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Ankle_Lt.jpg; path = PRESET/Ankle_Lt.jpg; sourceTree = "<group>"; };
+		B73802C51E333A1700D3045E /* Ankle_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Ankle_Rt.jpg; path = PRESET/Ankle_Rt.jpg; sourceTree = "<group>"; };
+		B73802C61E333A1700D3045E /* Foot_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Foot_Lt.jpg; path = PRESET/Foot_Lt.jpg; sourceTree = "<group>"; };
+		B73802C71E333A1700D3045E /* Foot_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Foot_Rt.jpg; path = PRESET/Foot_Rt.jpg; sourceTree = "<group>"; };
+		B73802C81E333A1700D3045E /* Hand_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hand_Lt.jpg; path = PRESET/Hand_Lt.jpg; sourceTree = "<group>"; };
+		B73802C91E333A1700D3045E /* Hand_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hand_Rt.jpg; path = PRESET/Hand_Rt.jpg; sourceTree = "<group>"; };
+		B73802CA1E333A1700D3045E /* Hip_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hip_Lt.jpg; path = PRESET/Hip_Lt.jpg; sourceTree = "<group>"; };
+		B73802CB1E333A1700D3045E /* Hip_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hip_Rt.jpg; path = PRESET/Hip_Rt.jpg; sourceTree = "<group>"; };
+		B73802CC1E333A1700D3045E /* Humerus_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Humerus_Lt.jpg; path = PRESET/Humerus_Lt.jpg; sourceTree = "<group>"; };
+		B73802CD1E333A1700D3045E /* Humerus_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Humerus_Rt.jpg; path = PRESET/Humerus_Rt.jpg; sourceTree = "<group>"; };
+		B73802CE1E333A1700D3045E /* Knee_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Knee_Lt.jpg; path = PRESET/Knee_Lt.jpg; sourceTree = "<group>"; };
+		B73802CF1E333A1700D3045E /* Knee_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Knee_Rt.jpg; path = PRESET/Knee_Rt.jpg; sourceTree = "<group>"; };
+		B73802D01E333A1700D3045E /* Lower_Limb_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Lower_Limb_Rt.jpg; path = PRESET/Lower_Limb_Rt.jpg; sourceTree = "<group>"; };
+		B73802D11E333A1700D3045E /* Lower_Limb_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Lower_Limb_Lt.jpg; path = PRESET/Lower_Limb_Lt.jpg; sourceTree = "<group>"; };
+		B73802D21E333A1700D3045E /* Pelvis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Pelvis.jpg; path = PRESET/Pelvis.jpg; sourceTree = "<group>"; };
+		B73802D31E333A1700D3045E /* Shoulder_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Shoulder_Lt.jpg; path = PRESET/Shoulder_Lt.jpg; sourceTree = "<group>"; };
+		B73802D41E333A1700D3045E /* Shoulder_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Shoulder_Rt.jpg; path = PRESET/Shoulder_Rt.jpg; sourceTree = "<group>"; };
+		B73802D51E333A1700D3045E /* Skull.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Skull.jpg; path = PRESET/Skull.jpg; sourceTree = "<group>"; };
+		B73802D61E333A1700D3045E /* Thoracic spine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Thoracic spine.jpg"; path = "PRESET/Thoracic spine.jpg"; sourceTree = "<group>"; };
+		B73802D71E333A1700D3045E /* Upper_Limb_Lt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Upper_Limb_Lt.jpg; path = PRESET/Upper_Limb_Lt.jpg; sourceTree = "<group>"; };
+		B73802D81E333A1700D3045E /* Upper_Limb_Rt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Upper_Limb_Rt.jpg; path = PRESET/Upper_Limb_Rt.jpg; sourceTree = "<group>"; };
+		B73802D91E333A1700D3045E /* Vertebral column.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Vertebral column.jpg"; path = "PRESET/Vertebral column.jpg"; sourceTree = "<group>"; };
+		B73802F41E33431E00D3045E /* Annotation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Annotation.storyboard; path = ANNOTAION/Annotation.storyboard; sourceTree = "<group>"; };
+		B73802F61E33436100D3045E /* DrawPresetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawPresetViewController.swift; path = ANNOTAION/DrawPresetViewController.swift; sourceTree = "<group>"; };
+		B73A00E41E2CDBB400D30531 /* Dentic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dentic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73A00E71E2CDBB400D30531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B73A00EC1E2CDBB400D30531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B73A00EE1E2CDBB400D30531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B73A00F11E2CDBB400D30531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B73A00F31E2CDBB400D30531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B73A00F81E2CDBB400D30531 /* DenticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DenticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73A00FC1E2CDBB400D30531 /* MEDDICTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEDDICTests.swift; sourceTree = "<group>"; };
+		B73A00FE1E2CDBB400D30531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B73A01031E2CDBB400D30531 /* DenticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DenticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73A01071E2CDBB400D30531 /* MEDDICUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEDDICUITests.swift; sourceTree = "<group>"; };
+		B73A01091E2CDBB400D30531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B73A01D01E2CDEAD00D30531 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		B73A01D21E2CDEF700D30531 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B73A01D51E2CE0EE00D30531 /* ThaiSansNeue-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Black.otf"; sourceTree = "<group>"; };
+		B73A01D61E2CE0EE00D30531 /* ThaiSansNeue-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-BlackItalic.otf"; sourceTree = "<group>"; };
+		B73A01D71E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Bold.otf"; sourceTree = "<group>"; };
+		B73A01D81E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-BoldItalic.otf"; sourceTree = "<group>"; };
+		B73A01D91E2CE0EE00D30531 /* ThaiSansNeue-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-ExtraBold.otf"; sourceTree = "<group>"; };
+		B73A01DA1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBoldItali.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-ExtraBoldItali.otf"; sourceTree = "<group>"; };
+		B73A01DB1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-ExtraLight.otf"; sourceTree = "<group>"; };
+		B73A01DC1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-ExtraLightItal.otf"; sourceTree = "<group>"; };
+		B73A01DD1E2CE0EE00D30531 /* ThaiSansNeue-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Italic.otf"; sourceTree = "<group>"; };
+		B73A01DE1E2CE0EE00D30531 /* ThaiSansNeue-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Light.otf"; sourceTree = "<group>"; };
+		B73A01DF1E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-LightItalic.otf"; sourceTree = "<group>"; };
+		B73A01E01E2CE0EE00D30531 /* ThaiSansNeue-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Regular.otf"; sourceTree = "<group>"; };
+		B73A01E11E2CE0EE00D30531 /* ThaiSansNeue-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-SemiBold.otf"; sourceTree = "<group>"; };
+		B73A01E21E2CE0EE00D30531 /* ThaiSansNeue-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		B73A01E31E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-UltraBold.otf"; sourceTree = "<group>"; };
+		B73A01E41E2CE0EE00D30531 /* ThaiSansNeue-UltraBoldItali.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-UltraBoldItali.otf"; sourceTree = "<group>"; };
+		B73A01E51E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-UltraLight.otf"; sourceTree = "<group>"; };
+		B73A01E61E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-UltraLightItal.otf"; sourceTree = "<group>"; };
+		B73A02191E2CEA4000D30531 /* APIUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
+		B73A021D1E2CF18600D30531 /* UILoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoading.swift; sourceTree = "<group>"; };
+		B73A02201E2D133200D30531 /* BackSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackSystem.swift; path = BACKEND/BackSystem.swift; sourceTree = "<group>"; };
+		B73A02241E2D140400D30531 /* RealmPhysician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmPhysician.swift; path = BACKEND/REALM/RealmPhysician.swift; sourceTree = "<group>"; };
+		B73A022A1E2D17AD00D30531 /* ModalErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalErrorViewController.swift; path = MODAL/ModalErrorViewController.swift; sourceTree = "<group>"; };
+		B73A022E1E2D4C2800D30531 /* ModalLoginError.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalLoginError.xib; sourceTree = "<group>"; };
+		B73A02311E2D4EEE00D30531 /* RecentPatientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentPatientViewController.swift; path = MAIN/RecentPatientViewController.swift; sourceTree = "<group>"; };
+		B73A02341E2D53D400D30531 /* RecentPatientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentPatientTableViewCell.swift; path = MAIN/RecentPatientTableViewCell.swift; sourceTree = "<group>"; };
+		B73A02371E2D556D00D30531 /* UITable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITable.swift; sourceTree = "<group>"; };
+		B73A02491E2D58F800D30531 /* chulalongkorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chulalongkorn.png; sourceTree = "<group>"; };
+		B73A024A1E2D58F800D30531 /* modlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modlogo.png; sourceTree = "<group>"; };
+		B73A024B1E2D58F800D30531 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		B73A024C1E2D58F800D30531 /* tabbar-patient-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-patient-selected.png"; sourceTree = "<group>"; };
+		B73A024D1E2D58F800D30531 /* tabbar-patient-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-patient-unselected.png"; sourceTree = "<group>"; };
+		B73A024E1E2D58F800D30531 /* tabbar-recent-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-recent-selected.png"; sourceTree = "<group>"; };
+		B73A024F1E2D58F800D30531 /* tabbar-recent-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-recent-unselected.png"; sourceTree = "<group>"; };
+		B74256571E4A54EF003B3A4E /* ic_upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_upload.png; sourceTree = "<group>"; };
+		B74256591E4A5546003B3A4E /* ic_sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_sync.png; sourceTree = "<group>"; };
+		B742565B1E4A5865003B3A4E /* add-patient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-patient.png"; sourceTree = "<group>"; };
+		B742565D1E4A5C85003B3A4E /* camera-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-white.png"; path = "PROFILE/camera-white.png"; sourceTree = "<group>"; };
+		B742565F1E4A6749003B3A4E /* cloud-computing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-computing.png"; sourceTree = "<group>"; };
+		B74B3CE91E386F9E00A508EB /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = CUSTOMFORM/star.png; sourceTree = "<group>"; };
+		B74B3CEB1E386FB500A508EB /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = CUSTOMFORM/star.png; sourceTree = "<group>"; };
+		B74B3CED1E38820300A508EB /* CustomFormInitQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormInitQuestionViewController.swift; path = CUSTOMFORM/CustomFormInitQuestionViewController.swift; sourceTree = "<group>"; };
+		B74B3CEF1E38861500A508EB /* CusFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CusFormTableViewCell.swift; path = CUSTOMFORM/CusFormTableViewCell.swift; sourceTree = "<group>"; };
+		B74B3CF11E38A31300A508EB /* RowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RowTableViewCell.swift; path = CUSTOMFORM/RowTableViewCell.swift; sourceTree = "<group>"; };
+		B74B3CF31E38A32600A508EB /* ColumnTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColumnTableViewCell.swift; path = CUSTOMFORM/ColumnTableViewCell.swift; sourceTree = "<group>"; };
+		B74B3CF51E38A34000A508EB /* CustomFormMultipleGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormMultipleGridViewController.swift; path = CUSTOMFORM/CustomFormMultipleGridViewController.swift; sourceTree = "<group>"; };
+		B7528B811E3237A600C440F0 /* Annotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Annotate.png; path = CLINICAL/Annotate.png; sourceTree = "<group>"; };
+		B7528B821E3237A600C440F0 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Camera.png; path = CLINICAL/Camera.png; sourceTree = "<group>"; };
+		B7528B851E3237AC00C440F0 /* Gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gallery.png; path = CLINICAL/Gallery.png; sourceTree = "<group>"; };
+		B7528B891E326EC100C440F0 /* Preset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Preset.png; path = CLINICAL/Preset.png; sourceTree = "<group>"; };
+		B7528B8B1E32708700C440F0 /* tools.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tools.png; path = CLINICAL/tools.png; sourceTree = "<group>"; };
+		B758D62B1E45D54200C7D11B /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		B758D62D1E45D59F00C7D11B /* CheckboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTableViewCell.swift; sourceTree = "<group>"; };
+		B758D62F1E45D84600C7D11B /* CheckBoxCheckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxCheckTableViewCell.swift; sourceTree = "<group>"; };
+		B758D6311E45E1D800C7D11B /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		B758D6331E45E22E00C7D11B /* MultipleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleTableViewCell.swift; sourceTree = "<group>"; };
+		B758D6351E45E23E00C7D11B /* MultipleCheckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleCheckTableViewCell.swift; sourceTree = "<group>"; };
+		B758D6371E463DBE00C7D11B /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
+		B758D6391E464BBA00C7D11B /* CustomFormSectionAns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormSectionAns.swift; path = MEDDIC/CUSTOMFORM/CustomFormSectionAns.swift; sourceTree = "<group>"; };
+		B758D63B1E464BD700C7D11B /* CustomFormAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormAnswer.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormAnswer.swift; sourceTree = "<group>"; };
+		B76297A81E334A79000921E9 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eraser.png; path = ANNOTATION/eraser.png; sourceTree = "<group>"; };
+		B76297A91E334A79000921E9 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marker.png; path = ANNOTATION/marker.png; sourceTree = "<group>"; };
+		B76297AA1E334A79000921E9 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pen.png; path = ANNOTATION/pen.png; sourceTree = "<group>"; };
+		B76297AB1E334A79000921E9 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pencil.png; path = ANNOTATION/pencil.png; sourceTree = "<group>"; };
+		B76297AD1E334A79000921E9 /* whiteBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteBG.png; path = ANNOTATION/whiteBG.png; sourceTree = "<group>"; };
+		B76297B61E3354F1000921E9 /* upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upload.png; path = ANNOTATION/upload.png; sourceTree = "<group>"; };
+		B76297BB1E3367BA000921E9 /* CustomForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomForm.storyboard; path = CUSTOMFORM/CustomForm.storyboard; sourceTree = "<group>"; };
+		B76297BE1E3368C7000921E9 /* CustomForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomForm.swift; path = BACKEND/REALM/CUSTOMFORM/CustomForm.swift; sourceTree = "<group>"; };
+		B76297BF1E3368C7000921E9 /* CustomFormForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormForm.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormForm.swift; sourceTree = "<group>"; };
+		B76297C01E3368C7000921E9 /* CustomFormFormula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormFormula.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormFormula.swift; sourceTree = "<group>"; };
+		B76297C11E3368C7000921E9 /* CustomFormGridOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormGridOption.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormGridOption.swift; sourceTree = "<group>"; };
+		B76297C21E3368C7000921E9 /* CustomFormOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormOption.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormOption.swift; sourceTree = "<group>"; };
+		B76297C31E3368C7000921E9 /* CustomFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormSection.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormSection.swift; sourceTree = "<group>"; };
+		B76297C41E3368C7000921E9 /* CustomFormShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormShare.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormShare.swift; sourceTree = "<group>"; };
+		B764452F1E4DC2750012194F /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabbarViewController.swift; path = MAIN/TabbarViewController.swift; sourceTree = "<group>"; };
+		B76516A61E67F4BE0026D0CA /* customform-filled-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "customform-filled-green.png"; path = "CLINICAL/customform-filled-green.png"; sourceTree = "<group>"; };
+		B76516A81E67F4C40026D0CA /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Camera.png; path = CLINICAL/Camera.png; sourceTree = "<group>"; };
+		B76516AA1E67F5010026D0CA /* camera-filled-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-filled-red.png"; path = "CLINICAL/camera-filled-red.png"; sourceTree = "<group>"; };
+		B76516AC1E67F5D10026D0CA /* customform-filled-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "customform-filled-blue.png"; path = "CLINICAL/customform-filled-blue.png"; sourceTree = "<group>"; };
+		B76516AE1E67F6180026D0CA /* camera-filled-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-filled-blue.png"; path = "CLINICAL/camera-filled-blue.png"; sourceTree = "<group>"; };
+		B76516B01E6828BD0026D0CA /* CustomFormListAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormListAnswer.swift; path = BACKEND/REALM/CUSTOMFORM/CustomFormListAnswer.swift; sourceTree = "<group>"; };
+		B7669C951E641DDE0095819E /* WebviewVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebviewVideoViewController.swift; path = CUSTOMFORM/WebviewVideoViewController.swift; sourceTree = "<group>"; };
+		B769BD551E6D1B0E00544D89 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		B769BD571E6D206600544D89 /* FollowupHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowupHistoryTableViewCell.swift; path = CLINICAL/FollowupHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B76F74FA1E37665900E2184F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = CUSTOMFORM/LOGO/calendar.png; sourceTree = "<group>"; };
+		B76F74FB1E37665900E2184F /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkbox.png; path = CUSTOMFORM/LOGO/checkbox.png; sourceTree = "<group>"; };
+		B76F74FC1E37665900E2184F /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drop.png; path = CUSTOMFORM/LOGO/drop.png; sourceTree = "<group>"; };
+		B76F74FD1E37665900E2184F /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = CUSTOMFORM/LOGO/grid.png; sourceTree = "<group>"; };
+		B76F74FE1E37665900E2184F /* multiple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = multiple.png; path = CUSTOMFORM/LOGO/multiple.png; sourceTree = "<group>"; };
+		B76F74FF1E37665900E2184F /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = number.png; path = CUSTOMFORM/LOGO/number.png; sourceTree = "<group>"; };
+		B76F75001E37665900E2184F /* pictures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pictures.png; path = CUSTOMFORM/LOGO/pictures.png; sourceTree = "<group>"; };
+		B76F75011E37665900E2184F /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider.png; path = CUSTOMFORM/LOGO/slider.png; sourceTree = "<group>"; };
+		B76F75021E37665900E2184F /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = text.png; path = CUSTOMFORM/LOGO/text.png; sourceTree = "<group>"; };
+		B76F75031E37665900E2184F /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = video.png; path = CUSTOMFORM/LOGO/video.png; sourceTree = "<group>"; };
+		B76F750E1E37693700E2184F /* CustomFormQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormQuestionViewController.swift; path = CUSTOMFORM/CustomFormQuestionViewController.swift; sourceTree = "<group>"; };
+		B76FFCE41E496FD800E5F748 /* RealmStackFollowup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStackFollowup.swift; path = BACKEND/REALM/RealmStackFollowup.swift; sourceTree = "<group>"; };
+		B76FFCE71E497EC500E5F748 /* BackStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackStack.swift; path = BACKEND/BackStack.swift; sourceTree = "<group>"; };
+		B77057031E34DF0700B82883 /* PatientProfilTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientProfilTableViewCell.swift; sourceTree = "<group>"; };
+		B779CD9B1E44889800987CC1 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		B779CD9E1E448A3100987CC1 /* ic_cusform_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cusform_more.png; sourceTree = "<group>"; };
+		B779CD9F1E448A3100987CC1 /* ic_group_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_group_more.png; sourceTree = "<group>"; };
+		B779CDA01E448A3100987CC1 /* ic_logout_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logout_more.png; sourceTree = "<group>"; };
+		B779CDA11E448A3100987CC1 /* ic_passcode_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_passcode_more.png; sourceTree = "<group>"; };
+		B779CDA21E448A3100987CC1 /* ic_password_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_password_more.png; sourceTree = "<group>"; };
+		B779CDA31E448A3100987CC1 /* ic_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_profile.png; sourceTree = "<group>"; };
+		B779CDAE1E44999C00987CC1 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B779CDB01E449C1200987CC1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = MAIN/SearchViewController.swift; sourceTree = "<group>"; };
+		B780E9A11E69AC4200240EC9 /* RealmListFollowup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmListFollowup.swift; path = BACKEND/REALM/RealmListFollowup.swift; sourceTree = "<group>"; };
+		B78474C51E49B704005CCA1C /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Group.png; path = PROFILE/Group.png; sourceTree = "<group>"; };
+		B78474CB1E4A00A3005CCA1C /* RealmStackPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStackPicture.swift; path = BACKEND/REALM/RealmStackPicture.swift; sourceTree = "<group>"; };
+		B78474CD1E4A0522005CCA1C /* MedicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MedicLogo.png; sourceTree = "<group>"; };
+		B78474CF1E4A0645005CCA1C /* MedicLogoWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MedicLogoWhite.png; sourceTree = "<group>"; };
+		B78474D11E4A3309005CCA1C /* GridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridTableViewCell.swift; sourceTree = "<group>"; };
+		B78474D31E4A3868005CCA1C /* HeaderGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderGridTableViewCell.swift; sourceTree = "<group>"; };
+		B78474D51E4A3D12005CCA1C /* PhysicianProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicianProfileViewController.swift; path = MAIN/PhysicianProfileViewController.swift; sourceTree = "<group>"; };
+		B78474D81E4A3EB1005CCA1C /* APIPhysician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIPhysician.swift; path = PHYSICIAN/APIPhysician.swift; sourceTree = "<group>"; };
+		B785D2C81E47007900BCEDC8 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		B785D2CA1E470C1A00BCEDC8 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		B785D2CC1E47159100BCEDC8 /* DropTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropTableViewCell.swift; sourceTree = "<group>"; };
+		B785D2CE1E47200B00BCEDC8 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		B785D2D01E47228400BCEDC8 /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play-button.png"; path = "CUSTOMFORM/play-button.png"; sourceTree = "<group>"; };
+		B790E2901E2F3B9A00B8BB12 /* Clinical.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Clinical.storyboard; path = CLINICAL/Clinical.storyboard; sourceTree = "<group>"; };
+		B790E2931E2F3F3D00B8BB12 /* ClinicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalViewController.swift; sourceTree = "<group>"; };
+		B790E2991E2F502F00B8BB12 /* clinical-recent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clinical-recent.png"; path = "CLINICAL/clinical-recent.png"; sourceTree = "<group>"; };
+		B790E29B1E2F50A800B8BB12 /* clinical-questionare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clinical-questionare.png"; path = "CLINICAL/clinical-questionare.png"; sourceTree = "<group>"; };
+		B790E29D1E2F512300B8BB12 /* clinical-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clinical-edit.png"; path = "CLINICAL/clinical-edit.png"; sourceTree = "<group>"; };
+		B790E2A11E2F5FB100B8BB12 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = CLINICAL/edit.png; sourceTree = "<group>"; };
+		B7956F971E39A04C00BDB7F3 /* ShowCustomFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCustomFormViewController.swift; path = CUSTOMFORM/ShowCustomFormViewController.swift; sourceTree = "<group>"; };
+		B7A006421E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupCustomFormCollectionViewCell.swift; path = GROUP/ShowGroupCustomFormCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternalTableViewCell.swift; path = CLINICAL/DENTIST/InternalTableViewCell.swift; sourceTree = "<group>"; };
+		B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PAOralTableViewCell.swift; path = CLINICAL/DENTIST/PAOralTableViewCell.swift; sourceTree = "<group>"; };
+		B7A085741E488F4100C3EB14 /* ShowGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupViewController.swift; path = GROUP/ShowGroupViewController.swift; sourceTree = "<group>"; };
+		B7A085761E48913000C3EB14 /* ShowGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupCollectionViewCell.swift; path = GROUP/ShowGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7AC98C51E38AFDA00CF1B91 /* column.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = column.png; path = CUSTOMFORM/LOGO/column.png; sourceTree = "<group>"; };
+		B7AC98C71E38AFF200CF1B91 /* row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = row.png; path = CUSTOMFORM/LOGO/row.png; sourceTree = "<group>"; };
+		B7AC98C91E38B04F00CF1B91 /* CustomFormEquationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormEquationViewController.swift; path = CUSTOMFORM/CustomFormEquationViewController.swift; sourceTree = "<group>"; };
+		B7AC98CB1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowEquationCollectionViewCell.swift; path = CUSTOMFORM/ShowEquationCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7AFF9D51E450C2F00598A62 /* SectionTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleTableViewCell.swift; sourceTree = "<group>"; };
+		B7AFF9D71E450EE200598A62 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		B7B97B611E890C1800CCC45B /* DentistClinicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DentistClinicalViewController.swift; path = CLINICAL/DENTIST/DentistClinicalViewController.swift; sourceTree = "<group>"; };
+		B7B97B631E890D1700CCC45B /* ExternalOralTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExternalOralTableViewCell.swift; path = CLINICAL/DENTIST/ExternalOralTableViewCell.swift; sourceTree = "<group>"; };
+		B7BEFBF11E2E156800DD1FDC /* PatientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientViewController.swift; path = MAIN/PatientViewController.swift; sourceTree = "<group>"; };
+		B7BEFBF31E2E176D00DD1FDC /* NoDataFound.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataFound.xib; sourceTree = "<group>"; };
+		B7BEFBF51E2E17E900DD1FDC /* searching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searching.png; sourceTree = "<group>"; };
+		B7BEFBF71E2E1A8B00DD1FDC /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
+		B7BEFBF91E2E1AF600DD1FDC /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		B7C3D3501E2DC0E8008E7E86 /* APIPatient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIPatient.swift; path = PATIENT/APIPatient.swift; sourceTree = "<group>"; };
+		B7C3D3521E2DC241008E7E86 /* RealmPatient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmPatient.swift; path = BACKEND/REALM/RealmPatient.swift; sourceTree = "<group>"; };
+		B7C3D3541E2DC2A0008E7E86 /* RealmFollowup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmFollowup.swift; path = BACKEND/REALM/RealmFollowup.swift; sourceTree = "<group>"; };
+		B7C3D3561E2DC309008E7E86 /* BackPatient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackPatient.swift; path = BACKEND/BackPatient.swift; sourceTree = "<group>"; };
+		B7C3D3581E2DCE0A008E7E86 /* RealmJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmJSON.swift; path = BACKEND/REALM/RealmJSON.swift; sourceTree = "<group>"; };
+		B7C3D35C1E2DD419008E7E86 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = HELPER/Helper.swift; sourceTree = "<group>"; };
+		B7C3D35E1E2DE593008E7E86 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = HELPER/Color.swift; sourceTree = "<group>"; };
+		B7CD3D931E80E8460015BA60 /* customTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customTextField.swift; path = HELPER/customTextField.swift; sourceTree = "<group>"; };
+		B7CF48881E35F546009F597B /* APIAddCustomForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIAddCustomForm.swift; path = CUSTOMFORM/APIAddCustomForm.swift; sourceTree = "<group>"; };
+		B7CF488B1E35FDD5009F597B /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 0.png; path = CUSTOMFORM/ICON/0.png; sourceTree = "<group>"; };
+		B7CF488C1E35FDD5009F597B /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = CUSTOMFORM/ICON/1.png; sourceTree = "<group>"; };
+		B7CF488D1E35FDD5009F597B /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = CUSTOMFORM/ICON/2.png; sourceTree = "<group>"; };
+		B7CF488E1E35FDD5009F597B /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = CUSTOMFORM/ICON/3.png; sourceTree = "<group>"; };
+		B7CF488F1E35FDD5009F597B /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = CUSTOMFORM/ICON/4.png; sourceTree = "<group>"; };
+		B7CF48901E35FDD5009F597B /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = CUSTOMFORM/ICON/5.png; sourceTree = "<group>"; };
+		B7CF48911E35FDD5009F597B /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = CUSTOMFORM/ICON/6.png; sourceTree = "<group>"; };
+		B7CF48921E35FDD5009F597B /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = CUSTOMFORM/ICON/7.png; sourceTree = "<group>"; };
+		B7CF48931E35FDD5009F597B /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = CUSTOMFORM/ICON/8.png; sourceTree = "<group>"; };
+		B7CF48941E35FDD5009F597B /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = CUSTOMFORM/ICON/9.png; sourceTree = "<group>"; };
+		B7CF48951E35FDD5009F597B /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10.png; path = CUSTOMFORM/ICON/10.png; sourceTree = "<group>"; };
+		B7CF48A11E3600C5009F597B /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = CUSTOMFORM/ICON/11.png; sourceTree = "<group>"; };
+		B7CF48A21E3600C5009F597B /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = CUSTOMFORM/ICON/12.png; sourceTree = "<group>"; };
+		B7CF48A31E3600C5009F597B /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = CUSTOMFORM/ICON/13.png; sourceTree = "<group>"; };
+		B7CF48A41E3600C5009F597B /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 14.png; path = CUSTOMFORM/ICON/14.png; sourceTree = "<group>"; };
+		B7CF48AA1E3607AD009F597B /* Orthopedic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Orthopedic.png; path = CUSTOMFORM/CATEGORY/Orthopedic.png; sourceTree = "<group>"; };
+		B7CF48AB1E3607AD009F597B /* Cardiology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cardiology.png; path = CUSTOMFORM/CATEGORY/Cardiology.png; sourceTree = "<group>"; };
+		B7CF48AC1E3607AD009F597B /* Medicine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Medicine.png; path = CUSTOMFORM/CATEGORY/Medicine.png; sourceTree = "<group>"; };
+		B7CF48AD1E3607AD009F597B /* Surgery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Surgery.png; path = CUSTOMFORM/CATEGORY/Surgery.png; sourceTree = "<group>"; };
+		B7CF48AE1E3607AD009F597B /* Pediatric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pediatric.png; path = CUSTOMFORM/CATEGORY/Pediatric.png; sourceTree = "<group>"; };
+		B7CF48B51E360DE5009F597B /* CustomFormSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormSectionViewController.swift; path = CUSTOMFORM/CustomFormSectionViewController.swift; sourceTree = "<group>"; };
+		B7CF48B71E360E13009F597B /* BackCustomForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackCustomForm.swift; path = BACKEND/CUSTOMFORM/BackCustomForm.swift; sourceTree = "<group>"; };
+		B7D732CF1E33EEF5002F785C /* pills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pills.png; path = CUSTOMFORM/pills.png; sourceTree = "<group>"; };
+		B7D732D11E33F405002F785C /* emp_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emp_star.png; path = CUSTOMFORM/emp_star.png; sourceTree = "<group>"; };
+		B7D732D21E33F405002F785C /* full_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_star.png; path = CUSTOMFORM/full_star.png; sourceTree = "<group>"; };
+		B7D732D31E33F405002F785C /* half_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = half_star.png; path = CUSTOMFORM/half_star.png; sourceTree = "<group>"; };
+		B7D732D71E33F536002F785C /* CustomFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormViewController.swift; path = CUSTOMFORM/CustomFormViewController.swift; sourceTree = "<group>"; };
+		B7D732DB1E33F572002F785C /* CustomFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormTableViewCell.swift; path = CUSTOMFORM/CustomFormTableViewCell.swift; sourceTree = "<group>"; };
+		B7D732DE1E33FA71002F785C /* PatientProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PatientProfile.storyboard; path = PROFILE/PatientProfile.storyboard; sourceTree = "<group>"; };
+		B7E0DEB21E792D7100785381 /* ic_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_data.png; sourceTree = "<group>"; };
+		B7E0DEB51E792EF300785381 /* RepresentData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RepresentData.storyboard; path = REPRESENT/RepresentData.storyboard; sourceTree = "<group>"; };
+		B7E0DEB71E79309300785381 /* RepresentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentTableViewController.swift; path = REPRESENT/RepresentTableViewController.swift; sourceTree = "<group>"; };
+		B7E0DEB91E79322A00785381 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashtagViewController.swift; path = REPRESENT/HashtagViewController.swift; sourceTree = "<group>"; };
+		B7E0DEBB1E7936F400785381 /* BackRepresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackRepresent.swift; path = BACKEND/BackRepresent.swift; sourceTree = "<group>"; };
+		B7E0DEBD1E793C9600785381 /* RealmMeshtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmMeshtag.swift; path = BACKEND/REALM/RealmMeshtag.swift; sourceTree = "<group>"; };
+		B7E0DEBF1E793D4600785381 /* BackMeshtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackMeshtag.swift; path = BACKEND/BackMeshtag.swift; sourceTree = "<group>"; };
+		B7E5DF6F1E54250600EF407C /* Neuro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Neuro.jpg; path = PRESET/Neuro.jpg; sourceTree = "<group>"; };
+		B7E5DF711E54575200EF407C /* RealmGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmGroup.swift; path = BACKEND/REALM/RealmGroup.swift; sourceTree = "<group>"; };
+		B7E5DF731E5458C500EF407C /* groups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groups.png; sourceTree = "<group>"; };
+		B7E5DF751E545BA300EF407C /* iconGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGroup.png; sourceTree = "<group>"; };
+		B7E5DF771E5460E100EF407C /* group-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group-grey.png"; sourceTree = "<group>"; };
+		B7E8C8271E48187A0052C7CC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = MAIN/ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		B7E8C82A1E4835740052C7CC /* APIGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIGroup.swift; path = GROUP/APIGroup.swift; sourceTree = "<group>"; };
+		B7E8C82D1E483FA60052C7CC /* BackGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackGroup.swift; path = BACKEND/GROUP/BackGroup.swift; sourceTree = "<group>"; };
+		B7E8C8301E487E460052C7CC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = BACKEND/GROUP/Group.swift; sourceTree = "<group>"; };
+		B7EA5AE01E4AC38100B561AD /* RowGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowGridTableViewCell.swift; sourceTree = "<group>"; };
+		B7EA5AE21E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCE7F12EAE8A763B25CC90B6 /* Pods-DenticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C44CBFBE3789B74028F6B22A /* Pods-DenticUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D69A2A0AD2D50C8CE6EC53DB /* Pods-MEDDIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDIC/Pods-MEDDIC.debug.xcconfig"; sourceTree = "<group>"; };
+		F0AB492D6B7E2B1AEDAE1A89 /* Pods-MEDDICUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDICUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDICUITests/Pods-MEDDICUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3099DA34A8A03786EAB6442 /* Pods-MEDDICUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDICUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDICUITests/Pods-MEDDICUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F62F69347CBDDF3D17A6BF81 /* Pods_Dentic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dentic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B73A00E11E2CDBB400D30531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48149B1A09B8948776C91619 /* Pods_Dentic.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A00F51E2CDBB400D30531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBAEF106E026CFCDA1547BDA /* Pods_MEDDICTests.framework in Frameworks */,
+				15E9FDCE65ABC73AB902B713 /* Pods_DenticTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A01001E2CDBB400D30531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41DF708E8A0C6D14350AA580 /* Pods_MEDDICUITests.framework in Frameworks */,
+				CF4C0A5CEB531E828D8A1F39 /* Pods_DenticUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7382CA0017261BDED8CA0B7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D69A2A0AD2D50C8CE6EC53DB /* Pods-MEDDIC.debug.xcconfig */,
+				489BAEDF60D1B09EBAE5BAF2 /* Pods-MEDDIC.release.xcconfig */,
+				6C5988619858F1A7F49EE428 /* Pods-MEDDICTests.debug.xcconfig */,
+				880B198C571ED5787FBB12C4 /* Pods-MEDDICTests.release.xcconfig */,
+				F3099DA34A8A03786EAB6442 /* Pods-MEDDICUITests.debug.xcconfig */,
+				F0AB492D6B7E2B1AEDAE1A89 /* Pods-MEDDICUITests.release.xcconfig */,
+				295B012D6D24E70C18CBE5E2 /* Pods-Dentic.debug.xcconfig */,
+				41CFB393E6ADFCF89DA7ED6D /* Pods-Dentic.release.xcconfig */,
+				A06502B107C08F6AF4BE1F37 /* Pods-DenticTests.debug.xcconfig */,
+				B129593550F41BBD31E5E8B2 /* Pods-DenticTests.release.xcconfig */,
+				C44CBFBE3789B74028F6B22A /* Pods-DenticUITests.debug.xcconfig */,
+				BCE7F12EAE8A763B25CC90B6 /* Pods-DenticUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B70120B51E347F46008CC584 /* PROFILE */ = {
+			isa = PBXGroup;
+			children = (
+				B742565D1E4A5C85003B3A4E /* camera-white.png */,
+				B78474C51E49B704005CCA1C /* Group.png */,
+				B70120BA1E348547008CC584 /* Address.png */,
+				B70120BB1E348547008CC584 /* Date of birth.png */,
+				B70120BC1E348547008CC584 /* Gender.png */,
+				B70120BD1E348547008CC584 /* HN.png */,
+				B70120BE1E348547008CC584 /* passport.png */,
+				B70120BF1E348547008CC584 /* Med Payment.png */,
+				B70120B61E347F4F008CC584 /* Name.png */,
+				B70120C61E34854F008CC584 /* Nationality.png */,
+				B70120C71E34854F008CC584 /* Telephone.png */,
+			);
+			name = PROFILE;
+			sourceTree = "<group>";
+		};
+		B73642C91E4778B00042D39A /* GROUP */ = {
+			isa = PBXGroup;
+			children = (
+				B73642CA1E4778D80042D39A /* Group.storyboard */,
+				B73642CC1E477A4D0042D39A /* GroupViewController.swift */,
+				B73642D01E4788080042D39A /* AddGroupViewController.swift */,
+				B7A085741E488F4100C3EB14 /* ShowGroupViewController.swift */,
+				B7A085761E48913000C3EB14 /* ShowGroupCollectionViewCell.swift */,
+				B7A006421E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift */,
+			);
+			name = GROUP;
+			sourceTree = "<group>";
+		};
+		B73802C31E3339F900D3045E /* PRESET */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5DF6F1E54250600EF407C /* Neuro.jpg */,
+				B73802C41E333A1700D3045E /* Ankle_Lt.jpg */,
+				B73802C51E333A1700D3045E /* Ankle_Rt.jpg */,
+				B73802C61E333A1700D3045E /* Foot_Lt.jpg */,
+				B73802C71E333A1700D3045E /* Foot_Rt.jpg */,
+				B73802C81E333A1700D3045E /* Hand_Lt.jpg */,
+				B73802C91E333A1700D3045E /* Hand_Rt.jpg */,
+				B73802CA1E333A1700D3045E /* Hip_Lt.jpg */,
+				B73802CB1E333A1700D3045E /* Hip_Rt.jpg */,
+				B73802CC1E333A1700D3045E /* Humerus_Lt.jpg */,
+				B73802CD1E333A1700D3045E /* Humerus_Rt.jpg */,
+				B73802CE1E333A1700D3045E /* Knee_Lt.jpg */,
+				B73802CF1E333A1700D3045E /* Knee_Rt.jpg */,
+				B73802D01E333A1700D3045E /* Lower_Limb_Rt.jpg */,
+				B73802D11E333A1700D3045E /* Lower_Limb_Lt.jpg */,
+				B73802D21E333A1700D3045E /* Pelvis.jpg */,
+				B73802D31E333A1700D3045E /* Shoulder_Lt.jpg */,
+				B73802D41E333A1700D3045E /* Shoulder_Rt.jpg */,
+				B73802D51E333A1700D3045E /* Skull.jpg */,
+				B73802D61E333A1700D3045E /* Thoracic spine.jpg */,
+				B73802D71E333A1700D3045E /* Upper_Limb_Lt.jpg */,
+				B73802D81E333A1700D3045E /* Upper_Limb_Rt.jpg */,
+				B73802D91E333A1700D3045E /* Vertebral column.jpg */,
+			);
+			name = PRESET;
+			sourceTree = "<group>";
+		};
+		B73802F11E3341A300D3045E /* ANNOTATION */ = {
+			isa = PBXGroup;
+			children = (
+				B73802F61E33436100D3045E /* DrawPresetViewController.swift */,
+				B73802F41E33431E00D3045E /* Annotation.storyboard */,
+			);
+			name = ANNOTATION;
+			sourceTree = "<group>";
+		};
+		B73A00DB1E2CDBB400D30531 = {
+			isa = PBXGroup;
+			children = (
+				B7C3D35B1E2DD3FB008E7E86 /* HELPER */,
+				B73A02221E2D135800D30531 /* BACKEND */,
+				B73A021C1E2CF16C00D30531 /* UI */,
+				B73A02171E2CEA3500D30531 /* API */,
+				B73A01FE1E2CE2D600D30531 /* IMAGE */,
+				B73A01D41E2CE0E500D30531 /* FONT */,
+				B73A00E61E2CDBB400D30531 /* MEDDIC */,
+				B73A00FB1E2CDBB400D30531 /* MEDDICTests */,
+				B73A01061E2CDBB400D30531 /* MEDDICUITests */,
+				B73A00E51E2CDBB400D30531 /* Products */,
+				7382CA0017261BDED8CA0B7B /* Pods */,
+				D81962E18D6FF4626402D94D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B73A00E51E2CDBB400D30531 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B73A00E41E2CDBB400D30531 /* Dentic.app */,
+				B73A00F81E2CDBB400D30531 /* DenticTests.xctest */,
+				B73A01031E2CDBB400D30531 /* DenticUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B73A00E61E2CDBB400D30531 /* MEDDIC */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DEB41E792E2D00785381 /* REPRESENT */,
+				B73642C91E4778B00042D39A /* GROUP */,
+				B73642C61E4771270042D39A /* MEDDIC.entitlements */,
+				B7D732DD1E33FA49002F785C /* PROFILE */,
+				B76297B81E3363E4000921E9 /* CUSTOMFORM */,
+				B73802F11E3341A300D3045E /* ANNOTATION */,
+				B790E28F1E2F3B7300B8BB12 /* CLINICAL */,
+				B73A02301E2D4EA700D30531 /* MAIN */,
+				B73A00E71E2CDBB400D30531 /* AppDelegate.swift */,
+				B73A00EE1E2CDBB400D30531 /* Assets.xcassets */,
+				B73A00F01E2CDBB400D30531 /* LaunchScreen.storyboard */,
+				B73A00F31E2CDBB400D30531 /* Info.plist */,
+				B73A01D01E2CDEAD00D30531 /* FirstPageViewController.swift */,
+				B73A01D21E2CDEF700D30531 /* LoginViewController.swift */,
+				B71A99A21E320D2000F64844 /* LoadingViewController.swift */,
+				B716C8DF1E5A94E700BE7A71 /* SignupViewController.swift */,
+			);
+			path = MEDDIC;
+			sourceTree = "<group>";
+		};
+		B73A00FB1E2CDBB400D30531 /* MEDDICTests */ = {
+			isa = PBXGroup;
+			children = (
+				B73A00FC1E2CDBB400D30531 /* MEDDICTests.swift */,
+				B73A00FE1E2CDBB400D30531 /* Info.plist */,
+			);
+			path = MEDDICTests;
+			sourceTree = "<group>";
+		};
+		B73A01061E2CDBB400D30531 /* MEDDICUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B73A01071E2CDBB400D30531 /* MEDDICUITests.swift */,
+				B73A01091E2CDBB400D30531 /* Info.plist */,
+			);
+			path = MEDDICUITests;
+			sourceTree = "<group>";
+		};
+		B73A01D41E2CE0E500D30531 /* FONT */ = {
+			isa = PBXGroup;
+			children = (
+				B73A01D51E2CE0EE00D30531 /* ThaiSansNeue-Black.otf */,
+				B73A01D61E2CE0EE00D30531 /* ThaiSansNeue-BlackItalic.otf */,
+				B73A01D71E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf */,
+				B73A01D81E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf */,
+				B73A01D91E2CE0EE00D30531 /* ThaiSansNeue-ExtraBold.otf */,
+				B73A01DA1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBoldItali.otf */,
+				B73A01DB1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf */,
+				B73A01DC1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf */,
+				B73A01DD1E2CE0EE00D30531 /* ThaiSansNeue-Italic.otf */,
+				B73A01DE1E2CE0EE00D30531 /* ThaiSansNeue-Light.otf */,
+				B73A01DF1E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf */,
+				B73A01E01E2CE0EE00D30531 /* ThaiSansNeue-Regular.otf */,
+				B73A01E11E2CE0EE00D30531 /* ThaiSansNeue-SemiBold.otf */,
+				B73A01E21E2CE0EE00D30531 /* ThaiSansNeue-SemiBoldItalic.otf */,
+				B73A01E31E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf */,
+				B73A01E41E2CE0EE00D30531 /* ThaiSansNeue-UltraBoldItali.otf */,
+				B73A01E51E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf */,
+				B73A01E61E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf */,
+			);
+			path = FONT;
+			sourceTree = "<group>";
+		};
+		B73A01FE1E2CE2D600D30531 /* IMAGE */ = {
+			isa = PBXGroup;
+			children = (
+				B769BD551E6D1B0E00544D89 /* bg.jpg */,
+				B779CD9D1E448A3100987CC1 /* MORE */,
+				B70120B51E347F46008CC584 /* PROFILE */,
+				B7D732CE1E33EEE9002F785C /* CUSTOMFORM */,
+				B76297A71E334A69000921E9 /* ANNOTATION */,
+				B73802C31E3339F900D3045E /* PRESET */,
+				B790E2961E2F4F9D00B8BB12 /* CLINICAL */,
+				B73A02481E2D58F800D30531 /* PICALL */,
+			);
+			path = IMAGE;
+			sourceTree = "<group>";
+		};
+		B73A02171E2CEA3500D30531 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B78474D71E4A3E7A005CCA1C /* PHYSICIAN */,
+				B7E8C8291E4835560052C7CC /* GROUP */,
+				B7CF48851E35F457009F597B /* CUSTOMFORM */,
+				B7C3D34F1E2DC0C1008E7E86 /* PATIENT */,
+				B73A02181E2CEA3500D30531 /* SYSTEM */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B73A02181E2CEA3500D30531 /* SYSTEM */ = {
+			isa = PBXGroup;
+			children = (
+				B73A02191E2CEA4000D30531 /* APIUser.swift */,
+			);
+			path = SYSTEM;
+			sourceTree = "<group>";
+		};
+		B73A021C1E2CF16C00D30531 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B73A02271E2D172D00D30531 /* MODAL */,
+				B73A021D1E2CF18600D30531 /* UILoading.swift */,
+				B73A02371E2D556D00D30531 /* UITable.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B73A02221E2D135800D30531 /* BACKEND */ = {
+			isa = PBXGroup;
+			children = (
+				B7E8C82C1E483F7D0052C7CC /* GROUP */,
+				B7CF48B41E360D9A009F597B /* CUSTOMFORM */,
+				B73A02231E2D13E700D30531 /* REALM */,
+				B73A02201E2D133200D30531 /* BackSystem.swift */,
+				B76FFCE71E497EC500E5F748 /* BackStack.swift */,
+				B7C3D3561E2DC309008E7E86 /* BackPatient.swift */,
+				B70D03A61E700DFF000FF059 /* BackPhysician.swift */,
+				B7E0DEBB1E7936F400785381 /* BackRepresent.swift */,
+				B7E0DEBF1E793D4600785381 /* BackMeshtag.swift */,
+			);
+			name = BACKEND;
+			sourceTree = "<group>";
+		};
+		B73A02231E2D13E700D30531 /* REALM */ = {
+			isa = PBXGroup;
+			children = (
+				B76297BD1E3368BA000921E9 /* CUSTOMFORM */,
+				B73A02241E2D140400D30531 /* RealmPhysician.swift */,
+				B7C3D3521E2DC241008E7E86 /* RealmPatient.swift */,
+				B780E9A11E69AC4200240EC9 /* RealmListFollowup.swift */,
+				B7C3D3541E2DC2A0008E7E86 /* RealmFollowup.swift */,
+				B7C3D3581E2DCE0A008E7E86 /* RealmJSON.swift */,
+				B70A0A341E35435900F21C24 /* RealmStatus.swift */,
+				B76FFCE41E496FD800E5F748 /* RealmStackFollowup.swift */,
+				B78474CB1E4A00A3005CCA1C /* RealmStackPicture.swift */,
+				B7E5DF711E54575200EF407C /* RealmGroup.swift */,
+				B7E0DEBD1E793C9600785381 /* RealmMeshtag.swift */,
+			);
+			name = REALM;
+			sourceTree = "<group>";
+		};
+		B73A02271E2D172D00D30531 /* MODAL */ = {
+			isa = PBXGroup;
+			children = (
+				B73A022A1E2D17AD00D30531 /* ModalErrorViewController.swift */,
+				B7BEFBF31E2E176D00DD1FDC /* NoDataFound.xib */,
+				B7BEFBF91E2E1AF600DD1FDC /* NoDataView.swift */,
+				B73A022E1E2D4C2800D30531 /* ModalLoginError.xib */,
+				B71A99921E31BD8D00F64844 /* Loading.xib */,
+				B71A99961E31C24500F64844 /* Loading.swift */,
+			);
+			name = MODAL;
+			sourceTree = "<group>";
+		};
+		B73A02301E2D4EA700D30531 /* MAIN */ = {
+			isa = PBXGroup;
+			children = (
+				B73A00EB1E2CDBB400D30531 /* Main.storyboard */,
+				B73A02311E2D4EEE00D30531 /* RecentPatientViewController.swift */,
+				B73A02341E2D53D400D30531 /* RecentPatientTableViewCell.swift */,
+				B7BEFBF11E2E156800DD1FDC /* PatientViewController.swift */,
+				B779CD9B1E44889800987CC1 /* MoreViewController.swift */,
+				B73642C41E476D580042D39A /* MoreTableViewCell.swift */,
+				B779CDB01E449C1200987CC1 /* SearchViewController.swift */,
+				B73642C21E4760670042D39A /* PasscodeViewController.swift */,
+				B7E8C8271E48187A0052C7CC /* ChangePasswordViewController.swift */,
+				B78474D51E4A3D12005CCA1C /* PhysicianProfileViewController.swift */,
+				B764452F1E4DC2750012194F /* TabbarViewController.swift */,
+			);
+			name = MAIN;
+			sourceTree = "<group>";
+		};
+		B73A02481E2D58F800D30531 /* PICALL */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5DF771E5460E100EF407C /* group-grey.png */,
+				B7E5DF751E545BA300EF407C /* iconGroup.png */,
+				B7E5DF731E5458C500EF407C /* groups.png */,
+				B742565F1E4A6749003B3A4E /* cloud-computing.png */,
+				B742565B1E4A5865003B3A4E /* add-patient.png */,
+				B78474CF1E4A0645005CCA1C /* MedicLogoWhite.png */,
+				B78474CD1E4A0522005CCA1C /* MedicLogo.png */,
+				B758D6311E45E1D800C7D11B /* circle.png */,
+				B758D62B1E45D54200C7D11B /* tick.png */,
+				B779CDAE1E44999C00987CC1 /* search.png */,
+				B70A0A3A1E35EE8F00F21C24 /* download.png */,
+				B71A99981E31C4A700F64844 /* loading.png */,
+				B7BEFBF71E2E1A8B00DD1FDC /* reload.png */,
+				B7BEFBF51E2E17E900DD1FDC /* searching.png */,
+				B73A02491E2D58F800D30531 /* chulalongkorn.png */,
+				B73A024A1E2D58F800D30531 /* modlogo.png */,
+				B73A024B1E2D58F800D30531 /* profile.png */,
+				B73A024C1E2D58F800D30531 /* tabbar-patient-selected.png */,
+				B73A024D1E2D58F800D30531 /* tabbar-patient-unselected.png */,
+				B73A024E1E2D58F800D30531 /* tabbar-recent-selected.png */,
+				B71A999E1E320A8B00F64844 /* tabbar-more-selected.png */,
+				B71A999F1E320A8B00F64844 /* tabbar-more-unselected.png */,
+				B73A024F1E2D58F800D30531 /* tabbar-recent-unselected.png */,
+			);
+			path = PICALL;
+			sourceTree = "<group>";
+		};
+		B76297A71E334A69000921E9 /* ANNOTATION */ = {
+			isa = PBXGroup;
+			children = (
+				B76297B61E3354F1000921E9 /* upload.png */,
+				B76297A81E334A79000921E9 /* eraser.png */,
+				B76297A91E334A79000921E9 /* marker.png */,
+				B76297AA1E334A79000921E9 /* pen.png */,
+				B76297AB1E334A79000921E9 /* pencil.png */,
+				B76297AD1E334A79000921E9 /* whiteBG.png */,
+			);
+			name = ANNOTATION;
+			sourceTree = "<group>";
+		};
+		B76297B81E3363E4000921E9 /* CUSTOMFORM */ = {
+			isa = PBXGroup;
+			children = (
+				B76A45041E442A6700CBB20B /* CUSTOMFORMCELL */,
+				B76297BB1E3367BA000921E9 /* CustomForm.storyboard */,
+				B7D732D71E33F536002F785C /* CustomFormViewController.swift */,
+				B7956F971E39A04C00BDB7F3 /* ShowCustomFormViewController.swift */,
+				B7D732DB1E33F572002F785C /* CustomFormTableViewCell.swift */,
+				B70A0A3E1E35F1CB00F21C24 /* AddFormTitleViewController.swift */,
+				B7CF48B51E360DE5009F597B /* CustomFormSectionViewController.swift */,
+				B714B4001E37019F0042A4CD /* SectionHeaderTableViewCell.swift */,
+				B76F750E1E37693700E2184F /* CustomFormQuestionViewController.swift */,
+				B74B3CED1E38820300A508EB /* CustomFormInitQuestionViewController.swift */,
+				B74B3CEF1E38861500A508EB /* CusFormTableViewCell.swift */,
+				B74B3CF51E38A34000A508EB /* CustomFormMultipleGridViewController.swift */,
+				B74B3CF11E38A31300A508EB /* RowTableViewCell.swift */,
+				B74B3CF31E38A32600A508EB /* ColumnTableViewCell.swift */,
+				B7AC98C91E38B04F00CF1B91 /* CustomFormEquationViewController.swift */,
+				B7AC98CB1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift */,
+				B7669C951E641DDE0095819E /* WebviewVideoViewController.swift */,
+			);
+			name = CUSTOMFORM;
+			sourceTree = "<group>";
+		};
+		B76297BD1E3368BA000921E9 /* CUSTOMFORM */ = {
+			isa = PBXGroup;
+			children = (
+				B76297BE1E3368C7000921E9 /* CustomForm.swift */,
+				B76297BF1E3368C7000921E9 /* CustomFormForm.swift */,
+				B76297C01E3368C7000921E9 /* CustomFormFormula.swift */,
+				B76297C11E3368C7000921E9 /* CustomFormGridOption.swift */,
+				B76297C21E3368C7000921E9 /* CustomFormOption.swift */,
+				B76297C31E3368C7000921E9 /* CustomFormSection.swift */,
+				B76297C41E3368C7000921E9 /* CustomFormShare.swift */,
+				B76516B01E6828BD0026D0CA /* CustomFormListAnswer.swift */,
+				B758D6391E464BBA00C7D11B /* CustomFormSectionAns.swift */,
+				B758D63B1E464BD700C7D11B /* CustomFormAnswer.swift */,
+			);
+			name = CUSTOMFORM;
+			sourceTree = "<group>";
+		};
+		B76A45041E442A6700CBB20B /* CUSTOMFORMCELL */ = {
+			isa = PBXGroup;
+			children = (
+				B7AFF9D51E450C2F00598A62 /* SectionTitleTableViewCell.swift */,
+				B7AFF9D71E450EE200598A62 /* TextFieldTableViewCell.swift */,
+				B758D62D1E45D59F00C7D11B /* CheckboxTableViewCell.swift */,
+				B758D62F1E45D84600C7D11B /* CheckBoxCheckTableViewCell.swift */,
+				B758D6331E45E22E00C7D11B /* MultipleTableViewCell.swift */,
+				B758D6351E45E23E00C7D11B /* MultipleCheckTableViewCell.swift */,
+				B758D6371E463DBE00C7D11B /* PictureTableViewCell.swift */,
+				B785D2C81E47007900BCEDC8 /* SliderTableViewCell.swift */,
+				B785D2CA1E470C1A00BCEDC8 /* DateTableViewCell.swift */,
+				B785D2CC1E47159100BCEDC8 /* DropTableViewCell.swift */,
+				B785D2CE1E47200B00BCEDC8 /* VideoTableViewCell.swift */,
+				B78474D11E4A3309005CCA1C /* GridTableViewCell.swift */,
+				B78474D31E4A3868005CCA1C /* HeaderGridTableViewCell.swift */,
+				B7EA5AE01E4AC38100B561AD /* RowGridTableViewCell.swift */,
+				B7EA5AE21E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift */,
+			);
+			name = CUSTOMFORMCELL;
+			path = CUSTOMFORM/CUSTOMFORMCELL;
+			sourceTree = "<group>";
+		};
+		B76F74F91E37664600E2184F /* LOGO */ = {
+			isa = PBXGroup;
+			children = (
+				B7AC98C71E38AFF200CF1B91 /* row.png */,
+				B7AC98C51E38AFDA00CF1B91 /* column.png */,
+				B76F74FA1E37665900E2184F /* calendar.png */,
+				B76F74FB1E37665900E2184F /* checkbox.png */,
+				B76F74FC1E37665900E2184F /* drop.png */,
+				B76F74FD1E37665900E2184F /* grid.png */,
+				B76F74FE1E37665900E2184F /* multiple.png */,
+				B76F74FF1E37665900E2184F /* number.png */,
+				B76F75001E37665900E2184F /* pictures.png */,
+				B76F75011E37665900E2184F /* slider.png */,
+				B76F75021E37665900E2184F /* text.png */,
+				B76F75031E37665900E2184F /* video.png */,
+			);
+			name = LOGO;
+			sourceTree = "<group>";
+		};
+		B779CD9D1E448A3100987CC1 /* MORE */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DEB21E792D7100785381 /* ic_data.png */,
+				B74256591E4A5546003B3A4E /* ic_sync.png */,
+				B74256571E4A54EF003B3A4E /* ic_upload.png */,
+				B779CD9E1E448A3100987CC1 /* ic_cusform_more.png */,
+				B779CD9F1E448A3100987CC1 /* ic_group_more.png */,
+				B779CDA01E448A3100987CC1 /* ic_logout_more.png */,
+				B779CDA11E448A3100987CC1 /* ic_passcode_more.png */,
+				B779CDA21E448A3100987CC1 /* ic_password_more.png */,
+				B779CDA31E448A3100987CC1 /* ic_profile.png */,
+			);
+			path = MORE;
+			sourceTree = "<group>";
+		};
+		B78474D71E4A3E7A005CCA1C /* PHYSICIAN */ = {
+			isa = PBXGroup;
+			children = (
+				B78474D81E4A3EB1005CCA1C /* APIPhysician.swift */,
+			);
+			name = PHYSICIAN;
+			sourceTree = "<group>";
+		};
+		B790E28F1E2F3B7300B8BB12 /* CLINICAL */ = {
+			isa = PBXGroup;
+			children = (
+				B7B97B601E890BF600CCC45B /* DENTIST */,
+				B790E2901E2F3B9A00B8BB12 /* Clinical.storyboard */,
+				B790E2931E2F3F3D00B8BB12 /* ClinicalViewController.swift */,
+				B70048DD1E309F1800A7B485 /* HistoryViewController.swift */,
+				B70048DF1E30A54800A7B485 /* HistoryTableViewCell.swift */,
+				B769BD571E6D206600544D89 /* FollowupHistoryTableViewCell.swift */,
+				B70A0A361E35E51C00F21C24 /* ViewProfilePicViewController.swift */,
+			);
+			name = CLINICAL;
+			sourceTree = "<group>";
+		};
+		B790E2961E2F4F9D00B8BB12 /* CLINICAL */ = {
+			isa = PBXGroup;
+			children = (
+				B72AFD2F1E8B7E240062E0D8 /* edit-draw-pencil.png */,
+				B72AFD2D1E8B7C820062E0D8 /* annotate-white.png */,
+				B76516AE1E67F6180026D0CA /* camera-filled-blue.png */,
+				B76516AC1E67F5D10026D0CA /* customform-filled-blue.png */,
+				B76516AA1E67F5010026D0CA /* camera-filled-red.png */,
+				B76516A81E67F4C40026D0CA /* Camera.png */,
+				B76516A61E67F4BE0026D0CA /* customform-filled-green.png */,
+				B7528B8B1E32708700C440F0 /* tools.png */,
+				B7528B891E326EC100C440F0 /* Preset.png */,
+				B7528B851E3237AC00C440F0 /* Gallery.png */,
+				B7528B811E3237A600C440F0 /* Annotate.png */,
+				B7528B821E3237A600C440F0 /* Camera.png */,
+				B790E29D1E2F512300B8BB12 /* clinical-edit.png */,
+				B790E29B1E2F50A800B8BB12 /* clinical-questionare.png */,
+				B790E2991E2F502F00B8BB12 /* clinical-recent.png */,
+				B790E2A11E2F5FB100B8BB12 /* edit.png */,
+			);
+			name = CLINICAL;
+			sourceTree = "<group>";
+		};
+		B7B97B601E890BF600CCC45B /* DENTIST */ = {
+			isa = PBXGroup;
+			children = (
+				B7B97B611E890C1800CCC45B /* DentistClinicalViewController.swift */,
+				B7B97B631E890D1700CCC45B /* ExternalOralTableViewCell.swift */,
+				B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */,
+				B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */,
+				B70CE02E1E8A2358000DB50E /* StoneOralTableViewCell.swift */,
+			);
+			name = DENTIST;
+			sourceTree = "<group>";
+		};
+		B7C3D34F1E2DC0C1008E7E86 /* PATIENT */ = {
+			isa = PBXGroup;
+			children = (
+				B7C3D3501E2DC0E8008E7E86 /* APIPatient.swift */,
+			);
+			name = PATIENT;
+			sourceTree = "<group>";
+		};
+		B7C3D35B1E2DD3FB008E7E86 /* HELPER */ = {
+			isa = PBXGroup;
+			children = (
+				B7C3D35C1E2DD419008E7E86 /* Helper.swift */,
+				B7C3D35E1E2DE593008E7E86 /* Color.swift */,
+				B7CD3D931E80E8460015BA60 /* customTextField.swift */,
+			);
+			name = HELPER;
+			sourceTree = "<group>";
+		};
+		B7CF48851E35F457009F597B /* CUSTOMFORM */ = {
+			isa = PBXGroup;
+			children = (
+				B7CF48881E35F546009F597B /* APIAddCustomForm.swift */,
+			);
+			name = CUSTOMFORM;
+			sourceTree = "<group>";
+		};
+		B7CF488A1E35FDA9009F597B /* ICON */ = {
+			isa = PBXGroup;
+			children = (
+				B74B3CE91E386F9E00A508EB /* star.png */,
+				B7CF488B1E35FDD5009F597B /* 0.png */,
+				B7CF488C1E35FDD5009F597B /* 1.png */,
+				B7CF488D1E35FDD5009F597B /* 2.png */,
+				B7CF488E1E35FDD5009F597B /* 3.png */,
+				B7CF488F1E35FDD5009F597B /* 4.png */,
+				B7CF48901E35FDD5009F597B /* 5.png */,
+				B7CF48911E35FDD5009F597B /* 6.png */,
+				B7CF48921E35FDD5009F597B /* 7.png */,
+				B7CF48931E35FDD5009F597B /* 8.png */,
+				B7CF48941E35FDD5009F597B /* 9.png */,
+				B7CF48951E35FDD5009F597B /* 10.png */,
+				B7CF48A11E3600C5009F597B /* 11.png */,
+				B7CF48A21E3600C5009F597B /* 12.png */,
+				B7CF48A31E3600C5009F597B /* 13.png */,
+				B7CF48A41E3600C5009F597B /* 14.png */,
+			);
+			name = ICON;
+			sourceTree = "<group>";
+		};
+		B7CF48A91E360799009F597B /* CATEGORY */ = {
+			isa = PBXGroup;
+			children = (
+				B7CF48AA1E3607AD009F597B /* Orthopedic.png */,
+				B7CF48AB1E3607AD009F597B /* Cardiology.png */,
+				B7CF48AC1E3607AD009F597B /* Medicine.png */,
+				B7CF48AD1E3607AD009F597B /* Surgery.png */,
+				B7CF48AE1E3607AD009F597B /* Pediatric.png */,
+			);
+			name = CATEGORY;
+			sourceTree = "<group>";
+		};
+		B7CF48B41E360D9A009F597B /* CUSTOMFORM */ = {
+			isa = PBXGroup;
+			children = (
+				B7CF48B71E360E13009F597B /* BackCustomForm.swift */,
+			);
+			name = CUSTOMFORM;
+			sourceTree = "<group>";
+		};
+		B7D732CE1E33EEE9002F785C /* CUSTOMFORM */ = {
+			isa = PBXGroup;
+			children = (
+				B785D2D01E47228400BCEDC8 /* play-button.png */,
+				B76F74F91E37664600E2184F /* LOGO */,
+				B7CF48A91E360799009F597B /* CATEGORY */,
+				B7CF488A1E35FDA9009F597B /* ICON */,
+				B73642CE1E4787870042D39A /* add-group.png */,
+				B70A0A381E35EC0D00F21C24 /* add.png */,
+				B7D732D11E33F405002F785C /* emp_star.png */,
+				B7D732D21E33F405002F785C /* full_star.png */,
+				B7D732D31E33F405002F785C /* half_star.png */,
+				B7D732CF1E33EEF5002F785C /* pills.png */,
+				B70A0A3C1E35F0F800F21C24 /* icon.png */,
+				B714B3F81E36FDC90042A4CD /* eye-dark.png */,
+				B714B3F91E36FDC90042A4CD /* eye-white.png */,
+				B714B3FC1E36FE6A0042A4CD /* calculator-dark.png */,
+				B714B3FD1E36FE6A0042A4CD /* calculator-white.png */,
+				B74B3CEB1E386FB500A508EB /* star.png */,
+			);
+			name = CUSTOMFORM;
+			sourceTree = "<group>";
+		};
+		B7D732DD1E33FA49002F785C /* PROFILE */ = {
+			isa = PBXGroup;
+			children = (
+				B7D732DE1E33FA71002F785C /* PatientProfile.storyboard */,
+				B70120B81E347FD1008CC584 /* PatientProfileViewController.swift */,
+				B77057031E34DF0700B82883 /* PatientProfilTableViewCell.swift */,
+			);
+			name = PROFILE;
+			sourceTree = "<group>";
+		};
+		B7E0DEB41E792E2D00785381 /* REPRESENT */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DEB51E792EF300785381 /* RepresentData.storyboard */,
+				B7E0DEB71E79309300785381 /* RepresentTableViewController.swift */,
+				B7E0DEB91E79322A00785381 /* HashtagViewController.swift */,
+			);
+			name = REPRESENT;
+			sourceTree = "<group>";
+		};
+		B7E8C8291E4835560052C7CC /* GROUP */ = {
+			isa = PBXGroup;
+			children = (
+				B7E8C82A1E4835740052C7CC /* APIGroup.swift */,
+			);
+			name = GROUP;
+			sourceTree = "<group>";
+		};
+		B7E8C82C1E483F7D0052C7CC /* GROUP */ = {
+			isa = PBXGroup;
+			children = (
+				B7E8C82D1E483FA60052C7CC /* BackGroup.swift */,
+				B7E8C8301E487E460052C7CC /* Group.swift */,
+			);
+			name = GROUP;
+			sourceTree = "<group>";
+		};
+		D81962E18D6FF4626402D94D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56B21E008E6B7BE4616C2AE9 /* Pods_MEDDIC.framework */,
+				660F86F48D5241CD73D4FD44 /* Pods_MEDDICTests.framework */,
+				1D5969A1918AAD94ED169C26 /* Pods_MEDDICUITests.framework */,
+				F62F69347CBDDF3D17A6BF81 /* Pods_Dentic.framework */,
+				4857896F26B2134F03097110 /* Pods_DenticTests.framework */,
+				41DE1BCC0DCAF155F663EE84 /* Pods_DenticUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B73A00E31E2CDBB400D30531 /* Dentic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B73A010C1E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "Dentic" */;
+			buildPhases = (
+				084C58CEA845229A9A945CE8 /* [CP] Check Pods Manifest.lock */,
+				B73A00E01E2CDBB400D30531 /* Sources */,
+				B73A00E11E2CDBB400D30531 /* Frameworks */,
+				B73A00E21E2CDBB400D30531 /* Resources */,
+				1901743DF4C040BBAC691EC1 /* [CP] Embed Pods Frameworks */,
+				CB368432B71AD990B1D4FF4E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dentic;
+			productName = MEDDIC;
+			productReference = B73A00E41E2CDBB400D30531 /* Dentic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B73A00F71E2CDBB400D30531 /* DenticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B73A010F1E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "DenticTests" */;
+			buildPhases = (
+				5E5150D98CF4B1C399C77FCA /* [CP] Check Pods Manifest.lock */,
+				B73A00F41E2CDBB400D30531 /* Sources */,
+				B73A00F51E2CDBB400D30531 /* Frameworks */,
+				B73A00F61E2CDBB400D30531 /* Resources */,
+				9D1AB8AAC8256CB120FFBCC1 /* [CP] Embed Pods Frameworks */,
+				9BF3FD8881577605C937E325 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B73A00FA1E2CDBB400D30531 /* PBXTargetDependency */,
+			);
+			name = DenticTests;
+			productName = MEDDICTests;
+			productReference = B73A00F81E2CDBB400D30531 /* DenticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B73A01021E2CDBB400D30531 /* DenticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B73A01121E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "DenticUITests" */;
+			buildPhases = (
+				350353C43BC731507C9F3D01 /* [CP] Check Pods Manifest.lock */,
+				B73A00FF1E2CDBB400D30531 /* Sources */,
+				B73A01001E2CDBB400D30531 /* Frameworks */,
+				B73A01011E2CDBB400D30531 /* Resources */,
+				C62E1D9EE8296ACD749595D8 /* [CP] Embed Pods Frameworks */,
+				52E220822DA4FA7F2F408303 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B73A01051E2CDBB400D30531 /* PBXTargetDependency */,
+			);
+			name = DenticUITests;
+			productName = MEDDICUITests;
+			productReference = B73A01031E2CDBB400D30531 /* DenticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B73A00DC1E2CDBB400D30531 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Tanakorn;
+				TargetAttributes = {
+					B73A00E31E2CDBB400D30531 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GCHU4UTN6D;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
+					};
+					B73A00F71E2CDBB400D30531 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B73A00E31E2CDBB400D30531;
+					};
+					B73A01021E2CDBB400D30531 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B73A00E31E2CDBB400D30531;
+					};
+				};
+			};
+			buildConfigurationList = B73A00DF1E2CDBB400D30531 /* Build configuration list for PBXProject "Dentic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B73A00DB1E2CDBB400D30531;
+			productRefGroup = B73A00E51E2CDBB400D30531 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B73A00E31E2CDBB400D30531 /* Dentic */,
+				B73A00F71E2CDBB400D30531 /* DenticTests */,
+				B73A01021E2CDBB400D30531 /* DenticUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B73A00E21E2CDBB400D30531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B73A01EB1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBold.otf in Resources */,
+				B76516A71E67F4BE0026D0CA /* customform-filled-green.png in Resources */,
+				B76297AE1E334A79000921E9 /* eraser.png in Resources */,
+				B7E0DEB31E792D7100785381 /* ic_data.png in Resources */,
+				B71A99A01E320A8B00F64844 /* tabbar-more-selected.png in Resources */,
+				B7CF48A71E3600C5009F597B /* 13.png in Resources */,
+				B7E5DF781E5460E100EF407C /* group-grey.png in Resources */,
+				B73A02561E2D58F800D30531 /* tabbar-recent-unselected.png in Resources */,
+				B76297B11E334A79000921E9 /* pencil.png in Resources */,
+				B78474C61E49B704005CCA1C /* Group.png in Resources */,
+				B73642CB1E4778D80042D39A /* Group.storyboard in Resources */,
+				B779CDA61E448A3100987CC1 /* ic_logout_more.png in Resources */,
+				B73802EB1E333A1700D3045E /* Skull.jpg in Resources */,
+				B73802EC1E333A1700D3045E /* Thoracic spine.jpg in Resources */,
+				B76297BC1E3367BA000921E9 /* CustomForm.storyboard in Resources */,
+				B779CDA41E448A3100987CC1 /* ic_cusform_more.png in Resources */,
+				B70A0A3D1E35F0F800F21C24 /* icon.png in Resources */,
+				B73802E71E333A1700D3045E /* Lower_Limb_Lt.jpg in Resources */,
+				B76516AF1E67F6180026D0CA /* camera-filled-blue.png in Resources */,
+				B70120C31E348547008CC584 /* HN.png in Resources */,
+				B758D6321E45E1D800C7D11B /* circle.png in Resources */,
+				B73A00F21E2CDBB400D30531 /* LaunchScreen.storyboard in Resources */,
+				B76F75051E37665900E2184F /* checkbox.png in Resources */,
+				B790E29A1E2F502F00B8BB12 /* clinical-recent.png in Resources */,
+				B714B3FF1E36FE6A0042A4CD /* calculator-white.png in Resources */,
+				B73A01E91E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf in Resources */,
+				B73802DC1E333A1700D3045E /* Foot_Lt.jpg in Resources */,
+				B73802E41E333A1700D3045E /* Knee_Lt.jpg in Resources */,
+				B73802EE1E333A1700D3045E /* Upper_Limb_Rt.jpg in Resources */,
+				B73A01EA1E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf in Resources */,
+				B7528B831E3237A600C440F0 /* Annotate.png in Resources */,
+				B769BD561E6D1B0E00544D89 /* bg.jpg in Resources */,
+				B73A01E81E2CE0EE00D30531 /* ThaiSansNeue-BlackItalic.otf in Resources */,
+				B76516AD1E67F5D10026D0CA /* customform-filled-blue.png in Resources */,
+				B76F75081E37665900E2184F /* multiple.png in Resources */,
+				B7AC98C81E38AFF200CF1B91 /* row.png in Resources */,
+				B70A0A3B1E35EE8F00F21C24 /* download.png in Resources */,
+				B7CF48AF1E3607AD009F597B /* Orthopedic.png in Resources */,
+				B73A02551E2D58F800D30531 /* tabbar-recent-selected.png in Resources */,
+				B73802E51E333A1700D3045E /* Knee_Rt.jpg in Resources */,
+				B70120C21E348547008CC584 /* Gender.png in Resources */,
+				B70120C51E348547008CC584 /* Med Payment.png in Resources */,
+				B73802F51E33431E00D3045E /* Annotation.storyboard in Resources */,
+				B7CF48A01E35FDD5009F597B /* 10.png in Resources */,
+				B73A01F11E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf in Resources */,
+				B71A99A11E320A8B00F64844 /* tabbar-more-unselected.png in Resources */,
+				B71A99931E31BD8D00F64844 /* Loading.xib in Resources */,
+				B73A01F81E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf in Resources */,
+				B7528B8A1E326EC100C440F0 /* Preset.png in Resources */,
+				B7BEFBF41E2E176D00DD1FDC /* NoDataFound.xib in Resources */,
+				B73642CF1E4787870042D39A /* add-group.png in Resources */,
+				B790E2911E2F3B9A00B8BB12 /* Clinical.storyboard in Resources */,
+				B7CF489B1E35FDD5009F597B /* 5.png in Resources */,
+				B73802DF1E333A1700D3045E /* Hand_Rt.jpg in Resources */,
+				B785D2D11E47228400BCEDC8 /* play-button.png in Resources */,
+				B78474D01E4A0645005CCA1C /* MedicLogoWhite.png in Resources */,
+				B7BEFBF61E2E17E900DD1FDC /* searching.png in Resources */,
+				B7AC98C61E38AFDA00CF1B91 /* column.png in Resources */,
+				B714B3FE1E36FE6A0042A4CD /* calculator-dark.png in Resources */,
+				B73802E91E333A1700D3045E /* Shoulder_Lt.jpg in Resources */,
+				B7CF489A1E35FDD5009F597B /* 4.png in Resources */,
+				B73A01F51E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf in Resources */,
+				B76516A91E67F4C40026D0CA /* Camera.png in Resources */,
+				B7E5DF701E54250600EF407C /* Neuro.jpg in Resources */,
+				B7E5DF741E5458C500EF407C /* groups.png in Resources */,
+				B7CF48A51E3600C5009F597B /* 11.png in Resources */,
+				B70120C11E348547008CC584 /* Date of birth.png in Resources */,
+				B7CF48961E35FDD5009F597B /* 0.png in Resources */,
+				B779CDA91E448A3100987CC1 /* ic_profile.png in Resources */,
+				B714B3FB1E36FDC90042A4CD /* eye-white.png in Resources */,
+				B73802E21E333A1700D3045E /* Humerus_Lt.jpg in Resources */,
+				B7CF489E1E35FDD5009F597B /* 8.png in Resources */,
+				B7D732D51E33F405002F785C /* full_star.png in Resources */,
+				B73A01EC1E2CE0EE00D30531 /* ThaiSansNeue-ExtraBoldItali.otf in Resources */,
+				B7CF48B11E3607AD009F597B /* Medicine.png in Resources */,
+				B779CDA81E448A3100987CC1 /* ic_password_more.png in Resources */,
+				B7CF48B21E3607AD009F597B /* Surgery.png in Resources */,
+				B7CF48981E35FDD5009F597B /* 2.png in Resources */,
+				B76F75061E37665900E2184F /* drop.png in Resources */,
+				B76297B71E3354F1000921E9 /* upload.png in Resources */,
+				B76F75091E37665900E2184F /* number.png in Resources */,
+				B73A01F31E2CE0EE00D30531 /* ThaiSansNeue-SemiBold.otf in Resources */,
+				B76F75041E37665900E2184F /* calendar.png in Resources */,
+				B7CF489F1E35FDD5009F597B /* 9.png in Resources */,
+				B73A01EE1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf in Resources */,
+				B7528B841E3237A600C440F0 /* Camera.png in Resources */,
+				B70120C41E348547008CC584 /* passport.png in Resources */,
+				B76F750A1E37665900E2184F /* pictures.png in Resources */,
+				B73802ED1E333A1700D3045E /* Upper_Limb_Lt.jpg in Resources */,
+				B758D62C1E45D54200C7D11B /* tick.png in Resources */,
+				B73A02541E2D58F800D30531 /* tabbar-patient-unselected.png in Resources */,
+				B71A99991E31C4A700F64844 /* loading.png in Resources */,
+				B73802E61E333A1700D3045E /* Lower_Limb_Rt.jpg in Resources */,
+				B78474CE1E4A0522005CCA1C /* MedicLogo.png in Resources */,
+				B76F75071E37665900E2184F /* grid.png in Resources */,
+				B7528B8C1E32708800C440F0 /* tools.png in Resources */,
+				B714B3FA1E36FDC90042A4CD /* eye-dark.png in Resources */,
+				B76F750C1E37665900E2184F /* text.png in Resources */,
+				B73A00EF1E2CDBB400D30531 /* Assets.xcassets in Resources */,
+				B73802E11E333A1700D3045E /* Hip_Rt.jpg in Resources */,
+				B73802DE1E333A1700D3045E /* Hand_Lt.jpg in Resources */,
+				B70120C91E34854F008CC584 /* Telephone.png in Resources */,
+				B73802DB1E333A1700D3045E /* Ankle_Rt.jpg in Resources */,
+				B70120C01E348547008CC584 /* Address.png in Resources */,
+				B70120B71E347F4F008CC584 /* Name.png in Resources */,
+				B742565A1E4A5546003B3A4E /* ic_sync.png in Resources */,
+				B73A00ED1E2CDBB400D30531 /* Main.storyboard in Resources */,
+				B76297B01E334A79000921E9 /* pen.png in Resources */,
+				B7E5DF761E545BA300EF407C /* iconGroup.png in Resources */,
+				B790E2A21E2F5FB100B8BB12 /* edit.png in Resources */,
+				B742565E1E4A5C85003B3A4E /* camera-white.png in Resources */,
+				B7D732D41E33F405002F785C /* emp_star.png in Resources */,
+				B7D732D61E33F405002F785C /* half_star.png in Resources */,
+				B73A01F41E2CE0EE00D30531 /* ThaiSansNeue-SemiBoldItalic.otf in Resources */,
+				B7E0DEB61E792EF300785381 /* RepresentData.storyboard in Resources */,
+				B73A01F61E2CE0EE00D30531 /* ThaiSansNeue-UltraBoldItali.otf in Resources */,
+				B7BEFBF81E2E1A8B00DD1FDC /* reload.png in Resources */,
+				B74256581E4A54EF003B3A4E /* ic_upload.png in Resources */,
+				B73A02511E2D58F800D30531 /* modlogo.png in Resources */,
+				B74B3CEC1E386FB500A508EB /* star.png in Resources */,
+				B73A01E71E2CE0EE00D30531 /* ThaiSansNeue-Black.otf in Resources */,
+				B7CF48991E35FDD5009F597B /* 3.png in Resources */,
+				B73A022F1E2D4C2800D30531 /* ModalLoginError.xib in Resources */,
+				B73802EA1E333A1700D3045E /* Shoulder_Rt.jpg in Resources */,
+				B790E29C1E2F50A800B8BB12 /* clinical-questionare.png in Resources */,
+				B742565C1E4A5865003B3A4E /* add-patient.png in Resources */,
+				B7CF48A61E3600C5009F597B /* 12.png in Resources */,
+				B7CF48A81E3600C5009F597B /* 14.png in Resources */,
+				B779CDA51E448A3100987CC1 /* ic_group_more.png in Resources */,
+				B73A02521E2D58F800D30531 /* profile.png in Resources */,
+				B73A01F01E2CE0EE00D30531 /* ThaiSansNeue-Light.otf in Resources */,
+				B76F750D1E37665900E2184F /* video.png in Resources */,
+				B72AFD301E8B7E240062E0D8 /* edit-draw-pencil.png in Resources */,
+				B76297AF1E334A79000921E9 /* marker.png in Resources */,
+				B73A02501E2D58F800D30531 /* chulalongkorn.png in Resources */,
+				B72AFD2E1E8B7C820062E0D8 /* annotate-white.png in Resources */,
+				B73A01ED1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf in Resources */,
+				B70120C81E34854F008CC584 /* Nationality.png in Resources */,
+				B73802E01E333A1700D3045E /* Hip_Lt.jpg in Resources */,
+				B73A01F71E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf in Resources */,
+				B70A0A391E35EC0D00F21C24 /* add.png in Resources */,
+				B73802DA1E333A1700D3045E /* Ankle_Lt.jpg in Resources */,
+				B7CF48B31E3607AD009F597B /* Pediatric.png in Resources */,
+				B74256601E4A6749003B3A4E /* cloud-computing.png in Resources */,
+				B779CDAF1E44999C00987CC1 /* search.png in Resources */,
+				B73802E81E333A1700D3045E /* Pelvis.jpg in Resources */,
+				B7D732DF1E33FA71002F785C /* PatientProfile.storyboard in Resources */,
+				B7CF48971E35FDD5009F597B /* 1.png in Resources */,
+				B73802EF1E333A1700D3045E /* Vertebral column.jpg in Resources */,
+				B7CF489D1E35FDD5009F597B /* 7.png in Resources */,
+				B73A01F21E2CE0EE00D30531 /* ThaiSansNeue-Regular.otf in Resources */,
+				B73A02531E2D58F800D30531 /* tabbar-patient-selected.png in Resources */,
+				B76F750B1E37665900E2184F /* slider.png in Resources */,
+				B779CDA71E448A3100987CC1 /* ic_passcode_more.png in Resources */,
+				B73802E31E333A1700D3045E /* Humerus_Rt.jpg in Resources */,
+				B7528B871E3237AC00C440F0 /* Gallery.png in Resources */,
+				B7CF489C1E35FDD5009F597B /* 6.png in Resources */,
+				B790E29E1E2F512300B8BB12 /* clinical-edit.png in Resources */,
+				B73A01EF1E2CE0EE00D30531 /* ThaiSansNeue-Italic.otf in Resources */,
+				B7CF48B01E3607AD009F597B /* Cardiology.png in Resources */,
+				B7D732D01E33EEF5002F785C /* pills.png in Resources */,
+				B76516AB1E67F5010026D0CA /* camera-filled-red.png in Resources */,
+				B73802DD1E333A1700D3045E /* Foot_Rt.jpg in Resources */,
+				B76297B31E334A79000921E9 /* whiteBG.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A00F61E2CDBB400D30531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A01011E2CDBB400D30531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		084C58CEA845229A9A945CE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1901743DF4C040BBAC691EC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dentic/Pods-Dentic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		350353C43BC731507C9F3D01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		52E220822DA4FA7F2F408303 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5150D98CF4B1C399C77FCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BF3FD8881577605C937E325 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DenticTests/Pods-DenticTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D1AB8AAC8256CB120FFBCC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DenticTests/Pods-DenticTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C62E1D9EE8296ACD749595D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB368432B71AD990B1D4FF4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dentic/Pods-Dentic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B73A00E01E2CDBB400D30531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B714B4011E37019F0042A4CD /* SectionHeaderTableViewCell.swift in Sources */,
+				B7A03D751E8920EC00EBD201 /* InternalTableViewCell.swift in Sources */,
+				B785D2CD1E47159100BCEDC8 /* DropTableViewCell.swift in Sources */,
+				B758D6341E45E22E00C7D11B /* MultipleTableViewCell.swift in Sources */,
+				B758D63A1E464BBA00C7D11B /* CustomFormSectionAns.swift in Sources */,
+				B7669C961E641DDE0095819E /* WebviewVideoViewController.swift in Sources */,
+				B7E8C82E1E483FA60052C7CC /* BackGroup.swift in Sources */,
+				B7A085771E48913000C3EB14 /* ShowGroupCollectionViewCell.swift in Sources */,
+				B73A01D31E2CDEF700D30531 /* LoginViewController.swift in Sources */,
+				B7E8C8281E48187A0052C7CC /* ChangePasswordViewController.swift in Sources */,
+				B76297C71E3368C7000921E9 /* CustomFormFormula.swift in Sources */,
+				B74B3CF01E38861500A508EB /* CusFormTableViewCell.swift in Sources */,
+				B7A006431E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift in Sources */,
+				B73A01D11E2CDEAD00D30531 /* FirstPageViewController.swift in Sources */,
+				B7E0DEBA1E79322A00785381 /* HashtagViewController.swift in Sources */,
+				B769BD581E6D206600544D89 /* FollowupHistoryTableViewCell.swift in Sources */,
+				B7C3D3591E2DCE0A008E7E86 /* RealmJSON.swift in Sources */,
+				B7C3D3571E2DC309008E7E86 /* BackPatient.swift in Sources */,
+				B7A03D771E892DDA00EBD201 /* PAOralTableViewCell.swift in Sources */,
+				B785D2CB1E470C1A00BCEDC8 /* DateTableViewCell.swift in Sources */,
+				B74B3CF61E38A34000A508EB /* CustomFormMultipleGridViewController.swift in Sources */,
+				B7CF48891E35F546009F597B /* APIAddCustomForm.swift in Sources */,
+				B7B97B621E890C1800CCC45B /* DentistClinicalViewController.swift in Sources */,
+				B70A0A371E35E51C00F21C24 /* ViewProfilePicViewController.swift in Sources */,
+				B7EA5AE31E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift in Sources */,
+				B7CF48B81E360E13009F597B /* BackCustomForm.swift in Sources */,
+				B73A02351E2D53D400D30531 /* RecentPatientTableViewCell.swift in Sources */,
+				B7E0DEB81E79309300785381 /* RepresentTableViewController.swift in Sources */,
+				B785D2C91E47007900BCEDC8 /* SliderTableViewCell.swift in Sources */,
+				B716C8E01E5A94E700BE7A71 /* SignupViewController.swift in Sources */,
+				B785D2CF1E47200B00BCEDC8 /* VideoTableViewCell.swift in Sources */,
+				B77057041E34DF0700B82883 /* PatientProfilTableViewCell.swift in Sources */,
+				B76FFCE81E497EC500E5F748 /* BackStack.swift in Sources */,
+				B76445301E4DC2750012194F /* TabbarViewController.swift in Sources */,
+				B74B3CF21E38A31300A508EB /* RowTableViewCell.swift in Sources */,
+				B70048DE1E309F1800A7B485 /* HistoryViewController.swift in Sources */,
+				B7E5DF721E54575200EF407C /* RealmGroup.swift in Sources */,
+				B7C3D35D1E2DD419008E7E86 /* Helper.swift in Sources */,
+				B758D6301E45D84600C7D11B /* CheckBoxCheckTableViewCell.swift in Sources */,
+				B70A0A3F1E35F1CB00F21C24 /* AddFormTitleViewController.swift in Sources */,
+				B71A99A31E320D2000F64844 /* LoadingViewController.swift in Sources */,
+				B7AFF9D81E450EE200598A62 /* TextFieldTableViewCell.swift in Sources */,
+				B7CF48B61E360DE5009F597B /* CustomFormSectionViewController.swift in Sources */,
+				B76297C91E3368C7000921E9 /* CustomFormOption.swift in Sources */,
+				B76FFCE51E496FD800E5F748 /* RealmStackFollowup.swift in Sources */,
+				B73A00E81E2CDBB400D30531 /* AppDelegate.swift in Sources */,
+				B7E0DEBE1E793C9600785381 /* RealmMeshtag.swift in Sources */,
+				B758D6381E463DBE00C7D11B /* PictureTableViewCell.swift in Sources */,
+				B73802F71E33436100D3045E /* DrawPresetViewController.swift in Sources */,
+				B7A085751E488F4100C3EB14 /* ShowGroupViewController.swift in Sources */,
+				B70048E01E30A54800A7B485 /* HistoryTableViewCell.swift in Sources */,
+				B73A022B1E2D17AD00D30531 /* ModalErrorViewController.swift in Sources */,
+				B73A02321E2D4EEE00D30531 /* RecentPatientViewController.swift in Sources */,
+				B779CD9C1E44889800987CC1 /* MoreViewController.swift in Sources */,
+				B7BEFBFA1E2E1AF600DD1FDC /* NoDataView.swift in Sources */,
+				B73642CD1E477A4D0042D39A /* GroupViewController.swift in Sources */,
+				B76516B11E6828BD0026D0CA /* CustomFormListAnswer.swift in Sources */,
+				B76F750F1E37693700E2184F /* CustomFormQuestionViewController.swift in Sources */,
+				B7AFF9D61E450C2F00598A62 /* SectionTitleTableViewCell.swift in Sources */,
+				B78474D91E4A3EB1005CCA1C /* APIPhysician.swift in Sources */,
+				B76297CB1E3368C7000921E9 /* CustomFormShare.swift in Sources */,
+				B7AC98CA1E38B04F00CF1B91 /* CustomFormEquationViewController.swift in Sources */,
+				B7956F981E39A04C00BDB7F3 /* ShowCustomFormViewController.swift in Sources */,
+				B73A02211E2D133200D30531 /* BackSystem.swift in Sources */,
+				B758D62E1E45D59F00C7D11B /* CheckboxTableViewCell.swift in Sources */,
+				B73642C31E4760670042D39A /* PasscodeViewController.swift in Sources */,
+				B78474D61E4A3D12005CCA1C /* PhysicianProfileViewController.swift in Sources */,
+				B7C3D35F1E2DE593008E7E86 /* Color.swift in Sources */,
+				B74B3CF41E38A32600A508EB /* ColumnTableViewCell.swift in Sources */,
+				B78474D41E4A3868005CCA1C /* HeaderGridTableViewCell.swift in Sources */,
+				B7E8C82B1E4835740052C7CC /* APIGroup.swift in Sources */,
+				B73642C51E476D580042D39A /* MoreTableViewCell.swift in Sources */,
+				B74B3CEE1E38820300A508EB /* CustomFormInitQuestionViewController.swift in Sources */,
+				B7C3D3511E2DC0E8008E7E86 /* APIPatient.swift in Sources */,
+				B7C3D3531E2DC241008E7E86 /* RealmPatient.swift in Sources */,
+				B7BEFBF21E2E156800DD1FDC /* PatientViewController.swift in Sources */,
+				B73642D11E4788080042D39A /* AddGroupViewController.swift in Sources */,
+				B70D03A71E700E00000FF059 /* BackPhysician.swift in Sources */,
+				B70120B91E347FD1008CC584 /* PatientProfileViewController.swift in Sources */,
+				B7E0DEC01E793D4600785381 /* BackMeshtag.swift in Sources */,
+				B73A02251E2D140400D30531 /* RealmPhysician.swift in Sources */,
+				B76297CA1E3368C7000921E9 /* CustomFormSection.swift in Sources */,
+				B758D63C1E464BD700C7D11B /* CustomFormAnswer.swift in Sources */,
+				B7E0DEBC1E7936F400785381 /* BackRepresent.swift in Sources */,
+				B758D6361E45E23E00C7D11B /* MultipleCheckTableViewCell.swift in Sources */,
+				B780E9A21E69AC4200240EC9 /* RealmListFollowup.swift in Sources */,
+				B790E2941E2F3F3D00B8BB12 /* ClinicalViewController.swift in Sources */,
+				B73A021E1E2CF18600D30531 /* UILoading.swift in Sources */,
+				B70CE02F1E8A2358000DB50E /* StoneOralTableViewCell.swift in Sources */,
+				B7B97B641E890D1700CCC45B /* ExternalOralTableViewCell.swift in Sources */,
+				B7E8C8311E487E460052C7CC /* Group.swift in Sources */,
+				B78474CC1E4A00A3005CCA1C /* RealmStackPicture.swift in Sources */,
+				B76297C61E3368C7000921E9 /* CustomFormForm.swift in Sources */,
+				B7D732D81E33F536002F785C /* CustomFormViewController.swift in Sources */,
+				B779CDB11E449C1200987CC1 /* SearchViewController.swift in Sources */,
+				B73A02381E2D556D00D30531 /* UITable.swift in Sources */,
+				B78474D21E4A3309005CCA1C /* GridTableViewCell.swift in Sources */,
+				B7CD3D941E80E8460015BA60 /* customTextField.swift in Sources */,
+				B7D732DC1E33F572002F785C /* CustomFormTableViewCell.swift in Sources */,
+				B7AC98CC1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift in Sources */,
+				B76297C81E3368C7000921E9 /* CustomFormGridOption.swift in Sources */,
+				B7EA5AE11E4AC38100B561AD /* RowGridTableViewCell.swift in Sources */,
+				B70A0A351E35435900F21C24 /* RealmStatus.swift in Sources */,
+				B76297C51E3368C7000921E9 /* CustomForm.swift in Sources */,
+				B7C3D3551E2DC2A0008E7E86 /* RealmFollowup.swift in Sources */,
+				B71A99971E31C24500F64844 /* Loading.swift in Sources */,
+				B73A021A1E2CEA4000D30531 /* APIUser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A00F41E2CDBB400D30531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B73A00FD1E2CDBB400D30531 /* MEDDICTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B73A00FF1E2CDBB400D30531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B73A01081E2CDBB400D30531 /* MEDDICUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B73A00FA1E2CDBB400D30531 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B73A00E31E2CDBB400D30531 /* Dentic */;
+			targetProxy = B73A00F91E2CDBB400D30531 /* PBXContainerItemProxy */;
+		};
+		B73A01051E2CDBB400D30531 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B73A00E31E2CDBB400D30531 /* Dentic */;
+			targetProxy = B73A01041E2CDBB400D30531 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B73A00EB1E2CDBB400D30531 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B73A00EC1E2CDBB400D30531 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B73A00F01E2CDBB400D30531 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B73A00F11E2CDBB400D30531 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B73A010A1E2CDBB400D30531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B73A010B1E2CDBB400D30531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B73A010D1E2CDBB400D30531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 295B012D6D24E70C18CBE5E2 /* Pods-Dentic.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MEDDIC/MEDDIC.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GCHU4UTN6D;
+				INFOPLIST_FILE = MEDDIC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = th.ac.chula.Dentic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B73A010E1E2CDBB400D30531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CFB393E6ADFCF89DA7ED6D /* Pods-Dentic.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MEDDIC/MEDDIC.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GCHU4UTN6D;
+				INFOPLIST_FILE = MEDDIC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = th.ac.chula.Dentic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B73A01101E2CDBB400D30531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06502B107C08F6AF4BE1F37 /* Pods-DenticTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MEDDICTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nont.MEDDICTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dentic.app/Dentic";
+			};
+			name = Debug;
+		};
+		B73A01111E2CDBB400D30531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B129593550F41BBD31E5E8B2 /* Pods-DenticTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MEDDICTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nont.MEDDICTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dentic.app/Dentic";
+			};
+			name = Release;
+		};
+		B73A01131E2CDBB400D30531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C44CBFBE3789B74028F6B22A /* Pods-DenticUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MEDDICUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nont.MEDDICUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MEDDIC;
+			};
+			name = Debug;
+		};
+		B73A01141E2CDBB400D30531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCE7F12EAE8A763B25CC90B6 /* Pods-DenticUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MEDDICUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nont.MEDDICUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MEDDIC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B73A00DF1E2CDBB400D30531 /* Build configuration list for PBXProject "Dentic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73A010A1E2CDBB400D30531 /* Debug */,
+				B73A010B1E2CDBB400D30531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B73A010C1E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "Dentic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73A010D1E2CDBB400D30531 /* Debug */,
+				B73A010E1E2CDBB400D30531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B73A010F1E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "DenticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73A01101E2CDBB400D30531 /* Debug */,
+				B73A01111E2CDBB400D30531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B73A01121E2CDBB400D30531 /* Build configuration list for PBXNativeTarget "DenticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73A01131E2CDBB400D30531 /* Debug */,
+				B73A01141E2CDBB400D30531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B73A00DC1E2CDBB400D30531 /* Project object */;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoDataView" customModule="MEDDIC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searching.png" translatesAutoresizingMaskIntoConstraints="NO" id="KeS-ei-E6r">
+                    <rect key="frame" x="112" y="228.5" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Wc4-V4-4s1"/>
+                        <constraint firstAttribute="width" constant="150" id="Xwq-Wx-Bm1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9s-LD-05u">
+                    <rect key="frame" x="114" y="403.5" width="146" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.89346402520000001" green="0.89346402520000001" blue="0.89346402520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KeS-ei-E6r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="8si-Oz-qZ2"/>
+                <constraint firstItem="KeS-ei-E6r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="L1x-zG-Aru"/>
+                <constraint firstItem="o9s-LD-05u" firstAttribute="top" secondItem="KeS-ei-E6r" secondAttribute="bottom" constant="25" id="cQa-Di-5hM"/>
+                <constraint firstItem="o9s-LD-05u" firstAttribute="centerX" secondItem="KeS-ei-E6r" secondAttribute="centerX" id="v6Q-CK-ISv"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="88.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="searching.png" width="512" height="512"/>
+    </resources>
+</document>
