@@ -120,6 +120,12 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         var phoneno = [String]()
         phoneno.append(self.patientInfo[7])
         if self.isCreate{
+            var gid = self.helper.generateID()
+            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:"",localid: gid)
+            if self.img != nil{
+            self.back.saveProfilePic(image: self.img, id: gid)
+            }
+            self.navigationController?.popViewController(animated: false)
             self.api.newPatient(sessionID: self.system.getSessionid(), success: {(success) in
                 var idd : String = ""
                 var hn : String = ""
@@ -137,13 +143,13 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
                     hn = self.patientInfo[1]
                 }
                 self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: idd, HN: hn, name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
-                    self.back.updatePatientProfile(name: self.patientInfo[0], HN: hn, gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:idd)
+                    self.back.updatePatientProfile(name: self.patientInfo[0], HN: hn, gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:idd,localid: self.patient.localid)
                     if self.img != nil{
                         self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: idd, image: self.img, success: {(success) in
                             self.vw_filter.isHidden = true
                             self.act.isHidden = true
                             self.back.saveProfilePic(image: self.img, id: self.patient.id)
-                            self.navigationController?.popViewController(animated: false)
+                            //self.navigationController?.popViewController(animated: false)
                         }, failure: {(error) in
                             self.vw_filter.isHidden = true
                             self.act.isHidden = true
@@ -169,15 +175,19 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
                 self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
             })
         }else{
+            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid)
+            if self.img != nil{
+            self.back.saveProfilePic(image: self.img, id: self.patient.localid)
+            }
+            self.navigationController?.popViewController(animated: false)
             self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: self.patient.id, HN: self.patientInfo[1], name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
-                self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id)
+                self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid)
                 if self.img != nil{
-                    print(self.patient.id)
                     self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: self.patient.id, image: self.img, success: {(success) in
                         self.vw_filter.isHidden = true
                         self.act.isHidden = true
                         self.back.saveProfilePic(image: self.img, id: self.patient.id)
-                        self.navigationController?.popViewController(animated: false)
+                        //self.navigationController?.popViewController(animated: false)
                     }, failure: {(error) in
                         
                     })
@@ -254,6 +264,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.tableView.reloadData()
     }
     func pickImage(){
+        self.view.endEditing(true)
         self.state = 5
         self.pickers = [String]()
         self.pickers.append("Camera ")
@@ -264,6 +275,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.vw_picker.isHidden = false
     }
     func pickNation(){
+        self.view.endEditing(true)
         self.state = 1
         self.pickers = [String]()
         self.pickers.append("TH 🇹🇭")
@@ -284,6 +296,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.vw_picker.isHidden = false
     }
     func pickGender(){
+        self.view.endEditing(true)
         self.state = 0
         self.pickers = [String]()
         self.pickers.append("X")
@@ -305,6 +318,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.vw_picker.isHidden = false
     }
     func pickMedPayment(){
+        self.view.endEditing(true)
         self.state = 2
         self.pickers = [String]()
         self.pickers.append("N/A")
@@ -329,6 +343,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.vw_picker.isHidden = false
     }
     func pickGroup(){
+        self.view.endEditing(true)
         self.state = 4
         self.pickers = [String]()
         for i in 0..<self.group.count{
@@ -372,7 +387,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             let pic = cell.viewWithTag(1) as! UIImageView
             if self.img == nil{
-                self.helper.loadLocalProfilePic(id: self.patient.id,image:pic)
+                self.helper.loadLocalProfilePic(id: self.patient.localid,image:pic)
             }else{
                 pic.image = self.img
             }

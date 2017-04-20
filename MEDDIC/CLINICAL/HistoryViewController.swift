@@ -13,6 +13,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var api = APIPatient()
     var back = BackPatient()
     var uiLoading = UILoading()
+    var fu = RealmFollowup()
     var backSystem = BackSystem()
     var patient = RealmPatient()
     var helper = Helper()
@@ -35,9 +36,6 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func btn_clinical_action(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
     @IBAction func btn_close_action(_ sender: UIButton) {
         self.collectionView.isHidden = true
         self.btn_close.isHidden = true
@@ -52,9 +50,14 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.view.addGestureRecognizer(panGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(showHistoryImage), name: NSNotification.Name(rawValue: "showHistoryImage"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showCustomForm), name: NSNotification.Name(rawValue: "showCustomForm"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showDentalHistory(notification:)), name: NSNotification.Name(rawValue: "showDentalHistory"), object: nil)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    func showDentalHistory(notification:Notification){
+        self.fu = notification.userInfo?["fu"] as! RealmFollowup
+        self.performSegue(withIdentifier: "hist", sender: self)
     }
     func showCustomForm(notification:Notification){
         
@@ -151,7 +154,6 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.cons_table_height.constant = cell.tableViewFollowup.contentSize.height
         return  cell
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.followUp.count
     }
@@ -172,6 +174,10 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 des.cusForm = self.cusform.customform
                 des.answer = self.cusform.customform_section_answer
                 des.isAns = true
+            }
+        }else if segue.identifier == "hist"{
+            if let des = segue.destination as? DentalHistoryViewController{
+                des.followup  = self.fu
             }
         }
     }

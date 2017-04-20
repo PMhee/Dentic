@@ -277,7 +277,7 @@ class PatientViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecentPatientTableViewCell
             self.ui.shadow(vw_layout: cell.vw_layout)
-            self.helper.loadLocalProfilePic(id: self.patients[indexPath.row].id,image:cell.img_profile)
+            self.helper.loadLocalProfilePic(id: self.patients[indexPath.row].localid,image:cell.img_profile)
             cell.img_profile.layer.cornerRadius = 2
             cell.img_profile.layer.masksToBounds = true
             cell.lb_name.text = self.patients[indexPath.row].name
@@ -334,7 +334,7 @@ class PatientViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "select"{
             if let des = segue.destination as? DentistClinicalViewController{
-                des.patient = self.back.findPatient(id: self.patients[self.index].id).first!
+                des.patient = self.back.findPatient(id: self.patients[self.index].localid).first!
                 des.isFirst = true
             }
         }else if segue.identifier == "add"{

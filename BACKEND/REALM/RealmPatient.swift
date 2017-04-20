@@ -11,6 +11,7 @@ import Realm
 import RealmSwift
 class RealmPatient:Object{
     dynamic var id : String = ""
+    dynamic var localid = ""
     dynamic var HN :String = ""
     dynamic var name:String = ""
     dynamic var gender:String = ""

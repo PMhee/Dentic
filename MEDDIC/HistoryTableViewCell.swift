@@ -97,6 +97,9 @@ class HistoryTableViewCell: UITableViewCell,UITableViewDelegate,UITableViewDataS
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showDentalHistory"), object: nil,userInfo:["fu":self.followups[indexPath.row]])
+    }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

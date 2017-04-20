@@ -13,13 +13,13 @@ class MoreViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var stackfu = try! Realm().objects(RealmStackFollowup.self)
     var stackpic = try! Realm().objects(RealmStackPicture.self)
     var backStack = BackStack()
-    var more = ["Physician Profile","Custom Form","Group","Data Representation","Sync","Change Password","Passcode Lock","Logout"]
-    let moreImage = ["ic_profile","ic_cusform_more","ic_group_more","ic_data","ic_sync","ic_password_more","ic_passcode_more","ic_logout_more"]
+    var more = ["Physician Profile","Group","Sync","Change Password","Passcode Lock","Logout"]
+    let moreImage = ["ic_profile","ic_group_more","ic_sync","ic_password_more","ic_passcode_more","ic_logout_more"]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(checkPasscode), name: NSNotification.Name(rawValue:"checkPasscode"), object: nil)
-        self.more[4] = "Sync(\(String(self.stackfu.count+self.stackpic.count)))"
+        //self.more[4] = "Sync(\(String(self.stackfu.count+self.stackpic.count)))"
         self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -33,7 +33,7 @@ class MoreViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoreTableViewCell
         cell.img_icon.image = UIImage(named: self.moreImage[indexPath.row])
         cell.lb_more.text = self.more[indexPath.row]
-        if indexPath.row == 6 {
+        if indexPath.row == 4 {
             if self.phys?.passcode.characters.count == 4{
                 cell.switch.isOn = true
             }else{
@@ -51,17 +51,13 @@ class MoreViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if indexPath.row == 0{
             self.performSegue(withIdentifier: "profile", sender: self)
         }else if indexPath.row == 1{
-            self.performSegue(withIdentifier: "customform", sender: self)
-        }else if indexPath.row == 2{
             self.performSegue(withIdentifier: "group", sender: self)
-        }else if indexPath.row == 3{
-            self.performSegue(withIdentifier: "data", sender: self)
-        }else if indexPath.row == 4{
+        }else if indexPath.row == 2{
             self.backStack.sendStackPicture()
             self.backStack.sendStackFollowup()
-        }else if indexPath.row == 5{
+        }else if indexPath.row == 3{
             self.performSegue(withIdentifier: "change", sender: self)
-        }else if indexPath.row == 7{
+        }else if indexPath.row == 5{
             try! Realm().write {
                 try! Realm().deleteAll()
             }

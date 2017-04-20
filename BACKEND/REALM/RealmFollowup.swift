@@ -26,6 +26,12 @@ class RealmFollowup:Object{
     dynamic var isCreate = false
     var meshtag = List<MeshTag>()
     var cusforms = List<CustomFormListAnswer>()
+    
+    //DENTIST
+    var ExternalImage = List<Picture>()
+    var InternalImage = List<Picture>()
+    var Film = List<Picture>()
+    var Lime = List<Picture>()
 }
 class MeshTag:Object{
     dynamic var tag : String = ""
@@ -33,6 +39,7 @@ class MeshTag:Object{
 }
 class Picture:Object{
     dynamic var id : String = ""
+    dynamic var type : String = ""
     dynamic var patientid : String = "K"
     dynamic var fudocid : String = ""
     dynamic var fulocalid : String = ""

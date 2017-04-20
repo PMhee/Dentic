@@ -12,6 +12,7 @@
 		48149B1A09B8948776C91619 /* Pods_Dentic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62F69347CBDDF3D17A6BF81 /* Pods_Dentic.framework */; };
 		B70048DE1E309F1800A7B485 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70048DD1E309F1800A7B485 /* HistoryViewController.swift */; };
 		B70048E01E30A54800A7B485 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70048DF1E30A54800A7B485 /* HistoryTableViewCell.swift */; };
+		B701090D1EA8A90A000C5618 /* DentalHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701090C1EA8A90A000C5618 /* DentalHistoryViewController.swift */; };
 		B70120B71E347F4F008CC584 /* Name.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120B61E347F4F008CC584 /* Name.png */; };
 		B70120B91E347FD1008CC584 /* PatientProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70120B81E347FD1008CC584 /* PatientProfileViewController.swift */; };
 		B70120C01E348547008CC584 /* Address.png in Resources */ = {isa = PBXBuildFile; fileRef = B70120BA1E348547008CC584 /* Address.png */; };
@@ -42,8 +43,19 @@
 		B71A99A01E320A8B00F64844 /* tabbar-more-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B71A999E1E320A8B00F64844 /* tabbar-more-selected.png */; };
 		B71A99A11E320A8B00F64844 /* tabbar-more-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B71A999F1E320A8B00F64844 /* tabbar-more-unselected.png */; };
 		B71A99A31E320D2000F64844 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A99A21E320D2000F64844 /* LoadingViewController.swift */; };
+		B7258FDE1E92068200E76765 /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7258FDD1E92068200E76765 /* CompareViewController.swift */; };
+		B7258FE11E92086000E76765 /* Compare3x2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7258FE01E92086000E76765 /* Compare3x2TableViewCell.swift */; };
 		B72AFD2E1E8B7C820062E0D8 /* annotate-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B72AFD2D1E8B7C820062E0D8 /* annotate-white.png */; };
 		B72AFD301E8B7E240062E0D8 /* edit-draw-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = B72AFD2F1E8B7E240062E0D8 /* edit-draw-pencil.png */; };
+		B72FF0AB1E934E81001223DF /* Compare5TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FF0AA1E934E81001223DF /* Compare5TableViewCell.swift */; };
+		B72FF0AF1E9358C6001223DF /* tooth.png in Resources */ = {isa = PBXBuildFile; fileRef = B72FF0AE1E9358C6001223DF /* tooth.png */; };
+		B73483B21EA5D2D800CDF527 /* PopOverFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73483B11EA5D2D800CDF527 /* PopOverFilterViewController.swift */; };
+		B73483B41EA5DA3300CDF527 /* SelectCompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73483B31EA5DA3300CDF527 /* SelectCompareTableViewCell.swift */; };
+		B73483B61EA5E74900CDF527 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = B73483B51EA5E74900CDF527 /* setting.png */; };
+		B73483B81EA6093D00CDF527 /* ManualSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73483B71EA6093D00CDF527 /* ManualSettingTableViewCell.swift */; };
+		B73483BA1EA6154700CDF527 /* premolar.png in Resources */ = {isa = PBXBuildFile; fileRef = B73483B91EA6154700CDF527 /* premolar.png */; };
+		B73483C01EA62B8F00CDF527 /* ManualType1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73483BF1EA62B8F00CDF527 /* ManualType1TableViewCell.swift */; };
+		B73483C21EA62BA600CDF527 /* ManualType2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73483C11EA62BA600CDF527 /* ManualType2TableViewCell.swift */; };
 		B73642C31E4760670042D39A /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642C21E4760670042D39A /* PasscodeViewController.swift */; };
 		B73642C51E476D580042D39A /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642C41E476D580042D39A /* MoreTableViewCell.swift */; };
 		B73642CB1E4778D80042D39A /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73642CA1E4778D80042D39A /* Group.storyboard */; };
@@ -208,12 +220,22 @@
 		B790E29C1E2F50A800B8BB12 /* clinical-questionare.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E29B1E2F50A800B8BB12 /* clinical-questionare.png */; };
 		B790E29E1E2F512300B8BB12 /* clinical-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E29D1E2F512300B8BB12 /* clinical-edit.png */; };
 		B790E2A21E2F5FB100B8BB12 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = B790E2A11E2F5FB100B8BB12 /* edit.png */; };
+		B793F3AC1EA726CC00D86556 /* Compare4TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793F3AB1EA726CC00D86556 /* Compare4TableViewCell.swift */; };
+		B793F3AF1EA73CC800D86556 /* 2x4.png in Resources */ = {isa = PBXBuildFile; fileRef = B793F3AD1EA73CC800D86556 /* 2x4.png */; };
+		B793F3B01EA73CC800D86556 /* 2x5.png in Resources */ = {isa = PBXBuildFile; fileRef = B793F3AE1EA73CC800D86556 /* 2x5.png */; };
 		B7956F981E39A04C00BDB7F3 /* ShowCustomFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7956F971E39A04C00BDB7F3 /* ShowCustomFormViewController.swift */; };
 		B7A006431E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A006421E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift */; };
 		B7A03D751E8920EC00EBD201 /* InternalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */; };
 		B7A03D771E892DDA00EBD201 /* PAOralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */; };
 		B7A085751E488F4100C3EB14 /* ShowGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A085741E488F4100C3EB14 /* ShowGroupViewController.swift */; };
 		B7A085771E48913000C3EB14 /* ShowGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A085761E48913000C3EB14 /* ShowGroupCollectionViewCell.swift */; };
+		B7A508081E979DE4005B7FD2 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A508071E979DE4005B7FD2 /* filter.png */; };
+		B7A5080A1E97A61B005B7FD2 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A508091E97A61B005B7FD2 /* triangle.png */; };
+		B7A508111E97B11E005B7FD2 /* 2x1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A5080B1E97B11E005B7FD2 /* 2x1.png */; };
+		B7A508121E97B11E005B7FD2 /* 2x2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A5080C1E97B11E005B7FD2 /* 2x2.png */; };
+		B7A508131E97B11E005B7FD2 /* 2x3.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A5080D1E97B11E005B7FD2 /* 2x3.png */; };
+		B7A508151E97B11E005B7FD2 /* 3x2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A5080F1E97B11E005B7FD2 /* 3x2.png */; };
+		B7A508161E97B11E005B7FD2 /* 3x3.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A508101E97B11E005B7FD2 /* 3x3.png */; };
 		B7AC98C61E38AFDA00CF1B91 /* column.png in Resources */ = {isa = PBXBuildFile; fileRef = B7AC98C51E38AFDA00CF1B91 /* column.png */; };
 		B7AC98C81E38AFF200CF1B91 /* row.png in Resources */ = {isa = PBXBuildFile; fileRef = B7AC98C71E38AFF200CF1B91 /* row.png */; };
 		B7AC98CA1E38B04F00CF1B91 /* CustomFormEquationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC98C91E38B04F00CF1B91 /* CustomFormEquationViewController.swift */; };
@@ -234,6 +256,8 @@
 		B7C3D3591E2DCE0A008E7E86 /* RealmJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D3581E2DCE0A008E7E86 /* RealmJSON.swift */; };
 		B7C3D35D1E2DD419008E7E86 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D35C1E2DD419008E7E86 /* Helper.swift */; };
 		B7C3D35F1E2DE593008E7E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3D35E1E2DE593008E7E86 /* Color.swift */; };
+		B7C84B231E924E9E006C2F7B /* Compare2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C84B221E924E9E006C2F7B /* Compare2TableViewCell.swift */; };
+		B7C84B251E92533B006C2F7B /* Compare1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C84B241E92533B006C2F7B /* Compare1TableViewCell.swift */; };
 		B7CD3D941E80E8460015BA60 /* customTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD3D931E80E8460015BA60 /* customTextField.swift */; };
 		B7CF48891E35F546009F597B /* APIAddCustomForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF48881E35F546009F597B /* APIAddCustomForm.swift */; };
 		B7CF48961E35FDD5009F597B /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CF488B1E35FDD5009F597B /* 0.png */; };
@@ -283,6 +307,7 @@
 		B7E8C8311E487E460052C7CC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C8301E487E460052C7CC /* Group.swift */; };
 		B7EA5AE11E4AC38100B561AD /* RowGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA5AE01E4AC38100B561AD /* RowGridTableViewCell.swift */; };
 		B7EA5AE31E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA5AE21E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift */; };
+		B7FD55BC1E94ADC000A6A70D /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FD55BB1E94ADC000A6A70D /* right-arrow.png */; };
 		BBAEF106E026CFCDA1547BDA /* Pods_MEDDICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660F86F48D5241CD73D4FD44 /* Pods_MEDDICTests.framework */; };
 		CF4C0A5CEB531E828D8A1F39 /* Pods_DenticUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DE1BCC0DCAF155F663EE84 /* Pods_DenticUITests.framework */; };
 /* End PBXBuildFile section */
@@ -319,6 +344,7 @@
 		B129593550F41BBD31E5E8B2 /* Pods-DenticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DenticTests/Pods-DenticTests.release.xcconfig"; sourceTree = "<group>"; };
 		B70048DD1E309F1800A7B485 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = CLINICAL/HistoryViewController.swift; sourceTree = "<group>"; };
 		B70048DF1E30A54800A7B485 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B701090C1EA8A90A000C5618 /* DentalHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DentalHistoryViewController.swift; path = CLINICAL/DENTIST/DentalHistoryViewController.swift; sourceTree = "<group>"; };
 		B70120B61E347F4F008CC584 /* Name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Name.png; sourceTree = "<group>"; };
 		B70120B81E347FD1008CC584 /* PatientProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientProfileViewController.swift; path = PROFILE/PatientProfileViewController.swift; sourceTree = "<group>"; };
 		B70120BA1E348547008CC584 /* Address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Address.png; path = PROFILE/Address.png; sourceTree = "<group>"; };
@@ -349,8 +375,19 @@
 		B71A999E1E320A8B00F64844 /* tabbar-more-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more-selected.png"; sourceTree = "<group>"; };
 		B71A999F1E320A8B00F64844 /* tabbar-more-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more-unselected.png"; sourceTree = "<group>"; };
 		B71A99A21E320D2000F64844 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B7258FDD1E92068200E76765 /* CompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompareViewController.swift; path = CLINICAL/DENTIST/CompareViewController.swift; sourceTree = "<group>"; };
+		B7258FE01E92086000E76765 /* Compare3x2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compare3x2TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/Compare3x2TableViewCell.swift; sourceTree = "<group>"; };
 		B72AFD2D1E8B7C820062E0D8 /* annotate-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "annotate-white.png"; path = "CLINICAL/annotate-white.png"; sourceTree = "<group>"; };
 		B72AFD2F1E8B7E240062E0D8 /* edit-draw-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit-draw-pencil.png"; path = "CLINICAL/edit-draw-pencil.png"; sourceTree = "<group>"; };
+		B72FF0AA1E934E81001223DF /* Compare5TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compare5TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/Compare5TableViewCell.swift; sourceTree = "<group>"; };
+		B72FF0AE1E9358C6001223DF /* tooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tooth.png; path = DENTIC/COMPARE/tooth.png; sourceTree = "<group>"; };
+		B73483B11EA5D2D800CDF527 /* PopOverFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopOverFilterViewController.swift; path = CLINICAL/DENTIST/PopOverFilterViewController.swift; sourceTree = "<group>"; };
+		B73483B31EA5DA3300CDF527 /* SelectCompareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectCompareTableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/SelectCompareTableViewCell.swift; sourceTree = "<group>"; };
+		B73483B51EA5E74900CDF527 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = DENTIC/COMPARE/setting.png; sourceTree = "<group>"; };
+		B73483B71EA6093D00CDF527 /* ManualSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualSettingTableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/ManualSettingTableViewCell.swift; sourceTree = "<group>"; };
+		B73483B91EA6154700CDF527 /* premolar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = premolar.png; path = DENTIC/premolar.png; sourceTree = "<group>"; };
+		B73483BF1EA62B8F00CDF527 /* ManualType1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualType1TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/ManualType1TableViewCell.swift; sourceTree = "<group>"; };
+		B73483C11EA62BA600CDF527 /* ManualType2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualType2TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/ManualType2TableViewCell.swift; sourceTree = "<group>"; };
 		B73642C21E4760670042D39A /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasscodeViewController.swift; path = MAIN/PasscodeViewController.swift; sourceTree = "<group>"; };
 		B73642C41E476D580042D39A /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = MAIN/MoreTableViewCell.swift; sourceTree = "<group>"; };
 		B73642C61E4771270042D39A /* MEDDIC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MEDDIC.entitlements; sourceTree = "<group>"; };
@@ -523,12 +560,22 @@
 		B790E29B1E2F50A800B8BB12 /* clinical-questionare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clinical-questionare.png"; path = "CLINICAL/clinical-questionare.png"; sourceTree = "<group>"; };
 		B790E29D1E2F512300B8BB12 /* clinical-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clinical-edit.png"; path = "CLINICAL/clinical-edit.png"; sourceTree = "<group>"; };
 		B790E2A11E2F5FB100B8BB12 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = CLINICAL/edit.png; sourceTree = "<group>"; };
+		B793F3AB1EA726CC00D86556 /* Compare4TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compare4TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/Compare4TableViewCell.swift; sourceTree = "<group>"; };
+		B793F3AD1EA73CC800D86556 /* 2x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2x4.png; path = DENTIC/COMPARE/2x4.png; sourceTree = "<group>"; };
+		B793F3AE1EA73CC800D86556 /* 2x5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2x5.png; path = DENTIC/COMPARE/2x5.png; sourceTree = "<group>"; };
 		B7956F971E39A04C00BDB7F3 /* ShowCustomFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCustomFormViewController.swift; path = CUSTOMFORM/ShowCustomFormViewController.swift; sourceTree = "<group>"; };
 		B7A006421E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupCustomFormCollectionViewCell.swift; path = GROUP/ShowGroupCustomFormCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternalTableViewCell.swift; path = CLINICAL/DENTIST/InternalTableViewCell.swift; sourceTree = "<group>"; };
 		B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PAOralTableViewCell.swift; path = CLINICAL/DENTIST/PAOralTableViewCell.swift; sourceTree = "<group>"; };
 		B7A085741E488F4100C3EB14 /* ShowGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupViewController.swift; path = GROUP/ShowGroupViewController.swift; sourceTree = "<group>"; };
 		B7A085761E48913000C3EB14 /* ShowGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowGroupCollectionViewCell.swift; path = GROUP/ShowGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7A508071E979DE4005B7FD2 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = DENTIC/COMPARE/filter.png; sourceTree = "<group>"; };
+		B7A508091E97A61B005B7FD2 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle.png; path = DENTIC/COMPARE/triangle.png; sourceTree = "<group>"; };
+		B7A5080B1E97B11E005B7FD2 /* 2x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2x1.png; path = DENTIC/COMPARE/2x1.png; sourceTree = "<group>"; };
+		B7A5080C1E97B11E005B7FD2 /* 2x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2x2.png; path = DENTIC/COMPARE/2x2.png; sourceTree = "<group>"; };
+		B7A5080D1E97B11E005B7FD2 /* 2x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2x3.png; path = DENTIC/COMPARE/2x3.png; sourceTree = "<group>"; };
+		B7A5080F1E97B11E005B7FD2 /* 3x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3x2.png; path = DENTIC/COMPARE/3x2.png; sourceTree = "<group>"; };
+		B7A508101E97B11E005B7FD2 /* 3x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3x3.png; path = DENTIC/COMPARE/3x3.png; sourceTree = "<group>"; };
 		B7AC98C51E38AFDA00CF1B91 /* column.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = column.png; path = CUSTOMFORM/LOGO/column.png; sourceTree = "<group>"; };
 		B7AC98C71E38AFF200CF1B91 /* row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = row.png; path = CUSTOMFORM/LOGO/row.png; sourceTree = "<group>"; };
 		B7AC98C91E38B04F00CF1B91 /* CustomFormEquationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFormEquationViewController.swift; path = CUSTOMFORM/CustomFormEquationViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +596,8 @@
 		B7C3D3581E2DCE0A008E7E86 /* RealmJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmJSON.swift; path = BACKEND/REALM/RealmJSON.swift; sourceTree = "<group>"; };
 		B7C3D35C1E2DD419008E7E86 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = HELPER/Helper.swift; sourceTree = "<group>"; };
 		B7C3D35E1E2DE593008E7E86 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = HELPER/Color.swift; sourceTree = "<group>"; };
+		B7C84B221E924E9E006C2F7B /* Compare2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compare2TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/Compare2TableViewCell.swift; sourceTree = "<group>"; };
+		B7C84B241E92533B006C2F7B /* Compare1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compare1TableViewCell.swift; path = CLINICAL/DENTIST/COMPARE/Compare1TableViewCell.swift; sourceTree = "<group>"; };
 		B7CD3D931E80E8460015BA60 /* customTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customTextField.swift; path = HELPER/customTextField.swift; sourceTree = "<group>"; };
 		B7CF48881E35F546009F597B /* APIAddCustomForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIAddCustomForm.swift; path = CUSTOMFORM/APIAddCustomForm.swift; sourceTree = "<group>"; };
 		B7CF488B1E35FDD5009F597B /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 0.png; path = CUSTOMFORM/ICON/0.png; sourceTree = "<group>"; };
@@ -598,6 +647,7 @@
 		B7E8C8301E487E460052C7CC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = BACKEND/GROUP/Group.swift; sourceTree = "<group>"; };
 		B7EA5AE01E4AC38100B561AD /* RowGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowGridTableViewCell.swift; sourceTree = "<group>"; };
 		B7EA5AE21E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7FD55BB1E94ADC000A6A70D /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right-arrow.png"; path = "DENTIC/COMPARE/right-arrow.png"; sourceTree = "<group>"; };
 		BCE7F12EAE8A763B25CC90B6 /* Pods-DenticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C44CBFBE3789B74028F6B22A /* Pods-DenticUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DenticUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DenticUITests/Pods-DenticUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D69A2A0AD2D50C8CE6EC53DB /* Pods-MEDDIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEDDIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MEDDIC/Pods-MEDDIC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -671,6 +721,50 @@
 				B70120C71E34854F008CC584 /* Telephone.png */,
 			);
 			name = PROFILE;
+			sourceTree = "<group>";
+		};
+		B7258FDF1E92082500E76765 /* COMPARE */ = {
+			isa = PBXGroup;
+			children = (
+				B7258FE01E92086000E76765 /* Compare3x2TableViewCell.swift */,
+				B7C84B221E924E9E006C2F7B /* Compare2TableViewCell.swift */,
+				B7C84B241E92533B006C2F7B /* Compare1TableViewCell.swift */,
+				B72FF0AA1E934E81001223DF /* Compare5TableViewCell.swift */,
+				B73483B31EA5DA3300CDF527 /* SelectCompareTableViewCell.swift */,
+				B73483B71EA6093D00CDF527 /* ManualSettingTableViewCell.swift */,
+				B73483BF1EA62B8F00CDF527 /* ManualType1TableViewCell.swift */,
+				B73483C11EA62BA600CDF527 /* ManualType2TableViewCell.swift */,
+				B793F3AB1EA726CC00D86556 /* Compare4TableViewCell.swift */,
+			);
+			name = COMPARE;
+			sourceTree = "<group>";
+		};
+		B72FF0AC1E93586C001223DF /* DENTIC */ = {
+			isa = PBXGroup;
+			children = (
+				B73483B91EA6154700CDF527 /* premolar.png */,
+				B72FF0AD1E9358B7001223DF /* COMPARE */,
+			);
+			name = DENTIC;
+			sourceTree = "<group>";
+		};
+		B72FF0AD1E9358B7001223DF /* COMPARE */ = {
+			isa = PBXGroup;
+			children = (
+				B73483B51EA5E74900CDF527 /* setting.png */,
+				B7A5080B1E97B11E005B7FD2 /* 2x1.png */,
+				B7A5080C1E97B11E005B7FD2 /* 2x2.png */,
+				B7A5080D1E97B11E005B7FD2 /* 2x3.png */,
+				B793F3AD1EA73CC800D86556 /* 2x4.png */,
+				B793F3AE1EA73CC800D86556 /* 2x5.png */,
+				B7A5080F1E97B11E005B7FD2 /* 3x2.png */,
+				B7A508101E97B11E005B7FD2 /* 3x3.png */,
+				B7A508091E97A61B005B7FD2 /* triangle.png */,
+				B7A508071E979DE4005B7FD2 /* filter.png */,
+				B7FD55BB1E94ADC000A6A70D /* right-arrow.png */,
+				B72FF0AE1E9358C6001223DF /* tooth.png */,
+			);
+			name = COMPARE;
 			sourceTree = "<group>";
 		};
 		B73642C91E4778B00042D39A /* GROUP */ = {
@@ -822,6 +916,7 @@
 		B73A01FE1E2CE2D600D30531 /* IMAGE */ = {
 			isa = PBXGroup;
 			children = (
+				B72FF0AC1E93586C001223DF /* DENTIC */,
 				B769BD551E6D1B0E00544D89 /* bg.jpg */,
 				B779CD9D1E448A3100987CC1 /* MORE */,
 				B70120B51E347F46008CC584 /* PROFILE */,
@@ -1119,11 +1214,15 @@
 		B7B97B601E890BF600CCC45B /* DENTIST */ = {
 			isa = PBXGroup;
 			children = (
+				B7258FDF1E92082500E76765 /* COMPARE */,
 				B7B97B611E890C1800CCC45B /* DentistClinicalViewController.swift */,
 				B7B97B631E890D1700CCC45B /* ExternalOralTableViewCell.swift */,
 				B7A03D741E8920EC00EBD201 /* InternalTableViewCell.swift */,
 				B7A03D761E892DDA00EBD201 /* PAOralTableViewCell.swift */,
 				B70CE02E1E8A2358000DB50E /* StoneOralTableViewCell.swift */,
+				B7258FDD1E92068200E76765 /* CompareViewController.swift */,
+				B73483B11EA5D2D800CDF527 /* PopOverFilterViewController.swift */,
+				B701090C1EA8A90A000C5618 /* DentalHistoryViewController.swift */,
 			);
 			name = DENTIST;
 			sourceTree = "<group>";
@@ -1426,6 +1525,7 @@
 				B73A01E91E2CE0EE00D30531 /* ThaiSansNeue-Bold.otf in Resources */,
 				B73802DC1E333A1700D3045E /* Foot_Lt.jpg in Resources */,
 				B73802E41E333A1700D3045E /* Knee_Lt.jpg in Resources */,
+				B7A508111E97B11E005B7FD2 /* 2x1.png in Resources */,
 				B73802EE1E333A1700D3045E /* Upper_Limb_Rt.jpg in Resources */,
 				B73A01EA1E2CE0EE00D30531 /* ThaiSansNeue-BoldItalic.otf in Resources */,
 				B7528B831E3237A600C440F0 /* Annotate.png in Resources */,
@@ -1435,7 +1535,9 @@
 				B76F75081E37665900E2184F /* multiple.png in Resources */,
 				B7AC98C81E38AFF200CF1B91 /* row.png in Resources */,
 				B70A0A3B1E35EE8F00F21C24 /* download.png in Resources */,
+				B73483B61EA5E74900CDF527 /* setting.png in Resources */,
 				B7CF48AF1E3607AD009F597B /* Orthopedic.png in Resources */,
+				B793F3AF1EA73CC800D86556 /* 2x4.png in Resources */,
 				B73A02551E2D58F800D30531 /* tabbar-recent-selected.png in Resources */,
 				B73802E51E333A1700D3045E /* Knee_Rt.jpg in Resources */,
 				B70120C21E348547008CC584 /* Gender.png in Resources */,
@@ -1445,18 +1547,22 @@
 				B73A01F11E2CE0EE00D30531 /* ThaiSansNeue-LightItalic.otf in Resources */,
 				B71A99A11E320A8B00F64844 /* tabbar-more-unselected.png in Resources */,
 				B71A99931E31BD8D00F64844 /* Loading.xib in Resources */,
+				B7A508081E979DE4005B7FD2 /* filter.png in Resources */,
 				B73A01F81E2CE0EE00D30531 /* ThaiSansNeue-UltraLightItal.otf in Resources */,
 				B7528B8A1E326EC100C440F0 /* Preset.png in Resources */,
 				B7BEFBF41E2E176D00DD1FDC /* NoDataFound.xib in Resources */,
 				B73642CF1E4787870042D39A /* add-group.png in Resources */,
 				B790E2911E2F3B9A00B8BB12 /* Clinical.storyboard in Resources */,
 				B7CF489B1E35FDD5009F597B /* 5.png in Resources */,
+				B72FF0AF1E9358C6001223DF /* tooth.png in Resources */,
 				B73802DF1E333A1700D3045E /* Hand_Rt.jpg in Resources */,
 				B785D2D11E47228400BCEDC8 /* play-button.png in Resources */,
 				B78474D01E4A0645005CCA1C /* MedicLogoWhite.png in Resources */,
 				B7BEFBF61E2E17E900DD1FDC /* searching.png in Resources */,
 				B7AC98C61E38AFDA00CF1B91 /* column.png in Resources */,
 				B714B3FE1E36FE6A0042A4CD /* calculator-dark.png in Resources */,
+				B7A508121E97B11E005B7FD2 /* 2x2.png in Resources */,
+				B7A5080A1E97A61B005B7FD2 /* triangle.png in Resources */,
 				B73802E91E333A1700D3045E /* Shoulder_Lt.jpg in Resources */,
 				B7CF489A1E35FDD5009F597B /* 4.png in Resources */,
 				B73A01F51E2CE0EE00D30531 /* ThaiSansNeue-UltraBold.otf in Resources */,
@@ -1465,8 +1571,10 @@
 				B7E5DF741E5458C500EF407C /* groups.png in Resources */,
 				B7CF48A51E3600C5009F597B /* 11.png in Resources */,
 				B70120C11E348547008CC584 /* Date of birth.png in Resources */,
+				B7FD55BC1E94ADC000A6A70D /* right-arrow.png in Resources */,
 				B7CF48961E35FDD5009F597B /* 0.png in Resources */,
 				B779CDA91E448A3100987CC1 /* ic_profile.png in Resources */,
+				B7A508151E97B11E005B7FD2 /* 3x2.png in Resources */,
 				B714B3FB1E36FDC90042A4CD /* eye-white.png in Resources */,
 				B73802E21E333A1700D3045E /* Humerus_Lt.jpg in Resources */,
 				B7CF489E1E35FDD5009F597B /* 8.png in Resources */,
@@ -1485,6 +1593,7 @@
 				B73A01EE1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLightItal.otf in Resources */,
 				B7528B841E3237A600C440F0 /* Camera.png in Resources */,
 				B70120C41E348547008CC584 /* passport.png in Resources */,
+				B7A508131E97B11E005B7FD2 /* 2x3.png in Resources */,
 				B76F750A1E37665900E2184F /* pictures.png in Resources */,
 				B73802ED1E333A1700D3045E /* Upper_Limb_Lt.jpg in Resources */,
 				B758D62C1E45D54200C7D11B /* tick.png in Resources */,
@@ -1533,12 +1642,15 @@
 				B72AFD301E8B7E240062E0D8 /* edit-draw-pencil.png in Resources */,
 				B76297AF1E334A79000921E9 /* marker.png in Resources */,
 				B73A02501E2D58F800D30531 /* chulalongkorn.png in Resources */,
+				B73483BA1EA6154700CDF527 /* premolar.png in Resources */,
 				B72AFD2E1E8B7C820062E0D8 /* annotate-white.png in Resources */,
 				B73A01ED1E2CE0EE00D30531 /* ThaiSansNeue-ExtraLight.otf in Resources */,
 				B70120C81E34854F008CC584 /* Nationality.png in Resources */,
 				B73802E01E333A1700D3045E /* Hip_Lt.jpg in Resources */,
+				B793F3B01EA73CC800D86556 /* 2x5.png in Resources */,
 				B73A01F71E2CE0EE00D30531 /* ThaiSansNeue-UltraLight.otf in Resources */,
 				B70A0A391E35EC0D00F21C24 /* add.png in Resources */,
+				B7A508161E97B11E005B7FD2 /* 3x3.png in Resources */,
 				B73802DA1E333A1700D3045E /* Ankle_Lt.jpg in Resources */,
 				B7CF48B31E3607AD009F597B /* Pediatric.png in Resources */,
 				B74256601E4A6749003B3A4E /* cloud-computing.png in Resources */,
@@ -1734,6 +1846,7 @@
 				B7A085771E48913000C3EB14 /* ShowGroupCollectionViewCell.swift in Sources */,
 				B73A01D31E2CDEF700D30531 /* LoginViewController.swift in Sources */,
 				B7E8C8281E48187A0052C7CC /* ChangePasswordViewController.swift in Sources */,
+				B73483B81EA6093D00CDF527 /* ManualSettingTableViewCell.swift in Sources */,
 				B76297C71E3368C7000921E9 /* CustomFormFormula.swift in Sources */,
 				B74B3CF01E38861500A508EB /* CusFormTableViewCell.swift in Sources */,
 				B7A006431E554744003E0C6D /* ShowGroupCustomFormCollectionViewCell.swift in Sources */,
@@ -1751,6 +1864,7 @@
 				B7EA5AE31E4ACC9D00B561AD /* ChoiceCollectionViewCell.swift in Sources */,
 				B7CF48B81E360E13009F597B /* BackCustomForm.swift in Sources */,
 				B73A02351E2D53D400D30531 /* RecentPatientTableViewCell.swift in Sources */,
+				B793F3AC1EA726CC00D86556 /* Compare4TableViewCell.swift in Sources */,
 				B7E0DEB81E79309300785381 /* RepresentTableViewController.swift in Sources */,
 				B785D2C91E47007900BCEDC8 /* SliderTableViewCell.swift in Sources */,
 				B716C8E01E5A94E700BE7A71 /* SignupViewController.swift in Sources */,
@@ -1768,14 +1882,17 @@
 				B7AFF9D81E450EE200598A62 /* TextFieldTableViewCell.swift in Sources */,
 				B7CF48B61E360DE5009F597B /* CustomFormSectionViewController.swift in Sources */,
 				B76297C91E3368C7000921E9 /* CustomFormOption.swift in Sources */,
+				B73483C01EA62B8F00CDF527 /* ManualType1TableViewCell.swift in Sources */,
 				B76FFCE51E496FD800E5F748 /* RealmStackFollowup.swift in Sources */,
 				B73A00E81E2CDBB400D30531 /* AppDelegate.swift in Sources */,
+				B7C84B251E92533B006C2F7B /* Compare1TableViewCell.swift in Sources */,
 				B7E0DEBE1E793C9600785381 /* RealmMeshtag.swift in Sources */,
 				B758D6381E463DBE00C7D11B /* PictureTableViewCell.swift in Sources */,
 				B73802F71E33436100D3045E /* DrawPresetViewController.swift in Sources */,
 				B7A085751E488F4100C3EB14 /* ShowGroupViewController.swift in Sources */,
 				B70048E01E30A54800A7B485 /* HistoryTableViewCell.swift in Sources */,
 				B73A022B1E2D17AD00D30531 /* ModalErrorViewController.swift in Sources */,
+				B72FF0AB1E934E81001223DF /* Compare5TableViewCell.swift in Sources */,
 				B73A02321E2D4EEE00D30531 /* RecentPatientViewController.swift in Sources */,
 				B779CD9C1E44889800987CC1 /* MoreViewController.swift in Sources */,
 				B7BEFBFA1E2E1AF600DD1FDC /* NoDataView.swift in Sources */,
@@ -1784,7 +1901,9 @@
 				B76F750F1E37693700E2184F /* CustomFormQuestionViewController.swift in Sources */,
 				B7AFF9D61E450C2F00598A62 /* SectionTitleTableViewCell.swift in Sources */,
 				B78474D91E4A3EB1005CCA1C /* APIPhysician.swift in Sources */,
+				B7258FDE1E92068200E76765 /* CompareViewController.swift in Sources */,
 				B76297CB1E3368C7000921E9 /* CustomFormShare.swift in Sources */,
+				B73483B41EA5DA3300CDF527 /* SelectCompareTableViewCell.swift in Sources */,
 				B7AC98CA1E38B04F00CF1B91 /* CustomFormEquationViewController.swift in Sources */,
 				B7956F981E39A04C00BDB7F3 /* ShowCustomFormViewController.swift in Sources */,
 				B73A02211E2D133200D30531 /* BackSystem.swift in Sources */,
@@ -1792,6 +1911,7 @@
 				B73642C31E4760670042D39A /* PasscodeViewController.swift in Sources */,
 				B78474D61E4A3D12005CCA1C /* PhysicianProfileViewController.swift in Sources */,
 				B7C3D35F1E2DE593008E7E86 /* Color.swift in Sources */,
+				B7258FE11E92086000E76765 /* Compare3x2TableViewCell.swift in Sources */,
 				B74B3CF41E38A32600A508EB /* ColumnTableViewCell.swift in Sources */,
 				B78474D41E4A3868005CCA1C /* HeaderGridTableViewCell.swift in Sources */,
 				B7E8C82B1E4835740052C7CC /* APIGroup.swift in Sources */,
@@ -1805,6 +1925,7 @@
 				B70120B91E347FD1008CC584 /* PatientProfileViewController.swift in Sources */,
 				B7E0DEC01E793D4600785381 /* BackMeshtag.swift in Sources */,
 				B73A02251E2D140400D30531 /* RealmPhysician.swift in Sources */,
+				B701090D1EA8A90A000C5618 /* DentalHistoryViewController.swift in Sources */,
 				B76297CA1E3368C7000921E9 /* CustomFormSection.swift in Sources */,
 				B758D63C1E464BD700C7D11B /* CustomFormAnswer.swift in Sources */,
 				B7E0DEBC1E7936F400785381 /* BackRepresent.swift in Sources */,
@@ -1822,15 +1943,18 @@
 				B73A02381E2D556D00D30531 /* UITable.swift in Sources */,
 				B78474D21E4A3309005CCA1C /* GridTableViewCell.swift in Sources */,
 				B7CD3D941E80E8460015BA60 /* customTextField.swift in Sources */,
+				B7C84B231E924E9E006C2F7B /* Compare2TableViewCell.swift in Sources */,
 				B7D732DC1E33F572002F785C /* CustomFormTableViewCell.swift in Sources */,
 				B7AC98CC1E38B55000CF1B91 /* ShowEquationCollectionViewCell.swift in Sources */,
 				B76297C81E3368C7000921E9 /* CustomFormGridOption.swift in Sources */,
 				B7EA5AE11E4AC38100B561AD /* RowGridTableViewCell.swift in Sources */,
 				B70A0A351E35435900F21C24 /* RealmStatus.swift in Sources */,
+				B73483C21EA62BA600CDF527 /* ManualType2TableViewCell.swift in Sources */,
 				B76297C51E3368C7000921E9 /* CustomForm.swift in Sources */,
 				B7C3D3551E2DC2A0008E7E86 /* RealmFollowup.swift in Sources */,
 				B71A99971E31C24500F64844 /* Loading.swift in Sources */,
 				B73A021A1E2CEA4000D30531 /* APIUser.swift in Sources */,
+				B73483B21EA5D2D800CDF527 /* PopOverFilterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

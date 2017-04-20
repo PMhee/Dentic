@@ -242,6 +242,11 @@ class Helper{
         format.dateFormat = "HH:mm:ss"
         return format.date(from: date)!
     }
+    func dateToStringOnlyDateInFormat(date:Date) -> String{
+        let format = DateFormatter()
+        format.dateFormat = "YYYY-MM-dd"
+        return format.string(from:date)
+    }
     func dateToStringOnlyDate(date:Date!) -> String{
         if date != nil{
             let format = DateFormatter()
@@ -329,6 +334,33 @@ class Helper{
             }
             
         }
+    }
+    func setGradientColorLeftRight(vw:UIView,color1:UIColor,color2:UIColor){
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [color1.cgColor, color2.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: vw.frame.size.width, height:vw.frame.size.height)
+        vw.layer.insertSublayer(gradient, at: 0)
+    }
+    func setGradientColorTopBot(vw:UIView,color1:UIColor,color2:UIColor){
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [color1.cgColor, color2.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: vw.frame.size.width, height:vw.frame.size.height)
+        vw.layer.insertSublayer(gradient, at: 0)
+    }
+    func setGradientColorSlide(vw:UIView,color1:UIColor,color2:UIColor){
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [color1.cgColor, color2.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: vw.frame.size.width, height:vw.frame.size.height)
+        vw.layer.insertSublayer(gradient, at: 0)
     }
     func loadLocalImage(id:String) -> UIImage?{
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
