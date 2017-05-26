@@ -1,0 +1,71 @@
+body { 
+	background: #fff;
+	-webkit-user-select: none;
+	height: 100vh;
+	margin: 0;
+	font-family: -apple-system,  '.SFNSText-Regular', 'Source Sans Pro', Helvetica, Sans-serif;
+}
+
+.content {
+	width: 534px;
+	margin: 0 auto;
+	position: relative;
+	background: #fff;
+	overflow: hidden;
+}
+
+
+p {
+	text-align: center;
+	
+	font-size: 15px;
+	color: #000;
+}	
+
+p.firstsection
+{
+	margin: 30px 0 0 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 46px;
+	margin-top: 0;
+	margin-bottom: 0px;
+}
+
+p.footerline {
+	margin: 30px 0 0 0;
+	color: #859398;
+	font-weight: 200;
+	font-size: 10px;
+}
+
+/* Animated Device Cloud */
+
+@-webkit-keyframes rotate {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+
+#device-cloud {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0.5;
+	left: 50%;
+	top: -125px;
+	left: 17px;
+	
+	animation: rotate 150s infinite;
+	animation-timing-function: linear;
+
+}
+
+img { 
+	-webkit-user-drag: none; 
+}
+
+a {
+	color: #219850;
+}

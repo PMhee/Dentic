@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Thank You for Purchasing</title>
+
+<style type="text/css">
+* {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	cursor: default;
+}
+
+body 
+{
+	background-image: url(images/cert_bg.png);
+	width: 600px;
+	height: 328px;
+	background-color: #d7d7d7;
+	font-family: Futura Std, Futura, sans-serif;
+	font-weight: lighter;
+	color: #383838;
+	font-size: 11pt;
+	margin-left: 0px !important;
+	}
+
+#focus 
+{
+	display: inline-block;
+	margin-left: 0px !important;
+	height: 150px;
+	width: 592px;
+	background: rgba(255, 255, 255, 0.6);
+	font-style: normal;
+	font-weight: 100;
+	font-size: 12pt;
+	color: #505050;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	text-align: left;
+	border-bottom: 3px solid #424547;
+	border-top: 3px solid #424547;
+	margin-bottom: 5px;
+}
+
+.license 
+{
+	padding-top: 25px;
+	display: block;
+	float: inherit;
+}
+
+.datacat 
+{
+    /* background-color: rgba(255, 0, 0, 0.2); */
+	float: left;
+	clear: none;
+	font-weight: bold;
+	font-size: 11pt;
+	letter-spacing: 0.1em; 
+	line-height: 24pt;
+	text-align: right !important;
+    margin-left: 1em;
+}
+
+.datum 
+{
+    /* background-color: rgba(0, 0, 255, 0.2); */
+	padding-left: 1em;
+	font-weight: normal;
+	text-align: left;
+	font-family: monospace;
+	font-size: 11pt;
+	line-height: 24pt;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#nameField {
+	
+}
+
+h1 
+{
+	font-size: 30pt;
+	color: #424547;
+	letter-spacing: 0.3em;
+	text-align: center;
+	height: 30px;
+}
+	
+h3 
+{
+	font-style: italic;
+	font-size: 14px;
+	text-align: center;
+	font-weight: lighter;
+	color: #505050;
+}
+</style>
+
+<script>
+
+    function backClicked()
+    {
+        var controller = window.PTRegistrationWindowController;
+        controller.unlockedBackClicked();
+    }
+
+    function doneClicked()
+    {
+        var controller = window.PTRegistrationWindowController;
+        controller.unlockedDoneClicked();
+    }
+
+    function didLoad()
+    {
+        var controller = window.PTRegistrationWindowController;
+        var productName = controller.productName();
+        var nameValue = controller.unlockedNameFieldValue();
+        var codeValue = controller.unlockedCodeFieldValue();
+        var dateValue = controller.unlockedDateFieldValue();
+
+        document.getElementById("productField1").innerHTML = productName;
+        document.getElementById("productField2").innerHTML = productName;
+
+        document.getElementById("nameField").innerHTML = nameValue;
+        document.getElementById("codeField").innerHTML = codeValue;
+        document.getElementById("dateField").innerHTML = dateValue;
+    }
+
+</script>
+
+</head>
+
+<body onLoad="didLoad()">
+
+<h1>THANK YOU!</h1>
+<h3>This certificate serves as proof that your purchase has made the world more awesome.</h3>
+
+<div id="focus">
+	<div class="datacat">
+						PRODUCT:
+						<br>
+						NAME:
+						<br>
+						LICENSE CODE:
+						<br>
+						<!--PURCHASED:
+						<br>-->
+	</div>
+	<div class="datum">
+						<span id="productField1">(Product)</span>
+						<br>
+						<span id="nameField">(Name)</span>
+						<br>
+						<span id="codeField">(Code)</span>
+						<!--<br>
+						<span id="dateField">(Date)</span>-->
+	</div>
+</div>
+<div style="margin: 35px 0 0 0;">
+	<h3><span id="productField2">Application</span> is now fully unlocked. Thanks again for purchasing!</h3>
+</div>
+</body>
+
+
+</html>

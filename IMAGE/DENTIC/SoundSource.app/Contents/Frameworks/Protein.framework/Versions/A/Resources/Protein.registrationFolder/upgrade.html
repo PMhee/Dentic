@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Purchase Application</title>
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="./style.css">
+			<style type="text/css">
+				
+				h1 {
+					line-height: 12px;
+					font-weight: bold;
+					color: #545758;
+					text-rendering: optimizeLegibility;
+					font-size: 16pt;
+					letter-spacing: 0.25em;
+					text-align: center;
+					text-stroke: transparent;
+				}
+			h2 {
+				font-size: 12pt;
+				color: #fff;
+				padding: 8px 5px 5px 5px;
+				letter-spacing: 0.1em;
+				text-align: center;
+				font-weight: lighter;
+			}
+			
+				</style>
+			
+			<script>
+				
+    function purchaseUpgradeClicked()
+	{
+		var controller = window.PTRegistrationWindowController;
+		controller.purchaseUpgradeClicked();
+	}
+			
+			function lostLicenseClicked()
+			{
+				var controller = window.PTRegistrationWindowController;
+				controller.purchaseLostLicenseClicked();
+			}
+			
+			function enterLicenseClicked()
+			{
+				var controller = window.PTRegistrationWindowController;
+				controller.purchaseEnterLicenseClicked();
+			}
+			
+			function didLoad()
+			{
+				var controller = window.PTRegistrationWindowController;
+				
+				var licenseLimitation = controller.upgradeLicenseLimitiation();
+				document.getElementById("licenseLimitation").innerHTML = licenseLimitation;
+				
+				var productName = controller.productName();
+				var templates = document.getElementsByClassName("prodName");
+				for( var i=0; i < templates.length; i++ )
+				templates[i].innerHTML = productName;
+			}
+			
+				</script>
+			
+	</head>
+	
+	<body onLoad="didLoad()">
+		
+		<div class="darkbox"><h2>YOU'RE ELIGIBLE FOR A</h2></div>
+		<h1>DISCOUNTED UPGRADE!</h1>
+		
+		<div id="copy">
+			<p><span id="licenseLimitation">limitation</span></p>
+			<p>As an owner of an older version of <span class="prodName">appName</span>, you can purchase a heavily discounted upgrade to use the software without limitations.</p>
+		</div>
+		
+		<div id="focus">
+			<div class="pbutton" onclick="purchaseUpgradeClicked()">PURCHASE UPGRADE</div>
+			<p class="itemtext">Make a fast and secure purchase through our online store.</p>
+			<div class="lbutton" onclick="enterLicenseClicked()">UNLOCK</div>
+			<p class="itemtext" span style="margin-top: 10px;">Enter your License Key to unlock the full version of <span class="prodName">appName</span>.</p>
+		</div>
+		
+		<div style="text-align: center; font-style: italic; margin-top: 5px">
+			We can also help you <a href="https://rogueamoeba.com/support/licenseRecovery.php" onclick="lostLicenseClicked()">recover a lost license</a>.
+		</div>
+		
+		
+	</body>
+	
+	
+</html>

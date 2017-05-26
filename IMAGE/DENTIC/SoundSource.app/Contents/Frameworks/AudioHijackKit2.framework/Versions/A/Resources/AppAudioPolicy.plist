@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>djay</key>
+	<array>
+		<string>com.algoriddim.djay3</string>
+		<string>net.algoriddim.djay</string>
+	</array>
+	<key>voip</key>
+	<array>
+		<string>com.amazon.Amazon-Chime</string>
+		<string>com.apple.FaceTime</string>
+		<string>com.apple.iChat</string>
+		<string>com.avaya.Spark</string>
+		<string>com.citrixonline.GoToMeeting</string>
+		<string>com.CounterPath_Corporation.Bria-4</string>
+		<string>com.CounterPath.Bria-3</string>
+		<string>com.CounterPath.Bria_3</string>
+		<string>com.counterpath.X_Lite_4</string>
+		<string>com.google.GoogleTalkPluginD</string>
+		<string>com.hnc.Discord</string>
+		<string>com.microsoft.Lync</string>
+		<string>com.microsoft.SkypeforBusiness</string>
+		<string>com.sipphone.GizmoProject</string>
+		<string>com.skype.skype</string>
+		<string>com.talk4free.magicJack</string>
+		<string>com.tinyspeck.slackmacgap</string>
+		<string>com.tencent.qq</string>
+		<string>com.tencent.xinWeChat</string>
+		<string>com.tlphn.Telephone</string>
+		<string>com.toktumi.toktumi</string>
+		<string>com.toktumi.LineTwo.Line2</string>
+		<string>com.vailsys.mac.Whistle</string>
+		<string>com.viber.osx</string>
+		<string>com.wearezeta.zclient.mac</string>
+		<string>com.xnet.iSoftPhone</string>
+		<string>com.xten.SIPClient</string>
+		<string>com.yahoo.messenger3</string>
+		<string>com.zoiper.www</string>
+		<string>us.zoom.xos</string>
+	</array>
+</dict>
+</plist>

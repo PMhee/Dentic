@@ -1,0 +1,125 @@
+@media screen
+{
+	#welcome {
+		font-family: -apple-system,  '.SFNSText-Regular', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Sans-serif;
+	}
+
+	#ww h2 {
+		font-family: -apple-system,  '.SFNSText-Regular', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Sans-serif;
+	}
+}
+
+@media print
+{
+	#welcome {
+		font-family: -apple-system,  '.SFNSText-Regular', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Sans-serif;
+	}
+	#ww h2 {
+		font-family: -apple-system,  '.SFNSText-Regular', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Sans-serif;
+	}
+}
+
+@media screen, print
+{
+	#ww {
+		padding: 0 !important;
+	}
+		
+	#welcome {
+		float: inherit;
+		clear: none;
+		width: 600px;
+		margin-top: 30px;
+		color: #515151;
+		font-size: 
+	}
+	
+	#ww h1 {
+		padding-top: 10px;
+		line-height: 20px;
+		font-size: 18px;
+		color: #343434;
+		margin: 0 0 5px;
+	}
+	
+	#ww h2 {
+		display: block;
+		text-align: center;
+		font-size: 9pt;
+		color: #515151;
+		font-weight: bold;
+		margin: 0px 30px 50px 20px;
+	}
+	
+	#welcome img {
+		
+		float: left;
+		clear: none;
+	}	
+	
+	#welcome p {
+		float: left;
+		clear: none;
+		margin: 0;
+		font-size: 14px;	
+	}
+	
+	#wwfootertext {
+		clear: both;
+		width: 550px;
+		margin: 20px 30px 15px 30px;	
+	}	
+	
+	#wwfootertext p {
+		float: left;	
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 0;	
+	}	
+	
+	.step {
+		float: left;
+		clear: both;
+		width: 600px;
+		margin-bottom: 30px;
+	}
+	
+	.content {
+		margin-bottom: 30px;
+	}
+	
+	/* Brings the footer text up, so it's not so far away from the bottom */
+	.step:last-child
+	{
+		margin-bottom: 30px;
+	}
+	
+	.column1, .column2, .column3 {
+		float: left;
+		clear: none;
+	}
+
+	.column1 {
+		width: 54px;
+		margin-left: 20px;		
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
+	.column2 {
+		width: 240px;
+		margin-right: 30px;
+		margin-left: 30px;
+		padding-top: 0;
+	}
+
+	.column3 {
+		width: 270px;		
+	}
+	
+	.column3 img {
+		float: right!important;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px rgba(45,66,53,0.5);
+	}
+}	

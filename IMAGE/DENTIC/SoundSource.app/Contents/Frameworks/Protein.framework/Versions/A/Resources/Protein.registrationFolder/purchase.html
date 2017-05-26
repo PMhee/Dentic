@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Purchase Application</title>
+<link rel="stylesheet" type="text/css" media="screen, projection" href="./style.css">
+<style type="text/css">
+</style>
+
+<script>
+
+    function purchaselicenseClicked()
+    {
+        var controller = window.PTRegistrationWindowController;
+        controller.purchasePurchaseLicenseClicked();
+    }
+
+    function lostLicenseClicked()
+    {
+        var controller = window.PTRegistrationWindowController;
+        controller.purchaseLostLicenseClicked();
+    }
+
+    function enterLicenseClicked()
+    {
+        var controller = window.PTRegistrationWindowController;
+        controller.purchaseEnterLicenseClicked();
+    }
+
+    function didLoad()
+    {
+        var controller = window.PTRegistrationWindowController;
+        var productName = controller.productName();
+        var licenseLimitation = controller.purchaseLicenseLimitation();
+
+        document.getElementById("licenseLimitation").innerHTML = licenseLimitation;
+
+        document.getElementById("productField1").innerHTML = productName;
+    }
+
+</script>
+
+</head>
+
+<body onLoad="didLoad()">
+
+<h1>PLEASE PURCHASE!</h1>
+
+<div id="copy">
+	<p>Thanks for taking a test drive! <span id="licenseLimitation">limitation</span></p>
+
+</div>
+	<div id="focus">
+		<div class="pbutton" onclick="purchaselicenseClicked()">PURCHASE LICENSE</div>
+		<p class="itemtext">Make a fast and secure purchase through our online store.</p>
+		<div class="lbutton" onclick="enterLicenseClicked()">UNLOCK</div>
+		<p class="itemtext" span style="margin-top: 10px;">Enter your License Key to unlock the full version of <span id="productField1">appName</span>.</p>
+		</div>
+<div>
+	
+	<div style="text-align: center; font-style: italic; margin-right: 10px; margin-top: 25px;">
+	<p>We can also help you <a href="https://rogueamoeba.com/support/licenseRecovery.php" onclick="lostLicenseClicked()">recover a lost license</a>.</p>
+	</div>
+
+
+</body>
+
+
+</html>
