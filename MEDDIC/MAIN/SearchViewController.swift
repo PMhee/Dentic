@@ -63,6 +63,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         return true
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tf_search.resignFirstResponder()
         self.index = indexPath.row
         self.tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "select", sender: self)

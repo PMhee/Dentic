@@ -36,6 +36,8 @@ class RealmPatient:Object{
     dynamic var status : String = ""
     var meshtag = List<MeshTag>()
     dynamic var lastfuupdatetime : Date!
+    var comparePic = List<Picture>()
+    dynamic var isNew :Bool = false
 }
 class phoneNo:Object{
     dynamic var phoneno : String = ""

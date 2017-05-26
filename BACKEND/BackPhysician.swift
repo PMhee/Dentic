@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 class BackPhysician{
+    var helper = Helper()
     func downloadPhysicianProfile(success:NSDictionary){
         try! Realm().write {
             if let content = success.value(forKey: "content") as? NSDictionary{
@@ -48,6 +49,7 @@ class BackPhysician{
                 }
                 if let picurl = content.value(forKey: "picurl") as? String{
                     physician.picurl = picurl
+                    self.helper.saveLocalProfilePic(picurl: picurl, id: physician.id)
                 }
                 if let userid = content.value(forKey: "userid") as? Int{
                     physician.userid = userid
@@ -56,6 +58,15 @@ class BackPhysician{
                     try! Realm().add(physician)
                 }
             }
+        }
+    }
+    func updatePhysicianProfile(name:String,des:String,institute:String,major:String){
+        try! Realm().write {
+            var physician = try! Realm().objects(RealmPhysician.self).first
+            physician?.name = name
+            physician?.des = des
+            physician?.institute = institute
+            physician?.major = major
         }
     }
     func getPhysician(id:String) ->RealmPhysician?{

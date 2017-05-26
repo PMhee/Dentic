@@ -15,7 +15,21 @@ class RealmGroup:Object{
     dynamic var groupdescription : String = ""
     dynamic var grouptype : Int = 0
     dynamic var didSelect : Bool = true
-    var physicians = List<RealmPhysician>()
+    var physicians = List<RealmGroupMember>()
     var customform = List<CustomForm>()
     var opdtag = List<RealmStatus>()
+}
+class RealmGroupMember:Object{
+    dynamic var id : String = ""
+    dynamic var approvebyuserid : String = ""
+    dynamic var approvetime : Date!
+    dynamic var groupdocid : String = ""
+    dynamic var invitebyuserid : String = ""
+    dynamic var invitetime : Date!
+    dynamic var requesttime : Date!
+    dynamic var role : String = ""
+    dynamic var physicianid : String = ""
+}
+class RealmGroupArray:Object{
+    dynamic var groupid : String = ""
 }

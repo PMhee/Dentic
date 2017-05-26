@@ -14,6 +14,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIGestureRecogni
     var back = BackSystem()
     var vw_error = UIView()
     var inSignup = false
+    var inPromotion = false
+    @IBOutlet weak var tf_promotional_code: UITextField!
+
+    @IBAction func btn_login_promotion(_ sender: UIButton) {
+    }
+    @IBOutlet weak var vw_promotion: UIView!
+    
     @IBAction func btn_create_action(_ sender: UIButton) {
         self.view.endEditing(true)
         self.signup_activity.isHidden = false
@@ -54,6 +61,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIGestureRecogni
                 self.signup_activity.isHidden = true
                 self.signup_activity.startAnimating()
                 self.btn_create.isUserInteractionEnabled = true
+                alertController.addAction(noAction)
+                self.present(alertController, animated: true, completion: nil)
                 self.present(alertController, animated: true, completion: nil)
             }, failure: {(error) in
                 self.signup_activity.isHidden = true
@@ -131,6 +140,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIGestureRecogni
                 self.vw_signup.isHidden = true
                 self.signup_activity.isHidden = true
                 self.btn_create.isUserInteractionEnabled = true
+                self.inSignup = false
+                return true
+            }
+        }else if self.inPromotion{
+            if self.helper.inBound(x: touch.location(in: self.vw_promotion).x, y: touch.location(in: self.vw_promotion).y, view: self.vw_promotion){
+                return false
+            }else{
+                self.view.endEditing(true)
+                self.vw_filter.isHidden = true
+                self.vw_promotion.isHidden = true
+                self.inPromotion = false
                 return true
             }
         }else{
@@ -154,6 +174,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIGestureRecogni
         self.tf_username.keyboardType = .emailAddress
         self.btn_signin.layer.cornerRadius = 2
         self.btn_signin.layer.masksToBounds = true
+        self.helper.setButtomBorder(tf: self.tf_promotional_code)
         // Do any additional setup after loading the view.
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

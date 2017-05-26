@@ -13,4 +13,5 @@ class RealmStackFollowup:Object{
     dynamic var followup : RealmFollowup!
     dynamic var patientid : String = ""
     dynamic var isUpdate = false
+    dynamic var state : Int = 0
 }

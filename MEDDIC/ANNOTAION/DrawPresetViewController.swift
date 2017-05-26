@@ -8,12 +8,17 @@
 
 import UIKit
 import Realm
-class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
     @IBOutlet weak var img_preset: UIImageView!
     //Dentist
+    var imgPresetSticker = [UIImage]()
     var isDentist = false
     var Dentstate = 0
     var Dentindex = 0
+    var isExport = false
+    var inFocusImage = 0
+    var inExpand = false
+    @IBOutlet weak var tf_input_text: UITextField!
     //
     var patientID = NSString()
     var swiped = false
@@ -45,9 +50,27 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         var alpha : Double = 0.0
         var lineCap : String = ""
     }
+    var begin_x : CGFloat = 0.0
+    var start_x : CGFloat = 0.0
+    var begin_y : CGFloat = 0.0
+    var start_y : CGFloat = 0.0
+    var stickerImage = [UIView]()
+    var stickerButton = [UIButton]()
+    var expandBut = [UIButton]()
+    var stickerExpandImage = [UIImageView]()
+    var stickerRemoveButton = [UIButton]()
     var imagePreset : UIImage!
     var helper = Helper()
     var state = [CGContext]()
+    var inSticker = false
+    var exactHeight :CGFloat = 0
+    @IBOutlet weak var cons_height_img_preset: NSLayoutConstraint!
+    @IBOutlet weak var cons_width_img_preset: NSLayoutConstraint!
+    @IBOutlet weak var cons_height_img_temp: NSLayoutConstraint!
+    @IBOutlet weak var cons_width_img_temp: NSLayoutConstraint!
+    @IBOutlet weak var cons_width_img_marker: NSLayoutConstraint!
+    @IBOutlet weak var cons_height_img_marker: NSLayoutConstraint!
+    
     @IBOutlet weak var img_tool: UIImageView!
     @IBOutlet var pan_gesture: UIPanGestureRecognizer!
     @IBOutlet weak var vw_camera: UIView!
@@ -56,8 +79,20 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
     @IBOutlet weak var img_temp: UIImageView!
     @IBOutlet weak var img_marker: UIImageView!
     @IBOutlet weak var vw_filter: UIView!
-    @IBOutlet weak var img_background: UIImageView!
     @IBOutlet weak var vw_tool: UIView!
+    
+    @IBAction func tf_input_text_change(_ sender: UITextField) {
+        if let lb = self.stickerImage[self.inFocusImage-1] as? UILabel{
+            lb.text = sender.text!
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let lb = self.stickerImage[self.inFocusImage-1] as? UILabel{
+            if lb.text != nil{
+            textField.text = lb.text!
+            }
+        }
+    }
     @IBAction func btn_gallery_action(_ sender: UIButton) {
         self.vw_camera.isHidden = true
         self.vw_filter.isHidden = true
@@ -68,6 +103,11 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
+    }
+    @IBAction func btn_sticker_action(_ sender: UIButton) {
+        self.vw_camera.isHidden = true
+        self.view.bringSubview(toFront: self.vw_sticker)
+        self.vw_sticker.isHidden = false
     }
     @IBAction func btn_cam_action(_ sender: UIButton) {
         self.vw_camera.isHidden = true
@@ -80,6 +120,53 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    @IBAction func btn_text_action(_ sender: UIButton) {
+        let tf_label = UILabel()
+        tf_label.frame = CGRect(x: (self.view.frame.width/2)-100, y: (self.view.frame.height/2)-25, width: 200, height:35)
+        tf_label.textColor = UIColor.white
+        tf_label.layer.cornerRadius = 3
+        tf_label.addDashedBorder(strokeColor: UIColor(netHex:0xE85153), lineWidth: 0.5)
+        tf_label.tag = self.stickerImage.count+1
+        tf_label.numberOfLines = 0
+        let btn = UIButton()
+        btn.tag = self.stickerImage.count+1
+        btn.frame = tf_label.frame
+        btn.addTarget(self, action: #selector(didTouchImage), for: .touchUpInside)
+        let btn_expand = UIButton()
+        btn_expand.frame = CGRect(x: tf_label.frame.origin.x + tf_label.frame.width - 10, y: tf_label.frame.origin.y + tf_label.frame.height - 10, width: 20, height: 20)
+        btn_expand.backgroundColor = UIColor(netHex:0xE85153)
+        btn_expand.layer.cornerRadius = 10
+        btn_expand.layer.masksToBounds = true
+        btn_expand.tag = self.stickerImage.count+1
+        let img_expand = UIImageView()
+        img_expand.frame = CGRect(x: tf_label.frame.origin.x + tf_label.frame.width - 6, y: tf_label.frame.origin.y + tf_label.frame.height - 6, width: 12, height: 12)
+        img_expand.image = UIImage(named:"expand.png")
+        let btn_remove = UIButton()
+        btn_remove.frame = CGRect(x: tf_label.frame.origin.x-10, y: tf_label.frame.origin.y-10, width: 20, height: 20)
+        btn_remove.backgroundColor = UIColor(netHex:0xE85153)
+        btn_remove.layer.cornerRadius = 10
+        btn_remove.layer.masksToBounds = true
+        btn_remove.setTitle("×", for: .normal)
+        btn_remove.addTarget(self, action: #selector(didRemoveImage), for: .touchUpInside)
+        btn_remove.tag = self.stickerImage.count+1
+        //tf_label.becomeFirstResponder()
+        self.view.addSubview(tf_label)
+        self.view.addSubview(btn)
+        self.view.addSubview(btn_expand)
+        self.view.addSubview(img_expand)
+        self.view.addSubview(btn_remove)
+        self.stickerButton.append(btn)
+        self.stickerImage.append(tf_label)
+        self.expandBut.append(btn_expand)
+        self.stickerExpandImage.append(img_expand)
+        self.stickerRemoveButton.append(btn_remove)
+        self.inFocusImage = btn.tag
+        self.vw_filter.isHidden = true
+        self.vw_camera.isHidden = true
+        self.view.addGestureRecognizer(self.pan_gesture)
+    }
+    @IBOutlet weak var vw_sticker: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     //    @IBOutlet weak var tick_yellow: UIImageView!
     //    @IBOutlet weak var tick_black: UIImageView!
@@ -91,7 +178,9 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         self.lineWidth = width
         ///self.line_size.text = String(Int(width))+" px"
     }
+    
     @IBAction func btn_add_pic_action(_ sender: UIButton) {
+        self.view.bringSubview(toFront: self.vw_camera)
         self.vw_camera.isHidden = false
         self.vw_filter.isHidden = false
     }
@@ -100,6 +189,8 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         self.dismiss(animated: true, completion: nil);
     }
     @IBAction func btn_tool_action(_ sender: UIButton) {
+        self.view.bringSubview(toFront: self.vw_filter)
+        self.view.bringSubview(toFront: self.vw_tool)
         self.vw_tool.isHidden = false
         self.vw_filter.isHidden = false
     }
@@ -186,15 +277,85 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.exactHeight = self.img_preset.frame.height
         self.genTool()
+        self.addPresetImage()
         self.ruler = Ruler(enable: false, begin: false, end: false, beginX: CGPoint(x: 0,y:0), endX: CGPoint(x: 0,y:0))
         tap_gesture.delegate = self
         self.view.addGestureRecognizer(tap_gesture)
+        self.pan_gesture = UIPanGestureRecognizer(target: self, action:#selector(handlePanGesture))
+        //self.view.addGestureRecognizer(panGesture)
         self.setUI()
+        self.tf_input_text.delegate = self
         if self.imagePreset != nil{
             self.img_preset.image = self.imagePreset
         }
         //        //up after loading the view.
+    }
+    func handlePanGesture(panGestureRecognizer : UIPanGestureRecognizer!){
+        switch panGestureRecognizer.state {
+        case .began:
+            self.begin_x = panGestureRecognizer.location(in: self.view).x
+            self.begin_y = panGestureRecognizer.location(in: self.view).y
+        case .changed:
+            if self.inFocusImage != 0 {
+                if self.inExpand{
+                    if let tf = stickerImage[self.inFocusImage-1] as? UILabel{
+                        tf.resignFirstResponder()
+                        self.expandBut[self.inFocusImage-1].isHidden = true
+                        self.stickerExpandImage[self.inFocusImage-1].isHidden = true
+                        self.stickerRemoveButton[self.inFocusImage-1].isHidden = true
+                        self.stickerImage[self.inFocusImage-1].frame = CGRect(x:self.stickerImage[self.inFocusImage-1].frame.origin.x , y: self.stickerImage[self.inFocusImage-1].frame.origin.y, width: self.stickerImage[self.inFocusImage-1].frame.width + (panGestureRecognizer.location(in: self.view).x-self.begin_x), height: self.stickerImage[self.inFocusImage-1].frame.height + (panGestureRecognizer.location(in: self.view).y-self.begin_y))
+                        self.begin_y = panGestureRecognizer.location(in: self.view).y
+                        self.begin_x = panGestureRecognizer.location(in: self.view).x
+                        self.stickerImage[self.inFocusImage-1].layer.sublayers?.removeAll()
+                        self.stickerImage[self.inFocusImage-1].addDashedBorder(strokeColor: UIColor(netHex:0xE85153), lineWidth: 0.5)
+                    }else{
+                    self.stickerImage[self.inFocusImage-1].frame = CGRect(x:self.stickerImage[self.inFocusImage-1].frame.origin.x , y: self.stickerImage[self.inFocusImage-1].frame.origin.y, width: self.stickerImage[self.inFocusImage-1].frame.height + (panGestureRecognizer.location(in: self.view).y-self.begin_y), height: self.stickerImage[self.inFocusImage-1].frame.height + (panGestureRecognizer.location(in: self.view).y-self.begin_y))
+                    self.stickerImage[self.inFocusImage-1].layer.sublayers?.removeAll()
+                    self.expandBut[self.inFocusImage-1].isHidden = true
+                    self.stickerExpandImage[self.inFocusImage-1].isHidden = true
+                    self.begin_y = panGestureRecognizer.location(in: self.view).y
+                    self.stickerRemoveButton[self.inFocusImage-1].isHidden = true
+                    }
+                }else{
+                    if let tf = stickerImage[self.inFocusImage-1] as? UILabel{
+                        self.stickerImage[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-(self.stickerImage[self.inFocusImage-1].frame.width/2) , y: panGestureRecognizer.location(in: self.view).y-(self.stickerImage[self.inFocusImage-1].frame.height/2), width: self.stickerImage[self.inFocusImage-1].frame.width, height: self.stickerImage[self.inFocusImage-1].frame.height)
+                        self.stickerButton[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-(self.stickerImage[self.inFocusImage-1].frame.width/2) , y: panGestureRecognizer.location(in: self.view).y-(self.stickerImage[self.inFocusImage-1].frame.height/2), width: self.stickerImage[self.inFocusImage-1].frame.width, height: self.stickerImage[self.inFocusImage-1].frame.height)
+                        self.stickerExpandImage[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x+((self.stickerImage[self.inFocusImage-1].frame.width/2)-6) , y: panGestureRecognizer.location(in: self.view).y+((self.stickerImage[self.inFocusImage-1].frame.height/2)-6), width: 12, height: 12)
+                        self.expandBut[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x+((self.stickerImage[self.inFocusImage-1].frame.width/2)-10) , y: panGestureRecognizer.location(in: self.view).y+((self.stickerImage[self.inFocusImage-1].frame.height/2)-10), width: 20, height: 20)
+                        self.stickerRemoveButton[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-((self.stickerImage[self.inFocusImage-1].frame.width/2)+10) , y: panGestureRecognizer.location(in: self.view).y-((self.stickerImage[self.inFocusImage-1].frame.height/2)+6), width: 20, height: 20)
+                    }else{
+                    self.stickerImage[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-(self.stickerImage[self.inFocusImage-1].frame.width/2) , y: panGestureRecognizer.location(in: self.view).y-(self.stickerImage[self.inFocusImage-1].frame.height/2), width: self.stickerImage[self.inFocusImage-1].frame.width, height: self.stickerImage[self.inFocusImage-1].frame.height)
+                    self.stickerButton[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-(self.stickerImage[self.inFocusImage-1].frame.width/2) , y: panGestureRecognizer.location(in: self.view).y-(self.stickerImage[self.inFocusImage-1].frame.height/2), width: self.stickerImage[self.inFocusImage-1].frame.width, height: self.stickerImage[self.inFocusImage-1].frame.height)
+                    self.stickerExpandImage[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x+((self.stickerImage[self.inFocusImage-1].frame.width/2)-6) , y: panGestureRecognizer.location(in: self.view).y+((self.stickerImage[self.inFocusImage-1].frame.width/2)-6), width: 12, height: 12)
+                    self.expandBut[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x+((self.stickerImage[self.inFocusImage-1].frame.width/2)-10) , y: panGestureRecognizer.location(in: self.view).y+((self.stickerImage[self.inFocusImage-1].frame.width/2)-10), width: 20, height: 20)
+                    self.stickerRemoveButton[self.inFocusImage-1].frame = CGRect(x:panGestureRecognizer.location(in: self.view).x-((self.stickerImage[self.inFocusImage-1].frame.width/2)+10) , y: panGestureRecognizer.location(in: self.view).y-((self.stickerImage[self.inFocusImage-1].frame.width/2)+6), width: 20, height: 20)
+                    }
+                }
+            }
+        case .ended:
+            if self.inExpand{
+                self.inExpand = false
+                self.stickerImage[self.inFocusImage-1].addDashedBorder(strokeColor: UIColor(netHex:0xE85153), lineWidth: 0.5)
+                self.stickerButton[self.inFocusImage-1].frame = self.stickerImage[self.inFocusImage-1].frame
+                self.expandBut[self.inFocusImage-1].frame = CGRect(x: self.stickerImage[self.inFocusImage-1].frame.origin.x + self.stickerImage[self.inFocusImage-1].frame.width - 10, y: self.stickerImage[self.inFocusImage-1].frame.origin.y + self.stickerImage[self.inFocusImage-1].frame.height - 10, width: 20, height: 20)
+                self.stickerExpandImage[self.inFocusImage-1].frame = CGRect(x: self.stickerImage[self.inFocusImage-1].frame.origin.x + self.stickerImage[self.inFocusImage-1].frame.width - 6, y: self.stickerImage[self.inFocusImage-1].frame.origin.y + self.stickerImage[self.inFocusImage-1].frame.height - 6, width: 12, height: 12)
+                self.stickerRemoveButton[self.inFocusImage-1].frame = CGRect(x: self.stickerImage[self.inFocusImage-1].frame.origin.x-10, y: self.stickerImage[self.inFocusImage-1].frame.origin.y-10, width: 20, height: 20)
+                self.stickerRemoveButton[self.inFocusImage-1].isHidden = false
+                self.stickerExpandImage[self.inFocusImage-1].isHidden = false
+                self.expandBut[self.inFocusImage-1].isHidden = false
+            }
+            print("")
+        default:
+            print("")
+        }
+    }
+    func addPresetImage(){
+        for i in 1..<11{
+            self.imgPresetSticker.append(UIImage(named:"img_annotate_"+String(i)+".png")!)
+        }
+        self.collectionView.reloadData()
     }
     func setUI(){
         let button: UIButton = UIButton()
@@ -204,41 +365,64 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         let barButton = UIBarButtonItem(customView: button)
         //assign button to navigationbar
         self.navigationItem.rightBarButtonItem = barButton
+        UIApplication.shared.isStatusBarHidden = false
     }
     func save(sender:UIButton){
-        UIGraphicsBeginImageContextWithOptions(CGSize(width:self.img_preset.frame.width,height:self.img_preset.frame.height), view.isOpaque, 0.0)
-        img_background.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
-        if img_preset.image != nil{
-            let image : UIImage = self.img_preset.image!
-            var imageRect : CGRect = CGRect(x:0, y:0, width:self.img_preset.frame.width, height:self.img_preset.frame.height) // desired x/y coords, with maximum width/height
-            // calculate resize ratio, and apply to rect
-            var ratio :CGFloat = min(imageRect.size.width / image.size.width, imageRect.size.height / image.size.height)
-            //            imageRect.size.width = imageRect.size.width * ratio
-            //            imageRect.size.height = imageRect.size.height * ratio
+        if self.isExport{
             self.aspectScaledImageSizeForImageView(iv: self.img_preset, im: self.img_preset.image!)
-            img_preset.image?.draw(in: CGRect(x: (self.img_preset.frame.width-a)/2, y: (self.img_preset.frame.height-b)/2, width: a, height: b), blendMode: .normal, alpha: 1)
-            // draw the image
+            UIGraphicsBeginImageContextWithOptions(CGSize(width:a,height:b), view.isOpaque, 0.0)
+            //img_background.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
+            if img_preset.image != nil{
+                img_preset.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 1)
+                // draw the image
+            }else{
+                img_preset.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 1)
+            }
+            img_temp.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 1)
+            img_marker.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 0.95)
+            for i in 0..<self.stickerImage.count{
+                if let pic = self.stickerImage[i] as? UIImageView{
+                pic.image?.draw(in:CGRect(x: self.stickerImage[i].frame.origin.x, y:self.stickerImage[i].frame.origin.y-(self.img_preset.frame.height-b)/2-64, width: self.stickerImage[i].frame.width, height: self.stickerImage[i].frame.height), blendMode: .normal, alpha: 1 )
+                }else{
+                    if let lb = self.stickerImage[i] as? UILabel{
+                        lb.drawHierarchy(in: CGRect(x: self.stickerImage[i].frame.origin.x, y:self.stickerImage[i].frame.origin.y-(self.img_preset.frame.height-b)/2-64, width: self.stickerImage[i].frame.width, height: self.stickerImage[i].frame.height), afterScreenUpdates: true)
+                    }
+                }
+            }
+            img_preset.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            if let image = img_preset.image {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didAnnotateDent"), object: nil,userInfo:["pic":image])
+                self.navigationController?.popViewController(animated: true)
+            }
         }else{
-            img_preset.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
+            self.aspectScaledImageSizeForImageView(iv: self.img_preset, im: self.img_preset.image!)
+            UIGraphicsBeginImageContextWithOptions(CGSize(width:a,height:b), view.isOpaque, 0.0)
+            //img_background.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
+            if img_preset.image != nil{
+                img_preset.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 1)
+                // draw the image
+            }else{
+                img_preset.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
+            }
+            img_temp.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 1)
+            img_marker.image?.draw(in: CGRect(x: 0, y: 0, width: a, height: b), blendMode: .normal, alpha: 0.95)
+            img_preset.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            if let image = img_preset.image {
+                if self.isDentist{
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DentaddAnnotateImage"), object: nil,userInfo:["pic":image,"index":self.Dentindex,"state":self.Dentstate])
+                    self.navigationController?.popViewController(animated: false)
+                }else{
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addAnnotateImage"), object: nil,userInfo:["pic":image,"isEdit":self.isEdit,"picture_no":self.picture_no])
+                    self.navigationController?.popViewController(animated: false)
+                    //                let filename = getDocumentsDirectory().appendingPathComponent("draw"+String(self.chatGroup.chat.count))
+                    //                try? data.write(to: filename)
+                }
+                
+            }
         }
         
-        //self.aspectScaledImageSizeForImageView(iv: self.img_preset, im: self.img_preset.image!)
-        img_temp.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 1)
-        img_marker.image?.draw(in: CGRect(x: 0, y: 0, width: self.img_preset.frame.width, height: self.img_preset.frame.height), blendMode: .normal, alpha: 0.65)
-        img_background.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        if let image = img_background.image {
-            if self.isDentist{
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DentaddAnnotateImage"), object: nil,userInfo:["pic":image,"index":self.Dentindex,"state":self.Dentstate])
-            self.navigationController?.popViewController(animated: false)
-            }else{
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addAnnotateImage"), object: nil,userInfo:["pic":image,"isEdit":self.isEdit,"picture_no":self.picture_no])
-                self.navigationController?.popViewController(animated: false)
-                //                let filename = getDocumentsDirectory().appendingPathComponent("draw"+String(self.chatGroup.chat.count))
-                //                try? data.write(to: filename)
-            }
-            
-        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -247,10 +431,20 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         self.vw_show_color.backgroundColor = UIColor(netHex: self.currentColor)
         self.vw_show_color.layer.cornerRadius = 15
         self.vw_show_color.layer.masksToBounds = true
+        if self.img_preset.image != nil {
+            self.aspectScaledImageSizeForImageView(iv: self.img_preset, im: self.img_preset.image!)
+            self.cons_width_img_preset.constant = self.a
+            self.cons_height_img_preset.constant = self.b
+            self.cons_width_img_temp.constant = self.a
+            self.cons_height_img_temp.constant = self.b
+            self.cons_width_img_marker.constant = self.a
+            self.cons_height_img_marker.constant = self.b
+        }
         //self.tick_black.hidden = false
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
         self.img_preset.clipsToBounds = true
         self.img_temp.clipsToBounds = true
     }
@@ -275,7 +469,7 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         marker.type = "marker"
         marker.color = self.currentColor
         marker.width = 20
-        marker.alpha = 0.6
+        marker.alpha = 0.95
         marker.icon = "marker.png"
         var eraser = Tool()
         eraser.type = "eraser"
@@ -294,6 +488,7 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
     //  let colorArray = ["black":UIColor(red:0/255,green: 0/255,blue: 0/255,alpha: 1.0),"green":UIColor(red:112/255,green:181/255,blue:69/255,alpha:1.0),"blue":UIColor(red:14/255,green:14/255,blue:84/255,alpha:1.0),"red":UIColor(red:168/255,green: 34/255,blue:27/255,alpha:1.0),"yellow":UIColor(red:231/255,green:158/255,blue:63/255,alpha:1.0),"pink":UIColor(red:232/255,green: 81/255,blue:83/255,alpha:1.0)]
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if !self.vw_tool.isHidden{
+            
             if self.helper.inBound(x: touch.location(in: self.vw_tool).x, y: touch.location(in: self.vw_tool).y, view: self.vw_tool){
                 return false
             }else{
@@ -308,14 +503,55 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
             }else{
                 self.vw_camera.isHidden = true
                 self.vw_filter.isHidden = true
+                return true
             }
         }
-        if touch.location(in: self.view).y > self.view.frame.height - 100{
-            return false
-        }else{
-            return true
-            
+        if !self.vw_sticker.isHidden{
+            if self.helper.inBound(x: touch.location(in: self.vw_sticker).x, y: touch.location(in: self.vw_sticker).y, view: self.vw_sticker){
+                return false
+            }else{
+                self.vw_sticker.isHidden = true
+                self.vw_filter.isHidden = true
+                return true
+            }
         }
+        if self.inFocusImage > 0 {
+            if self.helper.inBound(x: touch.location(in:self.expandBut[self.inFocusImage-1]).x, y: touch.location(in: self.expandBut[self.inFocusImage-1]).y, view: self.expandBut[self.inFocusImage-1]){
+                self.inExpand = true
+                return false
+            }
+            if self.helper.inBound(x: touch.location(in: self.stickerImage[self.inFocusImage-1]).x, y: touch.location(in: self.stickerImage[self.inFocusImage-1]).y, view: self.stickerImage[self.inFocusImage-1]){
+                return false
+            }else{
+                if self.helper.inBound(x: touch.location(in:self.expandBut[self.inFocusImage-1]).x, y: touch.location(in: self.expandBut[self.inFocusImage-1]).y, view: self.expandBut[self.inFocusImage-1]){
+                    return false
+                }else{
+                    self.view.removeGestureRecognizer(self.pan_gesture)
+                    self.inExpand = false
+                    self.inFocusImage = 0
+                    self.tf_input_text.resignFirstResponder()
+                    for i in 0..<self.stickerImage.count{
+                        self.stickerImage[i].layer.sublayers?.removeAll()
+                    }
+                    for i in 0..<self.expandBut.count{
+                        self.expandBut[i].isHidden = true
+                        self.stickerExpandImage[i].isHidden = true
+                    }
+                    for i in 0..<self.stickerRemoveButton.count{
+                        self.stickerRemoveButton[i].isHidden = true
+                    }
+                    return true
+                }
+            }
+        }
+        return false
+        //        if touch.location(in: self.view).y > self.view.frame.height - 100{
+        //            return false
+        //        }else{
+        //            print("oooo")
+        //            return true
+        //
+        //        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -397,7 +633,7 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
         context?.strokePath()
         if self.tools[self.currentTool].type == "marker" {
             img_marker.image = UIGraphicsGetImageFromCurrentImageContext()
-            img_marker.alpha = 0.65
+            img_marker.alpha = 0.95
         }else{
             if self.tools[self.currentTool].type == "eraser"{
                 img_marker.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -414,6 +650,8 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1{
             return self.tools.count
+        }else if collectionView.tag == 2{
+            return self.imgPresetSticker.count
         }else{
             return self.all_color.count
         }
@@ -424,17 +662,104 @@ class DrawPresetViewController: UIViewController,UIGestureRecognizerDelegate,UIS
             self.img_tool.image = UIImage(named: self.tools[indexPath.row].icon)
             self.vw_tool.isHidden = true
             self.vw_filter.isHidden = true
+        }else if collectionView.tag == 2{
+            let imageView = UIImageView()
+            imageView.image = self.imgPresetSticker[indexPath.row]
+            imageView.frame = CGRect(x: self.view.frame.width/2, y: self.view.frame.height/2, width: 150, height: 150)
+            imageView.addDashedBorder(strokeColor: UIColor(netHex:0xE85153), lineWidth: 0.5)
+            let btn = UIButton()
+            btn.tag = self.stickerImage.count+1
+            btn.frame = imageView.frame
+            btn.addTarget(self, action: #selector(didTouchImage), for: .touchUpInside)
+            let btn_expand = UIButton()
+            btn_expand.frame = CGRect(x: imageView.frame.origin.x + imageView.frame.width - 10, y: imageView.frame.origin.y + imageView.frame.height - 10, width: 20, height: 20)
+            btn_expand.backgroundColor = UIColor(netHex:0xE85153)
+            btn_expand.layer.cornerRadius = 10
+            btn_expand.layer.masksToBounds = true
+            btn_expand.tag = btn.tag
+            let img_expand = UIImageView()
+            img_expand.frame = CGRect(x: imageView.frame.origin.x + imageView.frame.width - 6, y: imageView.frame.origin.y + imageView.frame.height - 6, width: 12, height: 12)
+            img_expand.image = UIImage(named:"expand.png")
+            let btn_remove = UIButton()
+            btn_remove.frame = CGRect(x: imageView.frame.origin.x-10, y: imageView.frame.origin.y-10, width: 20, height: 20)
+            btn_remove.backgroundColor = UIColor(netHex:0xE85153)
+            btn_remove.layer.cornerRadius = 10
+            btn_remove.layer.masksToBounds = true
+            btn_remove.setTitle("×", for: .normal)
+            btn_remove.addTarget(self, action: #selector(didRemoveImage), for: .touchUpInside)
+            btn_remove.tag = btn.tag
+            self.view.addSubview(btn)
+            self.view.addSubview(imageView)
+            self.view.addSubview(btn_expand)
+            self.view.addSubview(img_expand)
+            self.view.addSubview(btn_remove)
+            self.stickerButton.append(btn)
+            self.stickerImage.append(imageView)
+            self.expandBut.append(btn_expand)
+            self.stickerExpandImage.append(img_expand)
+            self.stickerRemoveButton.append(btn_remove)
+            self.inFocusImage = btn.tag
+            self.vw_filter.isHidden = true
+            self.vw_sticker.isHidden = true
+            self.view.addGestureRecognizer(self.pan_gesture)
         }else{
             self.currentColor = self.all_color[indexPath.row]
             self.vw_show_color.backgroundColor = UIColor(netHex: self.currentColor)
         }
     }
-    
+    func didRemoveImage(sender:UIButton){
+        self.view.removeGestureRecognizer(self.pan_gesture)
+        self.inFocusImage = 0
+        self.inExpand = false
+        self.stickerButton[sender.tag-1].removeFromSuperview()
+        self.stickerImage[sender.tag-1].removeFromSuperview()
+        self.expandBut[sender.tag-1].removeFromSuperview()
+        self.stickerExpandImage[sender.tag-1].removeFromSuperview()
+        self.stickerRemoveButton[sender.tag-1].removeFromSuperview()
+        self.stickerButton.remove(at: sender.tag-1)
+        self.stickerImage.remove(at: sender.tag-1)
+        self.expandBut.remove(at: sender.tag-1)
+        self.stickerExpandImage.remove(at: sender.tag-1)
+        self.stickerRemoveButton.remove(at: sender.tag-1)
+        for i in sender.tag-1..<self.stickerRemoveButton.count{
+            self.stickerRemoveButton[i].tag -= 1
+            self.stickerButton[i].tag -= 1
+        }
+    }
+    func didTouchImage(sender:UIButton){
+        self.inFocusImage = sender.tag
+        self.inExpand = false
+        self.view.addGestureRecognizer(self.pan_gesture)
+        for i in 0..<self.stickerImage.count{
+            if self.inFocusImage-1 != i{
+                self.stickerImage[i].layer.sublayers?.removeAll()
+                self.stickerExpandImage[i].isHidden = true
+                self.expandBut[i].isHidden = true
+                self.stickerRemoveButton[i].isHidden = true
+            }else{
+                self.stickerImage[i].addDashedBorder(strokeColor: UIColor(netHex:0xE85153), lineWidth: 0.5)
+                self.stickerExpandImage[i].isHidden = false
+                self.expandBut[i].isHidden = false
+                self.stickerRemoveButton[i].isHidden = false
+            }
+        }
+        if let lb = self.stickerImage[sender.tag-1] as? UILabel{
+            self.tf_input_text.becomeFirstResponder()
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tool", for: indexPath)
             let icon = cell.viewWithTag(1) as! UIImageView
             icon.image = UIImage(named: self.tools[indexPath.row].icon)
+            return cell
+        }else if collectionView.tag == 2{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sticker", for: indexPath)
+            let vw_bg = cell.viewWithTag(1)
+            let img_sticker = cell.viewWithTag(2) as! UIImageView
+            vw_bg?.layer.cornerRadius = 5
+            vw_bg?.layer.masksToBounds = true
+            img_sticker.image = self.imgPresetSticker[indexPath.row]
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)

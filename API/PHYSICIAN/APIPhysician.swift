@@ -29,10 +29,10 @@ class APIPhysician{
     func genHeader() -> [String:String]{
         return ["deeappid":appID(),"deeappsecret":appSecret(),"deesessionid":self.system.getSessionid()]
     }
-    func updateUserInfo(sessionid:String,userid:String,name:String,gender:String,phoneno:String,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
+    func updateUserInfo(sessionid:String,physicianid:String,name:String,gender:String,phoneno:String,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
         self.setTimeout()
         let code = "\(self.url)updateUserInfo"
-        let parameter = ["post[userid]":userid,"post[firstname]":name,"post[middlename]":"","post[lastname]":"","post[gender]":gender,"post[phoneno]":phoneno] as [String : Any]
+        let parameter = ["post[physicianid]":physicianid,"post[firstname]":name,"post[middlename]":"","post[lastname]":"","post[gender]":gender,"post[phoneno]":phoneno] as [String : Any]
         sessionManager.request(code, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: self.genHeader())
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")

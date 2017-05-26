@@ -24,6 +24,9 @@ class LoadingViewController: UIViewController {
     var checkupdate = false
     var patientNumber = 0
     var counting = 0
+    
+    @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var act: UIActivityIndicatorView!
     var backPhysicain = BackPhysician()
     @IBOutlet weak var lb_loading: UILabel!
     
@@ -45,6 +48,7 @@ class LoadingViewController: UIViewController {
                 try! Realm().add(cusform)
             }
         }
+        self.act.startAnimating()
         self.checkForUpdate()
         self.apiGroup.listOPDTag(sessionid: self.backSystem.getSessionid(), id: "5898452eee522e3830295c25", success: {(success) in
             self.backGroup.initStatus(success: success)
@@ -94,6 +98,7 @@ class LoadingViewController: UIViewController {
             }
         }
     }
+    
     func checkForUpdate(){
         self.animateUpdate(i: 0)
         self.apiGroup.listMyGroup(sessionid: self.backSystem.getSessionid(), success: {(success) in
@@ -106,6 +111,7 @@ class LoadingViewController: UIViewController {
                 , offset: "", limit: "", data: "false", success: {(success) in
                     self.patientNumber = (success.value(forKey: "content") as! NSArray).count
                     if self.patientNumber == 0 {
+                        self.progress.setProgress(1, animated: true)
                         self.performSegue(withIdentifier: "show", sender: self)
                     }else{
                         self.downloadPatient(count: self.patientNumber/200, mod: self.patientNumber%200)
@@ -138,7 +144,8 @@ class LoadingViewController: UIViewController {
                     self.back.loadPatientData(dic: success)
                     if let array = success.value(forKey: "content") as? NSArray{
                         self.counting = self.counting + array.count
-                        self.lb_loading.text = "Updating \(self.counting)/\(self.patientNumber) patients"
+                        self.lb_loading.text = "Downloading update \(self.counting) of \(self.patientNumber) patients"
+                        self.progress.setProgress((Float(Float(self.counting)/Float(self.patientNumber))), animated: true)
                     }
                     self.helper.delay(0.5){
                         self.performSegue(withIdentifier: "show", sender: self)
@@ -151,7 +158,8 @@ class LoadingViewController: UIViewController {
                     self.back.loadPatientData(dic: success)
                     if let array = success.value(forKey: "content") as? NSArray{
                         self.counting = self.counting + array.count
-                        self.lb_loading.text = "Updating \(self.counting)/\(self.patientNumber) patients"
+                        self.lb_loading.text = "Downloading update \(self.counting) of \(self.patientNumber) patients"
+                        self.progress.setProgress((Float(Float(self.counting)/Float(self.patientNumber))), animated: true)
                     }
                     self.helper.delay(0.5){
                         self.performSegue(withIdentifier: "show", sender: self)
@@ -166,7 +174,8 @@ class LoadingViewController: UIViewController {
                     self.back.loadPatientData(dic: success)
                     if let array = success.value(forKey: "content") as? NSArray{
                         self.counting = self.counting + array.count
-                        self.lb_loading.text = "Updating \(self.counting)/\(self.patientNumber) patients"
+                        self.lb_loading.text = "Downloading update \(self.counting) of \(self.patientNumber) patients"
+                        self.progress.setProgress((Float(Float(self.counting)/Float(self.patientNumber))), animated: true)
                     }
                 }, failure: {(error) in
                     self.performSegue(withIdentifier: "show", sender: self)

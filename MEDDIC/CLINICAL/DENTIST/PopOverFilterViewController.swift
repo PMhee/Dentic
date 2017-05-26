@@ -61,9 +61,13 @@ class PopOverFilterViewController: UIViewController,UITableViewDelegate,UITableV
             cell.manualSetting = self.manualSetting
             if self.settingState == 0 {
                 cell.sgDegree.removeSegment(at: 0, animated: false)
-                cell.sgDegree.insertSegment(withTitle: "0º", at: 0, animated: true)
+                cell.sgDegree.removeSegment(at: 0, animated: false)
+                cell.sgDegree.insertSegment(withTitle: "L", at: 0, animated: true)
+                cell.sgDegree.insertSegment(withTitle: "F", at: 0, animated: true)
             }else{
                 cell.sgDegree.removeSegment(at: 0, animated: false)
+                cell.sgDegree.removeSegment(at: 0, animated: false)
+                cell.sgDegree.insertSegment(withTitle: "90º", at: 0, animated: true)
                 cell.sgDegree.insertSegment(withTitle: "45º", at: 0, animated: true)
             }
             switch self.manualSetting {
@@ -112,7 +116,7 @@ class PopOverFilterViewController: UIViewController,UITableViewDelegate,UITableV
             return 2
         }else if self.settingState == 0 {
             return 3
-        }else if self.settingState == 3{
+        }else if self.settingState == 3 || self.settingState == 4{
             return 1
         }else{
             return 2

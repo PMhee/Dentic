@@ -425,6 +425,7 @@ class ClinicalViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.view.addGestureRecognizer(self.gesture)
         // Do any additional setup after loading the view.
     }
+    
     func inFuProgress(notification:NSNotification){
         self.inProgress = true
         self.downloadFollowUp()

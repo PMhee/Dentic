@@ -7,129 +7,101 @@
 //
 
 import UIKit
-
+import RealmSwift
 class PhysicianProfileViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    @IBOutlet weak var lb_description: UILabel!
+    @IBOutlet weak var lb_institute: UILabel!
+    @IBOutlet weak var img_institute_logo: UIImageView!
+    @IBOutlet weak var lb_major: UILabel!
+    @IBOutlet weak var lb_name: UILabel!
+    @IBOutlet weak var vw_profile: UIView!
+    @IBOutlet weak var img_profile: UIImageView!
     var api = APIPhysician()
     var system = BackSystem()
+    var back = BackPhysician()
     var ui = UILoading()
     var id : String = ""
     var image : UIImage!
     var userid : String = ""
     var helper = Helper()
-    @IBOutlet weak var vw_filter: UIView!
-    @IBOutlet weak var act: UIActivityIndicatorView!
-    @IBOutlet weak var btn_update: UIButton!
-    @IBOutlet weak var tf_phone: UITextField!
-    @IBOutlet weak var tf_gender: UITextField!
-    @IBOutlet weak var tf_name: UITextField!
-    @IBOutlet weak var img_profile: UIImageView!
-    @IBAction func btn_update_action(_ sender: UIButton) {
-        self.vw_filter.isHidden = false
-        self.act.isHidden = false
-        self.api.updateUserInfo(sessionid: self.system.getSessionid(), userid: self.userid, name: self.tf_name.text!, gender: self.tf_gender.text!, phoneno: self.tf_phone.text!, success: {(success) in
-            if self.image != nil{
-                self.api.uploadProfilePic(sessionID: self.system.getSessionid(), id: self.id, image: self.image, success: {(success) in
-                    self.navigationController?.popViewController(animated: true)
-                }, failure: {(error) in
-                    self.vw_filter.isHidden = true
-                    self.act.isHidden = true
-                    self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-                })
-            }else{
-                self.navigationController?.popViewController(animated: true)
-            }
-        }, failure: {(error) in
-            self.vw_filter.isHidden = true
-            self.act.isHidden = true
-            self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-        })
+    var physician = try! Realm().objects(RealmPhysician.self).first
+    //,"Bone Exchange","Patho Surgery","Kidney Exchange","General Doctor"
+    var doctor_tag = ["Orthodontics"]
+    @IBAction func btn_edit_action(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "edit", sender: self)
     }
-    @IBAction func btn_image_action(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            var imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        self.img_profile.image = self.image
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.act.startAnimating()
-        self.tf_name.delegate = self
-        self.tf_phone.delegate = self
-        self.tf_gender.delegate = self
-        self.img_profile.layer.cornerRadius = 3
-        self.img_profile.layer.masksToBounds = true
-        self.img_profile.layer.borderColor = UIColor.white.cgColor
-        self.img_profile.layer.borderWidth = 2
-        self.btn_update.layer.cornerRadius  = 5
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.api.userInfo(sessionid: system.getSessionid(), success: {(success) in
-            if let content = success.value(forKey: "content") as? NSDictionary{
-                if let ID = content.value(forKey: "_id") as? NSDictionary{
-                    if let id = ID.value(forKey: "$id") as? String{
-                        self.id = id
-                    }
-                }
-                if let firstname = content.value(forKey: "firstname") as? String{
-                    if let middlename = content.value(forKey: "middlename") as? String{
-                        if let lastname = content.value(forKey: "lastname") as? String{
-                            self.tf_name.text = firstname + " " + middlename + " " + lastname
-                        }
-                    }
-                }
-                if let gender = content.value(forKey: "gender") as? String{
-                    self.tf_gender.text = gender
-                }
-                if let phoneno = content.value(forKey: "phoneno") as? String{
-                    self.tf_phone.text = phoneno
-                }
-                if let userid = content.value(forKey: "userid") as? String{
-                    self.userid = userid
-                }
-                if let picurl = content.value(forKey: "picurl") as? String{
-                    self.helper.downloadImageFrom(link: picurl, contentMode: .scaleAspectFill, img: self.img_profile)
-                }
-            }
-            self.vw_filter.isHidden = true
-            self.act.isHidden = true
+        self.setUI()
+        self.api.userInfo(sessionid: self.system.getSessionid(), success: {(success) in
+            self.back.downloadPhysicianProfile(success: success)
+            self.setUI()
         }, failure: {(error) in
-            self.vw_filter.isHidden = true
-            self.act.isHidden = true
-            self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
+            
         })
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    func setUI(){
+        if self.physician != nil{
+            if self.physician?.id != nil{
+                self.helper.loadLocalProfilePicWithSuccess(id: self.physician!.id, success: {(success) in
+                    self.img_profile.image = success
+                })
+            }
+            if self.physician?.name != nil{
+                self.lb_name.text = (self.physician?.name)!
+            }
+            self.lb_description.text = self.physician!.des
+            self.lb_institute.text = self.physician!.institute
+            self.lb_major.text = self.physician!.major
+        }
+        self.helper.shadow(vw_layout: self.img_profile)
+        self.helper.shadow(vw_layout: self.vw_profile)
+        //   self.generateDoctorTag()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func generateDoctorTag(){
+        if doctor_tag.count == 0{
+            
+        }else if doctor_tag.count == 1{
+            let lb_tag_1 = UILabel()
+            lb_tag_1.font = UIFont.systemFont(ofSize: 12)
+            lb_tag_1.text = self.doctor_tag[0]
+            let width1 = lb_tag_1.text!.characters.count*8
+            lb_tag_1.frame = CGRect(x: (self.view.frame.width/2)-CGFloat(width1), y: 286, width: CGFloat(width1), height: 30)
+            lb_tag_1.layer.borderWidth = 1
+            lb_tag_1.layer.cornerRadius = 15
+            lb_tag_1.layer.borderColor = UIColor.lightGray.cgColor
+            lb_tag_1.textAlignment = .center
+            self.vw_profile.addSubview(lb_tag_1)
+        }else if doctor_tag.count == 2{
+            let lb_tag_1 = UILabel()
+            let lb_tag_2 = UILabel()
+            lb_tag_1.font = UIFont.systemFont(ofSize: 12)
+            lb_tag_1.text = self.doctor_tag[0]
+            let width1 = lb_tag_1.text!.characters.count*8
+            lb_tag_1.frame = CGRect(x: (self.view.frame.width/2)-CGFloat(width1), y: 286, width: CGFloat(width1), height: 30)
+            lb_tag_1.layer.borderWidth = 1
+            lb_tag_1.layer.cornerRadius = 15
+            lb_tag_1.layer.borderColor = UIColor.lightGray.cgColor
+            lb_tag_1.textAlignment = .center
+            self.vw_profile.addSubview(lb_tag_1)
+        }else if doctor_tag.count == 3{
+            
+        }else{
+            
+        }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "edit"{
+            if let des = segue.destination as? PhysicianEditViewController{
+                if self.physician != nil{
+                    des.physician = self.physician!
+                }
+            }
+        }
+    }
 }

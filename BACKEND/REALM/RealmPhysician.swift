@@ -26,4 +26,8 @@ class RealmPhysician:Object{
     dynamic var isUpdate : Bool = false
     dynamic var passcode : String = ""
     dynamic var role : String = "Doctor"
+    dynamic var major : String = ""
+    dynamic var institute : String = ""
+    dynamic var institutePic : String = ""
+    var groupid = List<RealmGroupArray>()
 }

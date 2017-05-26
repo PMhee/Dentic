@@ -11,6 +11,7 @@ import SwiftyJSON
 import Realm
 import RealmSwift
 class BackPatient{
+    var album = CustomPhotoAlbum()
     var physician = try! Realm().objects(RealmPhysician.self).first
     var helper = Helper()
     var color = Color()
@@ -686,9 +687,6 @@ class BackPatient{
                             }
                         }
                         if self.getListFollowup(date: ckDate,id:patient.id) == nil{
-                            
-                            
-                            
                             patient.listFollowUp.append(listFollowup)
                             
                         }
@@ -782,33 +780,61 @@ class BackPatient{
             }
         }
     }
-    func updatePatientProfile(name:String,HN:String,gender:String,DOB:String,passport:String,nation:String,address:String,telephone:String,payment:String,group:RealmGroup,patient:RealmPatient,isCreate:Bool,id:String,localid:String){
+    func updatePatientProfile(name:String,HN:String,gender:String,DOB:String,passport:String,nation:String,address:String,telephone:String,payment:String,group:RealmGroup,patient:RealmPatient,isCreate:Bool,id:String,localid:String,isContianPic:Bool){
         try! realm.write {
+            let pt = RealmStackPatient()
             patient.name = name
+            pt.name = name
             patient.HN = HN
+            pt.HN = HN
             patient.gender = gender
+            pt.gender = gender
             if DOB == ""{
             }else{
                 patient.dob = self.helper.FormatStringToDate(date: DOB)
+                pt.dob = self.helper.FormatStringToDate(date: DOB)
                 patient.age = String(Date().years(from: patient.dob))+" Y"//+String(Date().months(from: patient.dob))+" M"+String(Date().days(from: patient.dob))+" D"
+                pt.age = String(Date().years(from: patient.dob))+" Y"
             }
             patient.nationalID = passport
+            pt.nationalID = passport
             patient.nationality = nation
+            pt.nationality = nation
             patient.address = address
+            pt.address = address
             patient.group = group
+            var gr = RealmGroup()
+            gr.id = group.id
+            pt.group = gr
             var ph = phoneNo()
+            if pt.phoneno.count == 0 {
+                pt.phoneno.append(ph)
+            }
             ph.phoneno = telephone
             if patient.phoneno.count > 0 {
                 patient.phoneno[0] = ph
+                pt.phoneno[0] = ph
             }else{
                 patient.phoneno.append(ph)
+                pt.phoneno.append(ph)
             }
             patient.medpayment = payment
+            pt.medpayment = payment
             patient.id = id
+            pt.id = id
             patient.localid = localid
+            pt.localid = localid
+            pt.isUpdate = true
+            if isContianPic{
+                pt.isPic = true
+            }else{
+                pt.isPic = false
+            }
             if isCreate{
+                pt.isUpdate = false
                 try! Realm().add(patient)
             }
+            try! Realm().add(pt)
         }
     }
     func saveProfilePic(image:UIImage,id:String){
@@ -821,7 +847,7 @@ class BackPatient{
             patient.status = status
         }
     }
-    func createDentFollowUp(date:Date,note:String,extra_image:[DentistClinicalViewController.Image],intra_image:[DentistClinicalViewController.Image],film_image:[DentistClinicalViewController.Image],lime_image:[DentistClinicalViewController.Image],patient:RealmPatient){
+    func createDentFollowUp(date:Date,note:String,extra_image:[DentistClinicalViewController.Image],intra_image:[DentistClinicalViewController.Image],film_image:[DentistClinicalViewController.Image],lime_image:[DentistClinicalViewController.Image],patient:RealmPatient,pic:[DentistClinicalViewController.Image]){
         try! realm.write{
             var lf = RealmListFollowup()
             //if self.findFuByDate(date: self.helper.dateToStringOnlyDate(date: date), patient: patient) != nil
@@ -833,13 +859,31 @@ class BackPatient{
             lf.patient.id = patient.id
             lf.patient.localid = patient.localid
             lf.date = self.helper.stringToDateOnlyDate(date: self.helper.dateToStringOnlyDate(date: date))
-            var fu = RealmFollowup()
-            fu.id = self.helper.generateID()
+            let fu = RealmFollowup()
+            let stackFU = RealmFollowup()
+            let idd = self.helper.generateID()
+            fu.localid = idd
+            stackFU.localid = idd
+            stackFU.patientid = patient.id
             fu.followdate = date
+            stackFU.followdate = date
             fu.physician = self.physician
             fu.followtime = self.helper.dateToStringOnlyTime(date: date)
+            stackFU.followtime = self.helper.dateToStringOnlyTime(date: date)
             fu.followupnote = note
+            stackFU.followupnote = note
             fu.patientid = patient.localid
+            for i in 0..<pic.count{
+                let picurl = Picture()
+                picurl.id = pic[i].id
+                picurl.picurl = pic[i].id
+                picurl.fulocalid = fu.localid
+                picurl.fudocid = fu.id
+                picurl.patientid = patient.id
+                self.helper.saveLocalProfilePicFromImage(image: pic[i].img, id: picurl.id)
+                self.album.save(image: pic[i].img)
+                fu.picurl.append(picurl)
+            }
             for i in 0..<extra_image.count{
                 let picurl = Picture()
                 picurl.id = self.helper.generateID()
@@ -851,9 +895,12 @@ class BackPatient{
                 }
                 self.helper.saveLocalProfilePicFromImage(image: extra_image[i].img, id: picurl.id)
                 if extra_image[i].isSet{
+                    picurl.isUpdate = true
                     fu.picurl.append(picurl)
+                    self.album.save(image: extra_image[i].img)
                 }
                 fu.ExternalImage.append(picurl)
+                stackFU.ExternalImage.append(picurl)
             }
             for i in 0..<intra_image.count{
                 let picurl = Picture()
@@ -863,9 +910,12 @@ class BackPatient{
                 picurl.patientid = patient.localid
                 self.helper.saveLocalProfilePicFromImage(image: intra_image[i].img, id: picurl.id)
                 if intra_image[i].isSet{
+                    picurl.isUpdate = true
                     fu.picurl.append(picurl)
+                    self.album.save(image: intra_image[i].img)
                 }
                 fu.InternalImage.append(picurl)
+                stackFU.InternalImage.append(picurl)
             }
             for i in 0..<film_image.count{
                 let picurl = Picture()
@@ -875,9 +925,12 @@ class BackPatient{
                 picurl.patientid = patient.localid
                 self.helper.saveLocalProfilePicFromImage(image: film_image[i].img, id: picurl.id)
                 if film_image[i].isSet{
+                    picurl.isUpdate = true
                     fu.picurl.append(picurl)
+                    self.album.save(image: film_image[i].img)
                 }
                 fu.Film.append(picurl)
+                stackFU.Film.append(picurl)
             }
             for i in 0..<lime_image.count{
                 let picurl = Picture()
@@ -887,10 +940,18 @@ class BackPatient{
                 picurl.patientid = patient.localid
                 self.helper.saveLocalProfilePicFromImage(image: lime_image[i].img, id: picurl.id)
                 if lime_image[i].isSet{
+                    picurl.isUpdate = true
                     fu.picurl.append(picurl)
+                    self.album.save(image: lime_image[i].img)
                 }
                 fu.Lime.append(picurl)
+                stackFU.Lime.append(picurl)
             }
+            let stack = RealmStackFollowup()
+            stack.followup = stackFU
+            stack.isUpdate = false
+            stack.patientid = stackFU.patientid
+            try realm.add(stack)
             lf.followup.insert(fu, at: 0)
             if self.findFuByDate(date: self.helper.dateToStringOnlyDate(date: date), patient: patient) == nil{
                 patient.listFollowUp.append(lf)
@@ -951,7 +1012,6 @@ class BackPatient{
     }
     func createFollowup(date:Date,note:String,hashtag:[String],pic:[ClinicalViewController.Image],patient:RealmPatient,status:String,picture:[Picture],id:String,updatetime:Date){
         try! realm.write {
-            
             var followup = RealmFollowup()
             if patient.lastfudate != nil{
                 if date > patient.lastfudate{
@@ -1063,7 +1123,9 @@ class BackPatient{
         default:
             return nil
         }
-        
+    }
+    func getListPatient(name:String,hn:String) ->Results<RealmPatient>{
+        return realm.objects(RealmPatient.self).filter(NSPredicate(format: "name contains[c] %@ OR HN contains[c] %@", name,hn))
     }
     func listPatientListFollowUp(id:String) -> Results<RealmListFollowup>{
         return realm.objects(RealmListFollowup.self).filter(NSPredicate(format: "patient.localid == %@",id)).sorted(byProperty: "date", ascending: true)
@@ -1081,13 +1143,16 @@ class BackPatient{
         return realm.objects(RealmListFollowup.self).filter(NSPredicate(format: "date == %@ AND patient.localid == %@", self.helper.StringtoDOB(date: date) as NSDate,id)).first
     }
     func getFollowup(id:String) ->RealmFollowup?{
-        return realm.objects(RealmFollowup.self).filter(NSPredicate(format: "id == %@", id)).first
+        return realm.objects(RealmFollowup.self).filter(NSPredicate(format: "localid == %@", id)).first
     }
     func getCusformAns(id:String) ->CustomFormListAnswer?{
         return realm.objects(CustomFormListAnswer.self).filter(NSPredicate(format: "cfansid == %@", id)).first
     }
     func findPatient(id:String) ->Results<RealmPatient>{
         return realm.objects(RealmPatient.self).filter(NSPredicate(format: "localid == %@", id))
+    }
+    func getPatientFromGroup(id:String) -> Results<RealmPatient>{
+        return realm.objects(RealmPatient.self).filter(NSPredicate(format: "group.id == %@", id))
     }
     func findGroup(id:String) ->Results<RealmGroup>{
         return realm.objects(RealmGroup.self).filter(NSPredicate(format: "id == %@", id))

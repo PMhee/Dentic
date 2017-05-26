@@ -16,6 +16,7 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     //var groups = [Group]()
     var groups = try! Realm().objects(RealmGroup.self)
     var index = 0
+    var helper = Helper()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var act: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         button.addTarget(self, action: #selector(addNew), for: UIControlEvents.touchUpInside)
         button.frame = CGRect(x:self.view.frame.width-40, y:0, width:20, height:20)
         let barButton = UIBarButtonItem(customView: button)
-        //assign button to navigationbar
+        //assign button to navigationbarxw
         self.navigationItem.rightBarButtonItem = barButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
@@ -35,6 +36,7 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.act.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         self.api.listMyGroup(sessionid: self.backSystem.getSessionid(), success: {(success) in
             self.act.isHidden = true
             self.back.collectGroup(success: success)
@@ -52,6 +54,7 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let img_group = cell.viewWithTag(1) as! UIImageView
         let lb_group = cell.viewWithTag(2) as! UILabel
         img_group.layer.cornerRadius = 25
+        self.helper.loadLocalProfilePic(id: self.groups[indexPath.row].id, image:img_group)
         lb_group.text = self.groups[indexPath.row].groupname
         return cell
     }
@@ -60,6 +63,24 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Group"
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            self.api.deleteGroup(sessionid: self.backSystem.getSessionid(), groupid: self.groups[indexPath.row].id, success: {(success) in
+                print(success)
+                try! Realm().write {
+                    try! Realm().delete(self.groups[indexPath.row])
+                    self.tableView.reloadData()
+                }
+            }, failure: {(error) in
+                
+            })
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
@@ -74,7 +95,7 @@ class GroupViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "select"{
-            if let des = segue.destination as? ShowGroupViewController{
+            if let des = segue.destination as? GroupHomeViewController{
                 des.group = self.groups[self.index]
             }
         }

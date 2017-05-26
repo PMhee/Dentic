@@ -11,6 +11,28 @@ import UIKit
 import SystemConfiguration
 import Alamofire
 import AlamofireImage
+extension UIView {
+    func addDashedBorder(strokeColor: UIColor, lineWidth: CGFloat) {
+        self.layoutIfNeeded()
+        let strokeColor = strokeColor.cgColor
+        
+        let shapeLayer:CAShapeLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
+        
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = strokeColor
+        shapeLayer.lineWidth = lineWidth
+        shapeLayer.lineJoin = kCALineJoinRound
+        
+        shapeLayer.lineDashPattern = [5,5] // adjust to your liking
+        shapeLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: shapeRect.width, height: shapeRect.height), cornerRadius: self.layer.cornerRadius).cgPath
+        self.layer.addSublayer(shapeLayer)
+    }
+    
+}
 extension Date {
     /// Returns the amount of years from another date
     func years(from date: Date) -> Int {
@@ -199,14 +221,8 @@ class Helper{
     func dateToString(date:Date!) -> String{
         if date != nil{
             let format = DateFormatter()
-            let cpFormat = DateFormatter()
-            cpFormat.dateStyle = .short
-            if cpFormat.string(from: date) == cpFormat.string(from: Date()){
-                format.timeStyle = .short
-            }else{
-                format.dateStyle = .medium
-                format.timeStyle = .medium
-            }
+            format.dateStyle = .medium
+            format.timeStyle = .medium
             return format.string(from: date)
         }else{
             return ""
@@ -335,6 +351,61 @@ class Helper{
             
         }
     }
+    func loadLocalProfilePicWithSuccess(id:String,image:UIImageView,success: @escaping (_ response: String) -> Void){
+        DispatchQueue.global(qos:.background).async {
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths            = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if paths.count > 0
+            {
+                let dirPath = paths[0]
+                let readPath = dirPath.appending("/"+id)
+                let img  = UIImage(contentsOfFile: readPath)
+                img?.cgImage
+                DispatchQueue.main.async {
+                    image.image = img
+                    success("")
+                }
+                // Do whatever you want with the image
+            }
+            
+        }
+    }
+    func shadow(vw_layout:UIView){
+        //        let shadowPath = UIBezierPath(rect: vw_layout.frame)
+        //        vw_layout.layer.masksToBounds = false
+        //        vw_layout.layer.shadowColor = UIColor.black.cgColor
+        //        vw_layout.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        //        vw_layout.layer.shadowOpacity = 0.5
+        //        vw_layout.layer.shadowPath = shadowPath.cgPath
+        //        vw_layout.layer.borderWidth = 0.25
+        //        vw_layout.layer.borderColor = UIColor(netHex: 0x98999B).cgColor
+        vw_layout.layer.shadowColor = UIColor(netHex:0x98999B).cgColor
+        vw_layout.layer.shadowOffset = CGSize(width: 0, height: 1)
+        vw_layout.layer.shadowOpacity = 0.5
+        vw_layout.layer.shadowRadius = 1.0
+        vw_layout.clipsToBounds = false
+        vw_layout.layer.masksToBounds = false
+    }
+    func loadLocalImageWithSuccess(id:String,success: @escaping (_ response: UIImage?) -> Void){
+        DispatchQueue.global(qos:.background).async {
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths            = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if paths.count > 0
+            {
+                let dirPath = paths[0]
+                let readPath = dirPath.appending("/"+id)
+                let img  = UIImage(contentsOfFile: readPath)
+                img?.cgImage
+                DispatchQueue.main.async {
+                    success(img)
+                }
+                // Do whatever you want with the image
+            }
+            
+        }
+    }
     func setGradientColorLeftRight(vw:UIView,color1:UIColor,color2:UIColor){
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = [color1.cgColor, color2.cgColor]
@@ -384,6 +455,25 @@ class Helper{
             return true
         }
     }
+    func loadLocalProfilePicWithSuccess(id:String,success: @escaping (_ response: UIImage?) -> Void){
+        DispatchQueue.global(qos:.background).async {
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths            = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if paths.count > 0
+            {
+                let dirPath = paths[0]
+                let readPath = dirPath.appending("/"+id)
+                let img  = UIImage(contentsOfFile: readPath)
+                img?.cgImage
+                DispatchQueue.main.async {
+                    success(img)
+                }
+                // Do whatever you want with the image
+            }
+            
+        }
+    }
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
@@ -405,11 +495,11 @@ class Helper{
     }
     func saveLocalProfilePicFromImage(image:UIImage,id:String){
         DispatchQueue.global(qos:.background).async {
-        if let data = UIImageJPEGRepresentation(image,1.0) {
-            let filename = self.getDocumentsDirectory().appendingPathComponent(String(describing: id))
-            try? data.write(to: filename)
+            if let data = UIImageJPEGRepresentation(image,1.0) {
+                let filename = self.getDocumentsDirectory().appendingPathComponent(String(describing: id))
+                try? data.write(to: filename)
+            }
         }
-    }
     }
     func removePic(id:String){
         let fileManager = FileManager.default

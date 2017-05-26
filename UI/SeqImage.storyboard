@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e20-FW-gFm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Seq Image View Controller-->
+        <scene sceneID="8Yu-vh-6ln">
+            <objects>
+                <viewController id="e20-FW-gFm" customClass="SeqImageViewController" customModule="Dentic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oKx-JT-Dli"/>
+                        <viewControllerLayoutGuide type="bottom" id="LXD-5g-EV2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i2O-oQ-Qmw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facial left smile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHH-bz-ToQ">
+                                <rect key="frame" x="122.5" y="323" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOs-e2-Wy8">
+                                <rect key="frame" x="0.0" y="617" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JCL-Yu-RNT"/>
+                                    <constraint firstAttribute="width" constant="100" id="TVr-7W-OVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_cancel_action:" destination="e20-FW-gFm" eventType="touchUpInside" id="P3J-BC-pcp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yHH-bz-ToQ" firstAttribute="centerY" secondItem="i2O-oQ-Qmw" secondAttribute="centerY" id="Kp7-Dm-dec"/>
+                            <constraint firstItem="yHH-bz-ToQ" firstAttribute="centerX" secondItem="i2O-oQ-Qmw" secondAttribute="centerX" id="ZZ8-WY-m0l"/>
+                            <constraint firstItem="FOs-e2-Wy8" firstAttribute="leading" secondItem="i2O-oQ-Qmw" secondAttribute="leadingMargin" constant="-16" id="d2o-ul-XxO"/>
+                            <constraint firstItem="LXD-5g-EV2" firstAttribute="top" secondItem="FOs-e2-Wy8" secondAttribute="bottom" id="uoQ-gF-2k6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lb_show" destination="yHH-bz-ToQ" id="o2d-0Q-4jg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLY-Sd-ftn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="-31"/>
+        </scene>
+    </scenes>
+</document>

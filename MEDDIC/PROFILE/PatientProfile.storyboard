@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D0c-XV-r9g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D0c-XV-r9g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,22 +35,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-CG-Qog">
-                                                    <rect key="frame" x="118" y="5" width="140" height="140"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noPic.png" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-CG-Qog">
+                                                    <rect key="frame" x="128" y="15" width="120" height="120"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="L4J-iK-kBS"/>
-                                                        <constraint firstAttribute="width" constant="140" id="SvS-r7-7k4"/>
+                                                        <constraint firstAttribute="height" constant="120" id="L4J-iK-kBS"/>
+                                                        <constraint firstAttribute="width" constant="120" id="SvS-r7-7k4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Pq-Mn-A5i">
-                                                    <rect key="frame" x="238" y="125" width="20" height="20"/>
+                                                    <rect key="frame" x="228" y="115" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="8zh-wD-k2q"/>
                                                         <constraint firstAttribute="height" constant="20" id="uf9-bn-uW5"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.17254901959999999" green="0.21960784310000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.71764705880000002" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="7Pq-Mn-A5i" firstAttribute="leading" secondItem="UB9-CG-Qog" secondAttribute="trailing" constant="-20" id="1es-Zt-2rE"/>
                                                 <constraint firstItem="UB9-CG-Qog" firstAttribute="centerY" secondItem="fph-h6-BzI" secondAttribute="centerY" id="VCy-bV-QIm"/>
@@ -134,7 +134,7 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT6-JH-8GZ">
                                         <rect key="frame" x="206.5" y="130" width="150" height="40"/>
-                                        <color key="backgroundColor" red="0.10588235294117647" green="0.32549019607843138" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="sA4-Ov-rTj"/>
                                         </constraints>
@@ -148,7 +148,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-zU-uLO">
                                         <rect key="frame" x="19" y="130" width="150" height="40"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.1058823529" green="0.32549019610000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.71764705880000002" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="btn_cancel_action:" destination="D0c-XV-r9g" eventType="touchUpInside" id="RGv-LC-DAZ"/>
@@ -263,5 +263,6 @@
     <resources>
         <image name="Name.png" width="512" height="512"/>
         <image name="camera-white.png" width="512" height="512"/>
+        <image name="noPic.png" width="512" height="512"/>
     </resources>
 </document>

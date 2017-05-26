@@ -11,6 +11,8 @@ import Alamofire
 class APIPatient{
     //var url = "https://smr.cp.eng.chula.ac.th/dev/detnarong/service.php?q=api/"
     var url = "https://smr.cp.eng.chula.ac.th/service.php?q=api/"
+    var url_rest = "https://smr.cp.eng.chula.ac.th/rest.php/"
+    //var url_rest = "https://smr.cp.eng.chula.ac.th/dev/detnarong/rest.php/"
     func appID() -> String{
         return "ea5aeea931986e0b82eaaefa9131d777736ac50a"
     }
@@ -21,7 +23,6 @@ class APIPatient{
     func genHeader() -> [String:String]{
         return ["deeappid":appID(),"deeappsecret":appSecret(),"deesessionid":self.system.getSessionid()]
     }
-    var url_rest = "https://smr.cp.eng.chula.ac.th/dev/detnarong/rest.php/"
     let config = URLSessionConfiguration.background(withIdentifier: "com.example.app.background")
     var sessionManager = Alamofire.SessionManager.default
     func setTimeout(){
@@ -272,7 +273,7 @@ class APIPatient{
     }
     func createFollowup(sessionID:String,patientid:String,followupnote:String,meshtag:[String],opdtag:String,followupdate:String,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
         let code = "\(self.url)updateFollowUp"
-        let parameter = ["data":"true","post[patientid]":patientid,"post[followupnote]":followupnote,"post[followdate]":followupdate,"post[meshtagid]":meshtag.description,"post[opdtag]":opdtag] as [String : Any]
+        let parameter = ["data":"true","post[patientid]":patientid,"post[followupnote]":followupnote,"post[followdate]":followupdate,"post[meshtagid]":meshtag.description] as [String : Any]
         Alamofire.request(code, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: self.genHeader())
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")

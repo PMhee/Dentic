@@ -22,6 +22,8 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
     var isLoading = false
     var isNew = false
     var index = 0
+    
+    @IBOutlet weak var btn_add_patient: UIButton!
     var json = try! Realm().objects(RealmJSON.self)
     //var pat = try! Realm().objects(RealmPatient.self)
     var inGroup = false
@@ -47,6 +49,13 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
         self.loadUpdatedRecent()
         self.tableView.contentOffset.y = -64
     }
+    @IBAction func btn_add_patient_action(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "add", sender: self)
+    }
+    @IBAction func btn_search_action(_ sender: Any) {
+        self.performSegue(withIdentifier: "search", sender: self)
+    }
+    
     @IBAction func btn_group_action(_ sender: UIBarButtonItem) {
         self.vw_group.isHidden = false
         self.vw_filter.isHidden = false
@@ -151,6 +160,7 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.act_group.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         self.patients = self.back.sortPatientByFuDate()
         self.tableView.reloadData()
         self.listGroup = [String]()
@@ -209,7 +219,7 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
                 self.patients = self.back.sortPatientByFuDate()
                 self.tableView.reloadData()
                 self.vw_new_record.isHidden = true
-                self.tableView.contentOffset.y = 0
+                //self.tableView.contentOffset.y = 0
                 self.act.isHidden = true
             }, failure: {(error) in
                 
@@ -218,9 +228,9 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= -100{
-            self.loadUpdatedRecent()
-        }
+//        if scrollView.contentOffset.y <= -100{
+//            self.loadUpdatedRecent()
+//        }
         //        if self.helper.isConnectedToNetwork(){
         //            if scrollView.contentOffset.y <= -100{
         //                self.isDownloading = true
@@ -241,6 +251,7 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
         self.vw_new_record.layer.cornerRadius = 15
         self.vw_new_record.layer.masksToBounds = true
         self.ui.shadow(vw_layout: self.vw_new_record)
+        self.btn_add_patient.layer.cornerRadius = 25
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
     override func didReceiveMemoryWarning() {
@@ -296,6 +307,9 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
             }else{
                 cell.lb_status.text = self.patients[indexPath.row].status
             }
+            if self.patients[indexPath.row].group?.id != nil{
+                self.helper.loadLocalProfilePic(id: (self.patients[indexPath.row].group?.id)!, image: cell.icon_group)
+            }
             cell.lb_meshtag.text = ""
             for i in 0..<self.patients[indexPath.row].meshtag.count{
                 if i == 0 {
@@ -335,6 +349,10 @@ class RecentPatientViewController: UIViewController,UITableViewDelegate,UITableV
             if let des = segue.destination as? DentistClinicalViewController{
                 des.patient = self.back.findPatient(id: self.patients[self.index].localid).first!
                 des.isFirst = true
+            }
+        }else if segue.identifier == "add"{
+            if let des = segue.destination as? PatientProfileViewController{
+                des.isCreate = true
             }
         }
     }

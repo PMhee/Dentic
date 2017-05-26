@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 class APIGroup{
+    var backSystem = BackSystem()
     //var url = "https://smr.cp.eng.chula.ac.th/dev/detnarong/service.php?q=api/"
     //var url_rest = "https://smr.cp.eng.chula.ac.th/dev/detnarong/rest.php/"
     var url_rest = "https://smr.cp.eng.chula.ac.th/rest.php/"
@@ -360,6 +361,93 @@ class APIGroup{
                 
         }
     }
+    func editGroupName(groupname:String,groupdescription:String,groupid:String,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
+        self.setTimeout()
+        let header = ["deeappid":appID(),"deeappsecret":appSecret(),"Content-Type":"application/json","deesessionid":self.backSystem.getSessionid()]
+        let parameter = ["groupname":groupname,"groupdescription":groupdescription] as [String : Any]
+        let code = "\(self.url_rest)groups/\(groupid)"
+        Alamofire.request(code, method: .put, parameters: parameter, encoding: JSONEncoding.default, headers: header)
+            .responseString { response in
+                print("Success: \(response.result.isSuccess)")
+                var statusCode = response.response?.statusCode
+                if response.result.isSuccess{
+                }else{
+                    if let error = response.result.error as? AFError {
+                        statusCode = error._code // statusCode private
+                        switch error {
+                        case .invalidURL(let url):
+                            print("Invalid URL: \(url) - \(error.localizedDescription)")
+                        case .parameterEncodingFailed(let reason):
+                            print("Parameter encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .multipartEncodingFailed(let reason):
+                            print("Multipart encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .responseValidationFailed(let reason):
+                            print("Response validation failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                            switch reason {
+                            case .dataFileNil, .dataFileReadFailed:
+                                print("Downloaded file could not be read")
+                            case .missingContentType(let acceptableContentTypes):
+                                print("Content Type Missing: \(acceptableContentTypes)")
+                            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                                print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                            case .unacceptableStatusCode(let code):
+                                print("Response status code was unacceptable: \(code)")
+                                statusCode = code
+                            }
+                        case .responseSerializationFailed(let reason):
+                            print("Response serialization failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                            // statusCode = 3840 ???? maybe..
+                        }
+                    }else{
+                        failure("internet error")
+                    }
+                }
+                
+            }
+            .responseJSON { response in
+                //debugPrint(response.result.value)
+                if response.result.isSuccess{
+                    success((response.result.value as? NSDictionary)!)
+                }
+                
+        }
+    }
+    func uploadGrPic(groupdocid:String,image:UIImage,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
+        let code = "\(self.url)uploadGrPic"
+        
+        let parameters = ["appid":appID(),"appsecret":appSecret(),"sessionid":self.backSystem.getSessionid(),"data":"true","key":groupdocid] as [String : String]
+        Alamofire.upload(multipartFormData: {(multiple) in
+            if let data = UIImageJPEGRepresentation(image,1.0) {
+                multiple.append(data, withName: "picfile", fileName: "profile.jpg", mimeType: "image/jpeg")
+            }
+            for (key, value) in parameters {
+                multiple.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                //multiple.append(data: value.data(using: String.Encoding.utf8)! , name: key)
+            }
+        }, to: code, encodingCompletion: {(complete) in
+            switch complete {
+            case .success(let upload, _, _):
+                upload.responseJSON {
+                    response in
+                    print(response.request)  // original URL request
+                    print(response.response) // URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
+                    if let JSON = response.result.value {
+                        success(JSON as! NSDictionary)
+                        print("JSON: \(JSON)")
+                    }
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        })
+        
+    }
     func createGroup(sessionid:String,groupname:String,groupdescription:String,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
         self.setTimeout()
         let header = ["deeappid":appID(),"deeappsecret":appSecret(),"Content-Type":"application/json","deesessionid":sessionid]
@@ -477,6 +565,61 @@ class APIGroup{
         let parameter = ["userid":userid,"role":role] as [String : Any]
         let code = "\(self.url_rest)groups/invite/\(groupid)"
         Alamofire.request(code, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: header)
+            .responseString { response in
+                print("Success: \(response.result.isSuccess)")
+                var statusCode = response.response?.statusCode
+                if response.result.isSuccess{
+                }else{
+                    if let error = response.result.error as? AFError {
+                        statusCode = error._code // statusCode private
+                        switch error {
+                        case .invalidURL(let url):
+                            print("Invalid URL: \(url) - \(error.localizedDescription)")
+                        case .parameterEncodingFailed(let reason):
+                            print("Parameter encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .multipartEncodingFailed(let reason):
+                            print("Multipart encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .responseValidationFailed(let reason):
+                            print("Response validation failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                            switch reason {
+                            case .dataFileNil, .dataFileReadFailed:
+                                print("Downloaded file could not be read")
+                            case .missingContentType(let acceptableContentTypes):
+                                print("Content Type Missing: \(acceptableContentTypes)")
+                            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                                print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                            case .unacceptableStatusCode(let code):
+                                print("Response status code was unacceptable: \(code)")
+                                statusCode = code
+                            }
+                        case .responseSerializationFailed(let reason):
+                            print("Response serialization failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                            // statusCode = 3840 ???? maybe..
+                        }
+                    }else{
+                        failure("internet error")
+                    }
+                }
+                
+            }
+            .responseJSON { response in
+                //debugPrint(response.result.value)
+                if response.result.isSuccess{
+                    success((response.result.value as? NSDictionary)!)
+                }
+                
+        }
+    }
+    func deleteMember(sessionid:String,groupid:String,userid:Int,success: @escaping (_ response: NSDictionary) -> Void,failure: @escaping (_ error: String) -> Void){
+        self.setTimeout()
+        let header = ["deeappid":appID(),"deeappsecret":appSecret(),"Content-Type":"application/json","deesessionid":sessionid]
+        let parameter = ["userid":userid] as [String : Any]
+        let code = "\(self.url_rest)groups/invite/\(groupid)"
+        Alamofire.request(code, method: .delete, parameters: parameter, encoding: JSONEncoding.default, headers: header)
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
                 var statusCode = response.response?.statusCode

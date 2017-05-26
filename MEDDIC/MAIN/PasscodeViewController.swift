@@ -37,10 +37,10 @@ class PasscodeViewController: UIViewController,UITextFieldDelegate {
             if !isSet{
                 context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Please authenticate to proceed.") { [weak self] (success, error) in
                     guard success else {
-                        self?.vw1.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw2.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw3.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw4.backgroundColor = UIColor(netHex: 0x263F90)
+                        self?.vw1.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw2.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw3.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw4.backgroundColor = UIColor(netHex: 0x967C90)
                         DispatchQueue.main.async {
                             print("false")
                             self?.vw1.backgroundColor = UIColor.white
@@ -55,10 +55,10 @@ class PasscodeViewController: UIViewController,UITextFieldDelegate {
                         return
                     }
                     DispatchQueue.main.async {
-                        self?.vw1.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw2.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw3.backgroundColor = UIColor(netHex: 0x263F90)
-                        self?.vw4.backgroundColor = UIColor(netHex: 0x263F90)
+                        self?.vw1.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw2.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw3.backgroundColor = UIColor(netHex: 0x967C90)
+                        self?.vw4.backgroundColor = UIColor(netHex: 0x967C90)
                         self?.helper.delay(0.2){
                         self?.performSegue(withIdentifier: "success", sender: self)
                         }
@@ -86,25 +86,25 @@ class PasscodeViewController: UIViewController,UITextFieldDelegate {
             self.vw3.backgroundColor = UIColor.white
             self.vw4.backgroundColor = UIColor.white
         }else if sender.text!.characters.count == 1{
-            self.vw1.backgroundColor = UIColor(netHex: 0x263F90)
+            self.vw1.backgroundColor = UIColor(netHex: 0x967C90)
             self.vw2.backgroundColor = UIColor.white
             self.vw3.backgroundColor = UIColor.white
             self.vw4.backgroundColor = UIColor.white
         }else if sender.text!.characters.count == 2{
-            self.vw1.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw2.backgroundColor = UIColor(netHex: 0x263F90)
+            self.vw1.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw2.backgroundColor = UIColor(netHex: 0x967C90)
             self.vw3.backgroundColor = UIColor.white
             self.vw4.backgroundColor = UIColor.white
         }else if sender.text!.characters.count == 3{
-            self.vw1.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw2.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw3.backgroundColor = UIColor(netHex: 0x263F90)
+            self.vw1.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw2.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw3.backgroundColor = UIColor(netHex: 0x967C90)
             self.vw4.backgroundColor = UIColor.white
         }else{
-            self.vw1.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw2.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw3.backgroundColor = UIColor(netHex: 0x263F90)
-            self.vw4.backgroundColor = UIColor(netHex: 0x263F90)
+            self.vw1.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw2.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw3.backgroundColor = UIColor(netHex: 0x967C90)
+            self.vw4.backgroundColor = UIColor(netHex: 0x967C90)
         }
         if sender.text!.characters.count == 4{
             if self.isSet && !self.cfPassword{

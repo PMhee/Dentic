@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 class PatientProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var isPhysician = false
+    var groupName = ""
+    var groupID = ""
     @IBOutlet weak var act: UIActivityIndicatorView!
     @IBOutlet var gesture: UITapGestureRecognizer!
     @IBOutlet weak var cons_y: NSLayoutConstraint!
@@ -107,11 +109,14 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         if !self.isCreate{
             self.selectedGroup = self.patient.group!
         }else{
+            if self.groupID == ""{
             self.selectedGroup = self.group[0]
+            }
         }
         if !isCreate && self.patient.dob != nil{
             self.datePicker.date = self.patient.dob
         }
+        
     }
     func confirm(sender:UIButton){
         self.vw_filter.isHidden = false
@@ -121,87 +126,97 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         phoneno.append(self.patientInfo[7])
         if self.isCreate{
             var gid = self.helper.generateID()
-            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:"",localid: gid)
+            var isImg = false
+            if self.img != nil {
+                isImg = true
+            }
+            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:"",localid: gid,isContianPic: isImg)
             if self.img != nil{
-            self.back.saveProfilePic(image: self.img, id: gid)
+                self.back.saveProfilePic(image: self.img, id: gid)
+            }else{
+                self.back.saveProfilePic(image: UIImage(named:"noPic.png")!, id: gid)
             }
             self.navigationController?.popViewController(animated: false)
-            self.api.newPatient(sessionID: self.system.getSessionid(), success: {(success) in
-                var idd : String = ""
-                var hn : String = ""
-                if let content = success.value(forKey: "content") as? NSDictionary{
-                    if let ID = content.value(forKey: "_id") as? NSDictionary{
-                        if let id = ID.value(forKey: "$id") as? String{
-                            idd = id
-                        }
-                    }
-                    if let HN = content.value(forKey: "HN") as? String{
-                        hn = HN
-                    }
-                }
-                if self.patientInfo[1] != ""{
-                    hn = self.patientInfo[1]
-                }
-                self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: idd, HN: hn, name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
-                    self.back.updatePatientProfile(name: self.patientInfo[0], HN: hn, gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:idd,localid: self.patient.localid)
-                    if self.img != nil{
-                        self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: idd, image: self.img, success: {(success) in
-                            self.vw_filter.isHidden = true
-                            self.act.isHidden = true
-                            self.back.saveProfilePic(image: self.img, id: self.patient.id)
-                            //self.navigationController?.popViewController(animated: false)
-                        }, failure: {(error) in
-                            self.vw_filter.isHidden = true
-                            self.act.isHidden = true
-                            self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-                        })
-                        
-                    }else{
-                        self.vw_filter.isHidden = true
-                        self.act.isHidden = true
-                        self.navigationController?.popViewController(animated: false)
-                    }
-                }, failure: {(error) in
-                    self.vw_filter.isHidden = true
-                    self.act.isHidden = true
-                    self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-                })
-                
-                
-                
-            }, failure: {(error) in
-                self.vw_filter.isHidden = true
-                self.act.isHidden = true
-                self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-            })
+            //            self.api.newPatient(sessionID: self.system.getSessionid(), success: {(success) in
+            //                var idd : String = ""
+            //                var hn : String = ""
+            //                if let content = success.value(forKey: "content") as? NSDictionary{
+            //                    if let ID = content.value(forKey: "_id") as? NSDictionary{
+            //                        if let id = ID.value(forKey: "$id") as? String{
+            //                            idd = id
+            //                        }
+            //                    }
+            //                    if let HN = content.value(forKey: "HN") as? String{
+            //                        hn = HN
+            //                    }
+            //                }
+            //                if self.patientInfo[1] != ""{
+            //                    hn = self.patientInfo[1]
+            //                }
+            //                self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: idd, HN: hn, name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
+            //                    self.back.updatePatientProfile(name: self.patientInfo[0], HN: hn, gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:idd,localid: self.patient.localid,isContianPic: isImg)
+            //                    if self.img != nil{
+            //                        self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: idd, image: self.img, success: {(success) in
+            //                            self.vw_filter.isHidden = true
+            //                            self.act.isHidden = true
+            //                            self.back.saveProfilePic(image: self.img, id: self.patient.id)
+            //                            //self.navigationController?.popViewController(animated: false)
+            //                        }, failure: {(error) in
+            //                            self.vw_filter.isHidden = true
+            //                            self.act.isHidden = true
+            //                            self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
+            //                        })
+            //
+            //                    }else{
+            //                        self.vw_filter.isHidden = true
+            //                        self.act.isHidden = true
+            //                        self.navigationController?.popViewController(animated: false)
+            //                    }
+            //                }, failure: {(error) in
+            //                    self.vw_filter.isHidden = true
+            //                    self.act.isHidden = true
+            //                    self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
+            //                })
+            //
+            //
+            //
+            //            }, failure: {(error) in
+            //                self.vw_filter.isHidden = true
+            //                self.act.isHidden = true
+            //                self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
+            //            })
         }else{
-            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid)
+            var isImg = false
             if self.img != nil{
-            self.back.saveProfilePic(image: self.img, id: self.patient.localid)
+                isImg = true
+            }
+            self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid,isContianPic:isImg)
+            if self.img != nil{
+                self.back.saveProfilePic(image: self.img, id: self.patient.localid)
             }
             self.navigationController?.popViewController(animated: false)
-            self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: self.patient.id, HN: self.patientInfo[1], name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
-                self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid)
-                if self.img != nil{
-                    self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: self.patient.id, image: self.img, success: {(success) in
-                        self.vw_filter.isHidden = true
-                        self.act.isHidden = true
-                        self.back.saveProfilePic(image: self.img, id: self.patient.id)
-                        //self.navigationController?.popViewController(animated: false)
-                    }, failure: {(error) in
-                        
-                    })
-                    
-                }else{
-                    self.vw_filter.isHidden = true
-                    self.act.isHidden = true
-                    self.navigationController?.popViewController(animated: false)
-                }
-            }, failure: {(error) in
-                self.vw_filter.isHidden = true
-                self.act.isHidden = true
-                self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
-            })
+            //            self.api.updatePatient(sessionID: self.system.getSessionid(), patientid: self.patient.id, HN: self.patientInfo[1], name: self.patientInfo[0], gender: self.patientInfo[2], nationality: self.patientInfo[5], residentaddr: self.patientInfo[6], idno: self.patientInfo[4], dob: self.helper.dateToServer(date: self.datePicker.date), phoneno: [self.patientInfo[7]], medpayment: self.patientInfo[8], groupid: self.selectedGroup.id, success: {(success) in
+            //                self.back.updatePatientProfile(name: self.patientInfo[0], HN: self.patientInfo[1], gender: self.patientInfo[2], DOB: self.patientInfo[3], passport: self.patientInfo[4], nation: self.patientInfo[5], address: self.patientInfo[6], telephone: self.patientInfo[7], payment: self.patientInfo[8],group:self.selectedGroup, patient: self.patient,isCreate:self.isCreate,id:self.patient.id,localid: self.patient.localid,isContianPic:isImg)
+            //                if self.img != nil{
+            //                    self.api.uploadPatientPic(sessionID: self.system.getSessionid(), patientid: self.patient.id, image: self.img, success: {(success) in
+            //                        self.vw_filter.isHidden = true
+            //                        self.act.isHidden = true
+            //                        self.back.saveProfilePic(image: self.img, id: self.patient.id)
+            //                        //self.navigationController?.popViewController(animated: false)
+            //                    }, failure: {(error) in
+            //
+            //                    })
+            //
+            //                }else{
+            //                    self.vw_filter.isHidden = true
+            //                    self.act.isHidden = true
+            //                    self.navigationController?.popViewController(animated: false)
+            //                }
+            //            }, failure: {(error) in
+            //                self.vw_filter.isHidden = true
+            //                self.act.isHidden = true
+            //                self.ui.showErrorNav(error: "Internet connection problem", view: self.view)
+            //            })
         }
         
     }
@@ -220,7 +235,7 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         self.btn_cancel.layer.masksToBounds = true
         self.btn_cancel.layer.cornerRadius = 2
         self.btn_cancel.layer.borderWidth = 1
-        self.btn_cancel.layer.borderColor = UIColor(netHex: 0x1B5391).cgColor
+        self.btn_cancel.layer.borderColor = UIColor(netHex: 0xAC8FA6).cgColor
         self.btn_confirm.layer.masksToBounds = true
         self.btn_confirm.layer.cornerRadius = 2
     }
@@ -258,8 +273,12 @@ class PatientProfileViewController: UIViewController,UITableViewDelegate,UITable
         if !self.isCreate{
             self.patientInfo.append((self.patient.group?.groupname)!)
         }else{
-            
-            self.patientInfo.append(self.group[0].groupname)
+            if self.groupName != ""{
+                self.patientInfo.append(self.groupName)
+                self.selectedGroup.id = self.groupID
+            }else{
+                self.patientInfo.append(self.group[0].groupname)
+            }
         }
         self.tableView.reloadData()
     }

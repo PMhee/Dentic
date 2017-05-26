@@ -124,6 +124,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         self.followUp = self.back.sortFollowup(followUp: self.patient.listFollowUp)
         self.tableView.reloadData()
+        if self.followUp.count > 0{
+            self.tableView.scrollToRow(at: IndexPath(row:0,section:0), at: .top, animated: true)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
